@@ -9,23 +9,18 @@ abstract class Model
     public const RULE_MAX = 'max';
     public const RULE_UNIQUE = 'uniq';
     public const RULE_MATCH = 'match';
-
-
-    abstract public function rules():array;
-    public array $errors = [];
-    public function loadData($data): void
+    public function loadData($data)
     {
         foreach ($data as $key => $value) {
             if(property_exists($this, $key)) {
-                if(is_array($value)) {
-                    $this->{$key} = $value[0];
-                } else {
-                    $this->{$key} = $value;
-                }
-
+                $this->{$key} = $value;
             }
         }
+
     }
+
+    abstract public function rules():array;
+    public array $errors = [];
 
     public function labels():array
     {

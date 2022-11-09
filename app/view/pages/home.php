@@ -1,50 +1,58 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <!-- leftcorner -->
+        <section class="leftContainer">
+            <img src="../images/profile.png" class="leftImage">
+            <h1 class="lefttopic">Welcome Singha Club</h1>
+            <img src="../images/campaign.png" class="left1ConImage">  
+            <p class="left1Con">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+            <img src="../images/campaign.png" class="left2ConImage">
+            <p class="left2Con">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
+        </section>
+    <!-- leftcorner end-->
+    <!-- navigationbar Start-->
+        <section class="navbar">
+            <img src="../images/bell.png" class="bell">
+            <img src="../images/profile.png" class="profile">
+            <a href="" class="logout">LOGOUT</a>
+        </section>
+    <!-- navigationbar end -->
+    <!-- rightcorner start -->
+        <section class="rightCorner">
+            <div class="rc1">
+                <img src="../images/profile.png" class="rc1img">
+                <p class="rc1Con">Sinha Club Organisation</p>
+            </div>
+            <div class="rc2">
+                <img src="../images/profile.png" class="rc1img">
+                <p class="rc2Con">Singha Club Organisation</p>
+            </div>
+        </section>
+    <!-- rightcorner end -->
+    <!--bottom start-->
+        <a href="#" <div class="bottom1">
+            <img src="#" class="img1">
+            <p class="img1Con">Campaign Guidelines</p>
+            </div>
+        </a>
+        <a href="#"><div class="bottom2">
+            <img src="#" class="img2">
+            <p class="img2Con">Manage Campaigns</p>
+            </div>
+        </a>
+        <a href="#"><div class="bottom3">
+            <img src="#" class="img3">
+            <p class="img3Con">Campaign Guidelines</p>
+            </div>
+        </a>
 
-
-use Core\Application;
-
-?>
-
-Test D {{name}} {{Author}}
-
-<button onclick="test()">Click Me</button>
-<div id="test"></div>
-<!--<canvas id="myChart" width="400" height="400" style="max-width: 400px; max-height: 400px"></canvas>-->
-<!--<script>-->
-<!--    const ctx = document.getElementById('myChart').getContext('2d');-->
-<!--    const myChart = new Chart(ctx, {-->
-<!--        type: 'bar',-->
-<!--        data: {-->
-<!--            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],-->
-<!--            datasets: [{-->
-<!--                label: '# of Votes',-->
-<!--                data: [12, 19, 3, 5, 2, 3],-->
-<!--                backgroundColor: [-->
-<!--                    'rgba(255, 99, 132, 0.2)',-->
-<!--                    'rgba(54, 162, 235, 0.2)',-->
-<!--                    'rgba(255, 206, 86, 0.2)',-->
-<!--                    'rgba(75, 192, 192, 0.2)',-->
-<!--                    'rgba(153, 102, 255, 0.2)',-->
-<!--                    'rgba(255, 159, 64, 0.2)'-->
-<!--                ],-->
-<!--                borderColor: [-->
-<!--                    'rgba(255, 99, 132, 1)',-->
-<!--                    'rgba(54, 162, 235, 1)',-->
-<!--                    'rgba(255, 206, 86, 1)',-->
-<!--                    'rgba(75, 192, 192, 1)',-->
-<!--                    'rgba(153, 102, 255, 1)',-->
-<!--                    'rgba(255, 159, 64, 1)'-->
-<!--                ],-->
-<!--                borderWidth: 1-->
-<!--            }]-->
-<!--        },-->
-<!--        options: {-->
-<!--            scales: {-->
-<!--                y: {-->
-<!--                    beginAtZero: true-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-<!--    });-->
-<!--</script>-->
-
+    <!--bottom end-->
+</body>
+</html>

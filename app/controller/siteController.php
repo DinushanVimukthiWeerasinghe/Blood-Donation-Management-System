@@ -9,19 +9,29 @@ use Core\Response;
 
 class siteController extends \Core\Controller
 {
-    public function home(Request $request, Response $response)
+    public function home()
     {
         $params=[
             'name'=>'PHP CODES',
-            'Author'=>'Isurika Arunodi',
+            'Author'=>'Dinushan Vimukthi',
 
         ];
-        return $this->render('home',$params);
+        return $this->render('home','index',$params);
     }
 
     public function about(Request $request,Response $response)
     {
-
+        if($request->isPost()){
+            require_once Application::$ROOT_DIR.'/API/adduser.php';
+        }
         return $this->render('about');
     }
+    public function contact(Request $request,Response $response)
+    {
+        if($request->isPost()){
+            require_once Application::$ROOT_DIR.'/API/adduser.php';
+        }
+        return $this->render('contact');
+    }
+
 }
