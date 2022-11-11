@@ -18,6 +18,7 @@ class Controller
     public function registerMiddleware(Middleware $middleware): void
     {
         $this->middlewares[]=$middleware;
+
     }
 
     /**

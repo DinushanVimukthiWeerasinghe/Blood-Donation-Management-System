@@ -1,0 +1,458 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a{
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+    max-height: 100vh;
+    overflow: hidden
+}
+body{
+    position: relative;
+}
+
+/*body {*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    overflow-x: hidden;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+.home-bg{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    filter: brightness(0.5);
+    object-fit: cover;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Text*/
+.text-white{
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/*Cards*/
+
+
+.card{
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255,0.3);
+    width: 380px;
+    height: 200px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.card:hover{
+    background: rgba(255, 255, 255,0.5);
+}
+
+.card-title{
+    font-size: 3.5em;
+    font-weight: bolder;
+    margin-left: 1rem;
+    text-align: center;
+}
+.card-secondary-title{
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 1rem;
+    text-align: center;
+}
+
+.card-header{
+    margin: 0 1rem;
+    width: 10vw;
+    height: 10vh;
+    border-radius: 20rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-body{
+    width: 20vw;
+    height: 10vh;
+    color: #ffffff;
+    border-left: 1px solid #ccc;
+    /*border-radius: 10px;*/
+    padding: 1rem;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img-card{
+    display: flex;
+    opacity: 100%;
+    width: 250px;
+}
+
+.card-grp{
+    position: absolute;
+    bottom: 20%;
+}
+
+/*Side Bar*/
+.side-bar{
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 500px;
+    height: 60vh;
+    z-index: 5;
+}
+
+.super-header{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ========= BIG SCREEN STYLES ================== */
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(255, 255, 255,0.2);
+    width: 100%;
+    min-height: 50vh;
+    border-bottom-right-radius: 280px;
+}
+
+.nav-beg{
+    width: 100%;
+}
+
+.nav-logo h1{
+    color: #fff;
+}
+
+.nav-title{
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+.nav-desc{
+    width: 80%;
+}
+
+.g-flex{
+    display: flex;
+}
+
+.g-flex-align-center{
+    display: flex;
+    align-items: center;
+}
+
+.g-flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.btn-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.mx-1{
+    margin: 0 1rem;
+}
+
+.btn{
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.btn-primary{
+    background: #2e6da4;
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background: #337ab7;
+}
+
+.btn-red{
+    background: #d9534f;
+    color: #fff;
+}
+.btn-red:hover{
+    background: #c9302c;
+}
+
+.g-flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.g-flex-start{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+header {
+    width: 40%;
+    min-height: 10vh;
+    max-height: 8vh;
+    /*background: #A4152D;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 90%;
+    max-width: 90%;
+    height: 7vh;
+    min-height: 60px;
+    background-color: inherit;
+    color: rgba(255, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 38px;
+    letter-spacing: 5px;
+}
+
+.navList {
+    font-size: 17px;
+    text-transform: uppercase;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navBtn {
+    display: none;
+    cursor: pointer;
+}
+
+/* 3divs for 3line button */
+.navBtn div {
+    width: 30px;
+    height: 2px;
+    margin: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    transition: all 0.5s ease-in;
+}
+
+
+
+/* ============ SMALL SCREEN STYLES ============= */
+
+@media only screen and (max-width: 768px) {
+    body{
+        max-height: 100vh;
+    }
+
+    .btn-panel{
+        margin-top: 50px;
+    }
+    .btn-panel a{
+        padding: 3.5rem 3rem;
+        font-size: medium;
+    }
+
+    .home-bg{
+        height: 100vh;
+        content: url("/public/images/homebgmb.png");
+
+    }
+
+    header{
+        width: 15%;
+        max-height: 8vh;
+        z-index: 2;
+    }
+
+    .super-header{
+        height: 10vh;
+    }
+
+    nav {
+        padding: 0;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-title{
+        font-size: 1.5rem;
+    }
+    .nav-logo{
+        position: absolute;
+        width: 100vw;
+        max-height: 40vh !important;
+        min-height: 40vh !important;
+        border-bottom-right-radius: 0;
+        display: block;
+    }
+    .nav-logo img{
+        width:5rem;
+    }
+
+
+    .navList {
+        /* stick the ul (navList) to a window just below navbar  */
+        position: absolute;
+        right: 0;
+        height: 99.9vh;
+        top: clamp(0px, 0vh, 7vh);
+        /* li from row to column */
+        flex-direction: column;
+        gap: 5vh;
+        align-items: center;
+        justify-content: center;
+        /* make it a bit pretty :) */
+        padding: 5vh 15vw;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 26px;
+        letter-spacing: 1px;
+        /* blur the background */
+        backdrop-filter: blur(5px);
+        /* will move container off the screen temporarly :)*/
+        transform: translate(100%);
+        transition: transform 0.5s ease-out;
+    }
+
+    .navLi {
+        opacity: 0;
+        /* transform: translate(250px, 0); */
+        /* transition: all 0.4s ease-in 0.1s; */
+    }
+
+    /* showing navBtn button */
+    .navBtn {
+        display: block;
+    }
+
+    .card-grp{
+        position: absolute;
+        bottom: 8vh;
+    }
+
+    .card{
+        width: 100%;
+        height: 90%;
+        margin: 8px;
+        padding: 0;
+    }
+
+    .card:hover{
+        transform: scale(1.5);
+    }
+
+    .card-header{
+        background: transparent;
+    }
+
+    .card-title{
+        font-size: 1.5rem;
+    }
+
+    .card-secondary-title{
+        font-size: 1rem;
+    }
+    .card-body{
+        width: 60%;
+    }
+
+
+}
+
+/* ========== NAVLIST ACTIVATION CLASS ================= */
+/* used by js */
+/* toggle navList 'visability' :) */
+.navActive {
+    transform: translate(0%);
+}
+
+/* ========== LI ELEMENTS JAZZED UP TRANSFORMATION ===========*/
+/* used by js */
+/* .fadeIn {
+  opacity: 1;
+  transform: translate(0, 0);
+} */
+
+/* adding keyframe */
+/* used by js */
+@keyframes SlideIn {
+    from {
+        opacity: 0;
+        transform: translate(250px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* used by js */
+.navBtnToggle .line1 {
+    transform: rotate(-45deg) translate(-4px, 6px);
+}
+
+.navBtnToggle .line2 {
+    transform: scale(0) translate(10px, 0);
+}
+
+.navBtnToggle .line3 {
+    transform: rotate(45deg) translate(-4px, -6px);
+}

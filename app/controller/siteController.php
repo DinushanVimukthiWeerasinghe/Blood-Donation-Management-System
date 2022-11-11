@@ -16,7 +16,7 @@ class siteController extends \Core\Controller
             'Author'=>'Dinushan Vimukthi',
 
         ];
-        return $this->render('home','index',$params);
+        return $this->render('home','home','home',$params);
     }
 
     public function about(Request $request,Response $response)

@@ -22,15 +22,16 @@ class View
     }
 
 
-    private function renderContent($viewContent)
+
+    private function renderContent($viewContent): array|bool|string
     {
         $layoutContent=$this->layoutContent();
         return str_replace('{{content}}',$viewContent,$layoutContent);
-
     }
 
 
-    protected function layoutContent()
+
+    protected function layoutContent(): bool|string
     {
         $layout=Application::$app->layout;
         if(Application::$app->controller)
@@ -42,7 +43,7 @@ class View
         return ob_get_clean();
     }
 
-    protected function renderOnlyView($view,$params,$subf='')
+    protected function renderOnlyView($view,$params,$subf=''): bool|string
     {
         foreach ($params as $key=>$value){
             $$key=$value;
@@ -65,4 +66,5 @@ class View
         include_once Application::$ROOT_DIR ."/public/scripts/".$js.".js";
         return ob_get_clean();
     }
+
 }

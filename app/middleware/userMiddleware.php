@@ -7,15 +7,15 @@ use Exception;
 
 class userMiddleware extends \Core\Middleware
 {
-//    private array $action=[];
-//
-//    /**
-//     * @param array $action
-//     */
-//    public function __construct()
-//    {
-//        $this->action = Application::$app->getForbiddenRoutes()->getForbiddenRoutes();
-//    }
+    private array $action=[];
+
+    /**
+     * @param array $action
+     */
+    public function __construct()
+    {
+        $this->action = Application::$app->getForbiddenRoutes()->getForbiddenRoutes();
+    }
 
 
     /**

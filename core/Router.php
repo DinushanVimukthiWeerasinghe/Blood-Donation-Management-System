@@ -29,15 +29,22 @@ class Router
     {
         $path=$this->request->getPath();
         $method=$this->request->method();
+
+        if (str_contains($path, '/public/images/')) {
+            $this->response->setStatusCode(200);
+            return $this->response->sendFile(Application::$ROOT_DIR.$path);
+        }
+
+
         $callback=$this->route[$method][$path] ?? false;
         if(!$callback){
             $this->response->setStatusCode(404);
             echo "Error 404";
             throw new Exception();
         }
-        if (is_string($callback)) {
-            Application::$app->view->renderView($callback);
-        }
+//        if (is_string($callback)) {
+//            Application::$app->view->renderView($callback);
+//        }
         if(is_array($callback)){
             /** @var Controller $controller */
             $controller = new $callback[0]();
@@ -46,6 +53,11 @@ class Router
             $callback[0]= $controller;
         }
         return call_user_func($callback,$this->request,$this->response);
+
+    }
+
+    private function loadAssets(mixed $path)
+    {
 
     }
 }

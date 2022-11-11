@@ -11,4 +11,10 @@ class Response
     {
         header('Location: ' . $url);
     }
+
+    public function sendFile(string $string)
+    {
+        header('Content-Type: image/png');
+        return readfile($string);
+    }
 }
