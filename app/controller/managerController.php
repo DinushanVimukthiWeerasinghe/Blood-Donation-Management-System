@@ -14,7 +14,7 @@ class managerController extends \Core\Controller
 
     public function __construct()
     {
-        $this->registerMiddleware(new userMiddleware(['manager']));
+        $this->registerMiddleware(new userMiddleware());
     }
 
     public function login(Request $request, Response $response): string

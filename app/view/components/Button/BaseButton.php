@@ -9,7 +9,7 @@ abstract class BaseButton
     private string $class;
     private string $href;
 
-    public function __construct($text, $class, $href)
+    public function __construct($text, $href,$class)
     {
         $this->text = $text;
         $this->class = $class;

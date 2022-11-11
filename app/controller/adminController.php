@@ -10,10 +10,6 @@ class adminController extends \Core\Controller
 {
     public function login(Request $request, Response $response): string
     {
-//        $Admin=new Admin();
-//        if ($request->isPost()) {
-//            print_r($request->getBody());
-//        }
         $this->layout='auth';
         return $this->render('Admin\login','login');
     }
@@ -24,9 +20,6 @@ class adminController extends \Core\Controller
         {
             $admin=new Admin();
             $admin->loadData($request->getBody());
-            echo '<pre>';
-            print_r($admin);
-            echo '</pre>';
 
         }
 

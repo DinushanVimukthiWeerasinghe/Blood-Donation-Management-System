@@ -15,6 +15,7 @@ if(\Core\Application::$app->isGuest()){
 }
 ?>
 Manager DashBoard
+Demo
 <div class="g-flex">
     <?php echo $Card->render()?>
     <?php echo $Card->render()?>
