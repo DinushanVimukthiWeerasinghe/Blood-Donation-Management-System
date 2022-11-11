@@ -39,7 +39,6 @@ class Application
 
     public function getForbiddenRoutes(): forbiddenRoute
     {
-        print_r($this->forbiddenRoute);
         return $this->forbiddenRoute;
     }
 

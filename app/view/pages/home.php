@@ -65,7 +65,6 @@ $s4= new \App\view\components\Card\CounterCard(['primary'=>"100+",'secondary'=>"
     <?php
     echo $s1->render();
     echo $s2->render();
-//    echo $s3->render();
     echo $s4->render();
     //    echo $s->render();
 
