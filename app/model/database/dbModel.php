@@ -43,10 +43,12 @@ abstract class dbModel extends Model
 
 
 
-    private function saveRealtion(string $table1,string $table2){
+    private function saveRealtion(string $table1,string $table2): string
+    {
         return $table1.'_'.$table2;
     }
-    private function countDigits($MyNum){
+    private function countDigits($MyNum): int
+    {
         $MyNum = (int)$MyNum;
         $count = 0;
 
@@ -68,7 +70,8 @@ abstract class dbModel extends Model
 
     }
 
-    private function getPrimaryKey($table){
+    private function getPrimaryKey($table): bool|array
+    {
         $sql = "SHOW INDEX FROM $table WHERE Key_name = 'PRIMARY'";
         $gp = self::prepare($sql);
         $gp->execute();
@@ -86,7 +89,7 @@ abstract class dbModel extends Model
         }
     }
 
-    public function getIndex($number)
+    public function getIndex($number): string
     {
         if($this->countDigits($number)==1){
             return '00'.$number;
@@ -98,11 +101,11 @@ abstract class dbModel extends Model
             return $number;
         }
     }
-    public function getNextID(string $ID)
+    public function getNextID(string $ID): string
     {
         return explode('_',$ID)[0].'_'.  $this->getIndex(intval(explode('_',$ID)[1])+1);
     }
-    public function save()
+    public function save(): bool
     {
         $tableName = $this->tableName();
         $attributes=$this->attributes();

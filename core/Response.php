@@ -2,12 +2,12 @@
 namespace Core;
 class Response
 {
-    public function setStatusCode(int $code)
+    public function setStatusCode(int $code): void
     {
         http_response_code($code);
     }
 
-    public function redirect(string $url)
+    public function redirect(string $url): void
     {
         header('Location: ' . $url);
     }

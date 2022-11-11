@@ -1,10 +1,12 @@
+<?php
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BDMS</title>
-<!--    <link rel="stylesheet" href="login.css">-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
@@ -14,12 +16,12 @@
         <div class="form login">
             <div class="form-content">
                 <header>Login</header>
-                <form action="#" method="post">
+                <form action="/organisation/login" method="post">
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" class="email" required>
+                        <input type="email" placeholder="Email" name="email" required>
                     </div>
                     <div class="field input-field">
-                        <input type="password" placeholder="Password" class="password" id="password" required>
+                        <input type="password" placeholder="Password" name="password" id="password" required>
                         <i class="uil uil-eye-slash toggle"></i>
                     </div>  
                     <div class="form-link">
@@ -29,6 +31,10 @@
                         <button>Login</button>
                     </div>
                 </form>
+                <div class="btn">
+                    <br>
+                    <a href="/organisation/register" style="background-color: #337ab7; margin-left: 20%;border-radius: 8px;color: azure;text-decoration: none;padding: 10px 80px 10px 80px;">Register</a>
+                </div>
             </div>
         </div>
 

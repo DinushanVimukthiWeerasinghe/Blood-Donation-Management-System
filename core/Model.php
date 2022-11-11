@@ -33,6 +33,7 @@ abstract class Model
     }
     public function validate(): bool
     {
+
         foreach ($this->rules() as $attribute=>$rules)
         {
             $value=$this->{$attribute};
@@ -83,6 +84,7 @@ abstract class Model
                     $this->addErrorRule($attribute, self::RULE_MATCH,$rule);
                 }
             }
+
 
         }
         return empty($this->errors);

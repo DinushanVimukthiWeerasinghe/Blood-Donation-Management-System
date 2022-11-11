@@ -14,7 +14,7 @@
     <div class="form login">
         <div class="form-content">
             <header>Register</header>
-            <form action="/register" method="post">
+            <form action="/organisation/register" method="post">
                 <div class="field input-field">
                     <input type="text" placeholder="Organisation Name" name="name" required >
                 </div>
@@ -22,22 +22,22 @@
                    <input type="text" placeholder="Address line1" name="address1" required>
                 </div>
                 <div class="field input-field">
-                    <input type="text" placeholder="Address line2" class="address2" required>
+                    <input type="text" placeholder="Address line2" name="address2" required>
                 </div>
                 <div class="field input-field">
-                    <input type="text" placeholder="City" class="address3" required>
+                    <input type="text" placeholder="City" name="city" required>
                 </div>
                 <div class="field input-field">
-                    <input type="number" placeholder="Postal Code" class="postal" required>
+                    <input type="text" placeholder="Postal Code" name="postalcode" required>
                 </div>
                 <div class="field input-field">
-                    <input type="number" placeholder="Telephone Number" class="tel" required>
+                    <input type="text" placeholder="Telephone Number" name="tel" required>
                 </div>
                 <div class="field input-field">
-                    <input type="email" placeholder="Email" class="email" required>
+                    <input type="email" placeholder="Email" name="email" required>
                 </div>
                 <div class="field input-field">
-                    <input type="password" placeholder="Password" class="password" id="password" required>
+                    <input type="password" placeholder="Password" name="password" id="password" required>
                     <i class="uil uil-eye-slash toggle"></i>
                 </div>
                 <div class="field button-field">

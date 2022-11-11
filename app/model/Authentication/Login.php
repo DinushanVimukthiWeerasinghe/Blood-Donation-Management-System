@@ -35,13 +35,12 @@ class Login extends Model
     {
 
         $user= User::findOne(['email' => $this->email]);
-        echo "Login Model";
         if(!$user)
         {
             $this->addError('email','Invalid Account EMAIL!');
             return false;
         }
-//        if(!password_verify($this->password,$user->getPassword()))
+//        if(password_verify($this->password,$user->getPassword()))
 //        {
 //            $this->addError('password','Incorrect Password!');
 //            return false;
@@ -51,6 +50,9 @@ class Login extends Model
             $this->addError('password','Incorrect Password!');
             return false;
         }
+        echo '<pre>';
+        print_r($user);
+        echo '</pre>';
         Application::$app->login($user);
         return true;
     }
