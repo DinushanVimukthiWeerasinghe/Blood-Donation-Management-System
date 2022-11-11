@@ -58,7 +58,6 @@ class Application
         $this->router = new Router($this->request, $this->response);
         $this->db = new Database($config['db']);
 
-//        $primaryValue = $this->userClass::primary;
         if(isset($_SESSION['user']))
         {
             $this->user = User::findOne(['id' => $_SESSION['user']]);

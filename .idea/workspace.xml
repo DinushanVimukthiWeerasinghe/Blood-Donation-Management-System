@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1129d0c9-b45e-4255-9433-e673559df680" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Blood-Donation-Management-System.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controller/siteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/layout/main.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/pages/about.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/pages/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/migrations/m_0001_initial.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/migrations/m_0002_initial.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Request.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Response.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/View.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="2c22c35a-6d79-48f0-8c26-a909a9c65859" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,66 +12,148 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
     </include_path>
   </component>
-  <component name="ProjectId" id="2H4VwZg4WhylR0NmW8qmpEgjW2g" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2GvnMP1FwEpxSzXfitSEDulO9F1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Janith Heshara/Desktop/PHP-MVC-Framework-master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/stdin/Project/Group Project/Blood-Donation-Management-System/public/images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\app\view\components\Card" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\assets\images" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\styles" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\config\migrations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Janith Heshara\Desktop\Blood-Donation-Management-System\Blood-Donation-Management-System\app\view\images" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\app\view\pages\Admin" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\app\view\layout" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$/public" port="5000">
+    <configuration name="Run" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/public/index.php">
+      <CommandLine parameters="-S localhost:5000">
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.1" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
       <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1129d0c9-b45e-4255-9433-e673559df680" name="Changes" comment="" />
-      <created>1667544596512</created>
+      <changelist id="2c22c35a-6d79-48f0-8c26-a909a9c65859" name="Changes" comment="" />
+      <created>1667277882487</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1667544596512</updated>
-      <workItem from="1667544621792" duration="3463000" />
-      <workItem from="1667548211883" duration="7816000" />
-      <workItem from="1667801254492" duration="675000" />
+      <updated>1667277882487</updated>
+      <workItem from="1667277884327" duration="586000" />
+      <workItem from="1667278488941" duration="3155000" />
+      <workItem from="1667282068038" duration="1797000" />
+      <workItem from="1667284091564" duration="175000" />
+      <workItem from="1667290568279" duration="1266000" />
+      <workItem from="1667295668056" duration="953000" />
+      <workItem from="1667320572869" duration="1616000" />
+      <workItem from="1667446895197" duration="172000" />
+      <workItem from="1667447135061" duration="465000" />
+      <workItem from="1667455418717" duration="1063000" />
+      <workItem from="1667466055997" duration="2000" />
+      <workItem from="1667466078313" duration="5475000" />
+      <workItem from="1667473036143" duration="18000" />
+      <workItem from="1667539685109" duration="1467000" />
+      <workItem from="1667546327803" duration="1506000" />
+      <workItem from="1667660430017" duration="3786000" />
+      <workItem from="1667800698147" duration="172000" />
+      <workItem from="1667801304962" duration="594000" />
+      <workItem from="1667880725579" duration="7211000" />
+      <workItem from="1667890105401" duration="595000" />
+      <workItem from="1667894884489" duration="11902000" />
+      <workItem from="1667923036357" duration="4659000" />
+      <workItem from="1668011472686" duration="988000" />
+      <workItem from="1668013534162" duration="34000" />
+      <workItem from="1668013963532" duration="330000" />
+      <workItem from="1668049917380" duration="1698000" />
+      <workItem from="1668055146690" duration="611000" />
+      <workItem from="1668064520269" duration="13674000" />
+      <workItem from="1668081027920" duration="2000" />
+      <workItem from="1668081774678" duration="2799000" />
+      <workItem from="1668092204288" duration="12533000" />
+      <workItem from="1668137167447" duration="1812000" />
+      <workItem from="1668141155779" duration="1619000" />
+      <workItem from="1668144770614" duration="299000" />
     </task>
+    <task id="LOCAL-00001" summary="Added Middlewares">
+      <created>1668051492690</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668051492690</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,5 +169,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added Middlewares" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Middlewares" />
   </component>
 </project>

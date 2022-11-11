@@ -9,14 +9,14 @@ class View
         $viewContent=$this->renderOnlyView($view,$params,$subf);
         $layoutContent=$this->layoutContent();
         $renderCSS='<style>'.$this->RenderCSS($css).'</style>';
-//        $renderJS='<script>'.$this->RenderJS($js).'</script>';
+        $renderJS='<script>'.$this->RenderJS($js).'</script>';
         foreach ($params as $key=>$value)
         {
             $viewContent=str_replace('{{'.$key.'}}',$value,$viewContent);
         }
         $str= str_replace('{{content}}',$viewContent,$layoutContent);
         $str.=$renderCSS;
-//        $str.=$renderJS;
+        $str.=$renderJS;
         return $str;
 //        return $layoutContent.$viewContent;
     }
@@ -60,7 +60,6 @@ class View
         return ob_get_clean();
     }
 
-<<<<<<< Updated upstream
     protected function RenderJS($js): bool|string
     {
         ob_start();
@@ -68,12 +67,4 @@ class View
         return ob_get_clean();
     }
 
-=======
-//    protected function RenderJS($js): bool|string
-//    {
-//        ob_start();
-//        include_once Application::$ROOT_DIR ."/public/scripts/".$js.".js";
-//        return ob_get_clean();
-//    }
->>>>>>> Stashed changes
 }
