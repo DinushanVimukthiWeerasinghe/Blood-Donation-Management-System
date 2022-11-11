@@ -31,7 +31,7 @@ abstract class Model
     {
         return $this->labels()[$attribute] ?? $attribute;
     }
-    public function validate()
+    public function validate(): bool
     {
         foreach ($this->rules() as $attribute=>$rules)
         {
@@ -41,7 +41,6 @@ abstract class Model
                 $rulename=$rule;
                 if(!is_string($rulename)){
                     $rulename=$rule[0];
-
                 }
                 if($rulename===self::RULE_REQUIRED && empty($value))
                 {

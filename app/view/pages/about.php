@@ -1,15 +1,10 @@
 <?php
 ?>
-<style>
-    .logo {
-        position: relative;
-        width: 120px;
-        height: 116px;
-        left: 55px;
-        top: 36px;
-        background: #D9D9D9;
-    }
-</style>
-
-<img src="../images/logo.png" class="logo">
+About
+<form action="" method="post">
+    <label>
+        <input type="text" name="email" value="stdin@gmail.com" />
+    </label>
+    <input type="submit" value="Submit" />
+</form>
 

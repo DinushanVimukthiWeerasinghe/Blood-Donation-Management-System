@@ -10,16 +10,12 @@ class Controller
         $this->layout = $layout;
     }
 
-    public static function render($view,$css, $params = [],$subf='')
+    public static function render($view,$css='style',$js='index',$params = [],$subf='')
     {
-        return Application::$app->view->renderView($view,$css, $params,$subf);
+        return Application::$app->view->renderView($view,$css,$js, $params,$subf);
     }
-//    public static function setLayout($view,$css, $params = [],$subf='')
-//    {
-//        return Application::$app->view->renderView($view,$css, $params,$subf);
-//    }
 
-    public function registerMiddleware(BaseMiddleware $middleware)
+    public function registerMiddleware(Middleware $middleware): void
     {
         $this->middlewares[]=$middleware;
     }
