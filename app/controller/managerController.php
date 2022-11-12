@@ -41,7 +41,7 @@ class managerController extends \Core\Controller
             $manager->loadData($request->getBody());
             if($manager->validate() && $manager->save())
             {
-
+                
                 $response->redirect('/manager/login');
             }
         }
