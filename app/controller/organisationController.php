@@ -10,6 +10,7 @@ use Core\Request;
 use Core\Response;
 
 class organisationController extends \Core\Controller{
+
     public function login(Request $request,Response $response): string
     {
         $loginForm = new Login();
@@ -24,7 +25,7 @@ class organisationController extends \Core\Controller{
 //        ]);
         return $this->render('organisation/login','Orglogin');
     }
-    public function register(Request $request,Response $response)
+    public function register(Request $request,Response $response): string
     {
         $user = new User();
         if($request->isPost()){
@@ -45,7 +46,7 @@ class organisationController extends \Core\Controller{
 //        $this->setLayout('auth');
         return $this->render('Organisation\register','Orgregister');
     }
-    public function home(Request $request,Response $response)
+    public function home(Request $request,Response $response): string
     {
         if($request->isPost()){
             require_once Application::$ROOT_DIR.'/API/adduser.php';
@@ -53,7 +54,7 @@ class organisationController extends \Core\Controller{
         return $this->render('Organisation\home','Orghome');
     }
 
-    public function profile(Request $request,Response $response)
+    public function profile(Request $request,Response $response): string
     {
         if($request->isPost()){
             require_once Application::$ROOT_DIR.'/API/adduser.php';

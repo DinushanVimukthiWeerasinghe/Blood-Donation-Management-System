@@ -4,6 +4,7 @@ use App\controller\adminController;
 use App\controller\authController;
 use App\controller\donorController;
 use App\controller\managerController;
+use App\controller\organisationController;
 use App\controller\siteController;
 use Core\Application;
 
@@ -32,6 +33,11 @@ $app->router->get('/donor', [donorController::class, 'home']);
 $app->router->get('/admin/login', [adminController::class, 'login']);
 $app->router->post('/admin/login', [adminController::class, 'login']);
 $app->router->get('/admin/register', [adminController::class, 'register']);
+$app->router->get('/organisation/register', [organisationController::class, 'register']);
+$app->router->get('/organisation', [organisationController::class, 'home']);
+$app->router->post('/organisation/register', [organisationController::class, 'register']);
+$app->router->get('/organisation/login', [organisationController::class, 'login']);
+$app->router->post('/organisation/login', [organisationController::class, 'login']);
 $app->router->post('/admin/register', [adminController::class, 'register']);
 
 //Logout

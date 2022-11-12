@@ -74,7 +74,8 @@ class Application
         $primaryKey=$user->primaryKey();
         $primaryValue=$user->{$primaryKey};
         $this->session->set('user',$primaryValue);
-        $this->session->setFlash('success','Welcome Back '.$user->getFirstName());
+        $this->session->setFlash('success','Welcome Back '.$user->getName());
+
         return true;
     }
 
@@ -86,5 +87,18 @@ class Application
             echo $e->getMessage();
         }
     }
+    public function logout(): void
+    {
+        $this->user = null;
+        $this->session->remove('user');
+    }
+
+    public function getDisplayName(): string
+    {
+        return $this->user->getName();
+
+
+    }
+
 
 }

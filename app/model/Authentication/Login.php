@@ -34,8 +34,7 @@ class Login extends Model
     public function login(): bool
     {
 
-        $user= User::findOne(['email' => $this->email]);
-        echo "Login Model";
+        $user= (new \App\model\users\User)->findOne(['email' => $this->email]);
         if(!$user)
         {
             $this->addError('email','Invalid Account EMAIL!');

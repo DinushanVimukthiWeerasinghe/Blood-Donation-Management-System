@@ -68,7 +68,8 @@ abstract class dbModel extends Model
 
     }
 
-    private function getPrimaryKey($table){
+    private function getPrimaryKey($table): bool|array
+    {
         $sql = "SHOW INDEX FROM $table WHERE Key_name = 'PRIMARY'";
         $gp = self::prepare($sql);
         $gp->execute();
@@ -98,7 +99,7 @@ abstract class dbModel extends Model
             return $number;
         }
     }
-    public function getNextID(string $ID)
+    public function getNextID(string $ID): string
     {
         return explode('_',$ID)[0].'_'.  $this->getIndex(intval(explode('_',$ID)[1])+1);
     }
@@ -158,7 +159,7 @@ abstract class dbModel extends Model
 
         return $statement->fetchObject(static::class);
     }
-    public static function DeleteOne($where)
+    public static function DeleteOne($where): bool
     {
         $tableName=static::tableName();
         $attributes=array_keys($where);
@@ -176,7 +177,7 @@ abstract class dbModel extends Model
         return Application::$app->db->pdo->prepare($sql);
     }
 
-    private function getColoumnName(string $table)
+    private function getColoumnName(string $table): array
     {
         $sql="SHOW columns FROM ".$table;
         $statement=self::prepare($sql);

@@ -2,13 +2,28 @@
 
 namespace App\model\users;
 
-class User extends \App\model\database\dbModel
+use App\model\database\dbModel;
+use Core\UserModel;
+
+class User extends dbModel
 {
+
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+    const STATUS_DELETED = 2;
+
+
+
+    protected string $name='';
     protected string $email='';
     protected string $password='';
-    protected string $firstname='';
-    protected string $lastname='';
-    protected string $role='';
+    protected string $address1='';
+    protected string $address2='';
+    protected string $city='';
+    protected int $status= self::STATUS_INACTIVE;
+    protected string $postalcode='';
+    protected string $tel='';
+    protected string $role='Organisation';
     public function rules(): array
     {
         return [
@@ -23,6 +38,11 @@ class User extends \App\model\database\dbModel
     public function getEmail(): string
     {
         return $this->email;
+    }
+    public function save()
+    {
+        $this->status = self::STATUS_ACTIVE;
+        return parent::save();
     }
 
     /**
@@ -61,15 +81,30 @@ class User extends \App\model\database\dbModel
     public function attributes(): array
     {
         return [
+            'name',
             'email',
             'password',
-            'firstname',
+            'address1',
+            'address2',
+            'city',
+            'postalcode',
+            'tel',
+            'status',
             'role',
         ];
     }
 
-    public function getFirstName(): string
+    public function getName(): string
     {
-        return $this->firstname;
+        return $this->name;
+    }
+
+    public function register(): bool
+    {
+        return $this->save();
+    }
+    public function getDisplayName(): string
+    {
+        return $this->name;
     }
 }

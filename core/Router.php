@@ -12,11 +12,11 @@ class Router
         $this->request = $request;
         $this->response = $response;
     }
-    public function get($path,$callback)
+    public function get($path,$callback): void
     {
         $this->route['get'][$path] = $callback;
     }
-    public function post($path,$callback)
+    public function post($path,$callback): void
     {
         $this->route['post'][$path] = $callback;
     }
@@ -56,7 +56,7 @@ class Router
 
     }
 
-    private function loadAssets(mixed $path)
+    private function loadAssets(mixed $path): void
     {
 
     }
