@@ -27,8 +27,8 @@ use App\model\users\User;
 <body>
     <!-- leftcorner -->
         <section class="leftContainer">
-            <img src="../../images/profile.png" class="leftImage">
-            <h1 class="lefttopic">Welcome <?php Application::$app->getDisplayName(); ?> Club</h1>
+            <img src="../../../../public/images/profile.png" class="leftImage">
+            <h1 class="lefttopic">Welcome <?php ?> Club</h1>
             <img src="../../images/campaign.png" class="left1ConImage">
             <p class="left1Con">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
             <img src="../../images/campaign.png" class="left2ConImage">
@@ -37,19 +37,19 @@ use App\model\users\User;
     <!-- leftcorner end-->
     <!-- navigationbar Start-->
         <section class="navbar">
-            <img src="../../images/bell.png" class="bell">
-            <img src="../../images/profile.png" class="profile">
+            <img src="../../../../public/images/bell.png" class="bell">
+            <img src="../../../../public/images/profile.png" class="profile">
             <a href="" class="logout">LOGOUT</a>
         </section>
     <!-- navigationbar end -->
     <!-- rightcorner start -->
         <section class="rightCorner">
             <div class="rc1">
-                <img src="../../images/profile.png" class="rc1img">
+                <img src="../../../../public/images/profile.png" class="rc1img">
                 <p class="rc1Con">Sinha Club Organisation</p>
             </div>
             <div class="rc2">
-                <img src="../../images/profile.png" class="rc1img">
+                <img src="../../../../public/images/profile.png" class="rc1img">
                 <p class="rc2Con">Singha Club Organisation</p>
             </div>
         </section>

@@ -93,9 +93,8 @@ class Application
         $this->session->remove('user');
     }
 
-    public function getDisplayName(): string
+    public function getDisplayName(): void
     {
-        return $this->user->getName();
 
 
     }
