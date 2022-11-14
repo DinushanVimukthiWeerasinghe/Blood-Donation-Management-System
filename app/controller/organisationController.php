@@ -3,7 +3,7 @@
 namespace App\controller;
 
 use App\model\Authentication\Login;
-use App\model\RegisterModel as RegisterModel;
+use App\model\users\Campaign;
 use App\model\users\User;
 use Core\Application;
 use Core\Request;
@@ -48,10 +48,15 @@ class organisationController extends \Core\Controller{
     }
     public function home(Request $request,Response $response): string
     {
+        $userName='';
+        if (isset($_SESSION['userInfo'])){
+            $userName=$_SESSION['userInfo'];
+        }
         if($request->isPost()){
             require_once Application::$ROOT_DIR.'/API/adduser.php';
         }
-        return $this->render('Organisation\home','Orghome');
+
+        return $this->render('Organisation\home','Orghome','index',['userName'=>$userName]);
     }
 
     public function profile(Request $request,Response $response): string
@@ -60,5 +65,44 @@ class organisationController extends \Core\Controller{
             require_once Application::$ROOT_DIR.'/API/adduser.php';
         }
         return $this->render('Organisation\profile','Orgprofile');
+    }
+
+    public function manage(Request $request,Response $response): string
+    {
+        $userPassword = '';
+        $userEmail = '';
+        $userEmail = $_SESSION['email'];
+        $userName = $_SESSION['userInfo'];
+
+        if($request->isPost()){
+            require_once Application::$ROOT_DIR.'/API/adduser.php';
+        }
+        return $this->render('Organisation\manage','Orgmanage','index',['userName'=>$userName,'userEmail'=>$userEmail]);
+    }
+    public function create(Request $request,Response $response): string
+    {
+        $campaign = new Campaign();
+        if($request->isPost()){
+            $campaign -> loadData($request->getBody());
+//            require_once Application::$ROOT_DIR.'/API/adduser.php';
+            $campaign->create();
+        }
+        return $this->render('Organisation\create','Orgcreate');
+    }
+    public function history(Request $request,Response $response): string
+    {
+        if($request->isPost()){
+            require_once Application::$ROOT_DIR.'/API/adduser.php';
+        }
+        return $this->render('Organisation\history','Orghistory');
+    }
+
+    public function logout(Request $request,Response $response): string
+    {
+        if($request->isPost()){
+            require_once Application::$ROOT_DIR.'/API/adduser.php';
+        }
+//        return $this->render('Organisation\home','Orghome');
+        Application::$app->logout();
     }
 }

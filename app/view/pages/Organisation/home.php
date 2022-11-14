@@ -28,10 +28,10 @@ use App\model\users\User;
     <!-- leftcorner -->
         <section class="leftContainer">
             <img src="../../../../public/images/profile.png" class="leftImage">
-            <h1 class="lefttopic">Welcome <?php ?> Club</h1>
-            <img src="../../images/campaign.png" class="left1ConImage">
+            <h1 class="lefttopic">Welcome <?php echo $userName ?> Club</h1>
+            <img src="../../../../public/images/campaign.png" class="left1ConImage">
             <p class="left1Con">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-            <img src="../../images/campaign.png" class="left2ConImage">
+            <img src="../../../../public/images/campaign.png" class="left2ConImage">
             <p class="left2Con">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
         </section>
     <!-- leftcorner end-->
@@ -39,26 +39,44 @@ use App\model\users\User;
         <section class="navbar">
             <img src="../../../../public/images/bell.png" class="bell">
             <img src="../../../../public/images/profile.png" class="profile">
-            <a href="" class="logout">LOGOUT</a>
+            <a href="/logout" class="logout">LOGOUT</a>
         </section>
     <!-- navigationbar end -->
     <!-- rightcorner start -->
         <section class="rightCorner">
             <div class="rc1">
                 <img src="../../../../public/images/profile.png" class="rc1img">
-                <p class="rc1Con">Sinha Club Organisation</p>
+                <p class="rc1Con"><?php echo $userName ?> Club Organisation</p>
             </div>
             <div class="rc2">
                 <img src="../../../../public/images/profile.png" class="rc1img">
-                <p class="rc2Con">Singha Club Organisation</p>
+                <p class="rc2Con"><?php echo $userName ?> Club Organisation</p>
             </div>
         </section>
     <!-- rightcorner end -->
     <!--bottom start-->
-<!--        <a href="#" <div class="bottom1">-->
-<!--            <img src="#" class="img1">-->
-<!--            <p class="img1Con">Campaign Guidelines</p>-->
-<!-->>>>>>> Stashed changes-->
+        <a href="organisation/guidelines">
+            <div class="bottom1">
+                <img src="../../../../public/images/campaign.png" class="img1">
+                <p class="img1Con">Campaign Guidelines</p>
+            </div>
+        </a>
+
+        <a href="organisation/manage">
+            <div class="bottom2">
+                <img src="../../../../public/images/campaign.png" class="img2">
+                <p class="img2Con">Manage Campaign</p>
+            </div>
+        </a>
+
+        <a href="organisation/history">
+            <div class="bottom3">
+                <img src="../../../../public/images/campaign.png" class="img3">
+                <p class="img3Con">History</p>
+            </div>
+        </a>
+
+
 <!--            </div>-->
 <!--            <div class="nav-desc">-->
 <!--                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->

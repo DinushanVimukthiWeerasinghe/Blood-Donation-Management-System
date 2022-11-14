@@ -106,15 +106,20 @@ abstract class dbModel extends Model
     public function save()
     {
         $tableName = $this->tableName();
-        $attributes=$this->attributes();
-        $nextID=$this->id;
+        $attributes= $this->attributes();
+
+        $nextID = $this->id;
+
         if($nextID=='')
         {
             $nextID=$this->getNextID($this->getLastId($tableName));
         }
+
         $PK=$this->getPrimaryKey($this->tableName())[0];
         $params=array_map(fn($attr)=>":$attr",$attributes);
+
         $statement=self::prepare("INSERT INTO $tableName (".implode(',',$attributes).") VALUES (".implode(',',$params).")");
+
         $this->{$PK}=$nextID;
 //        $attributes['username']="username";
         foreach ($attributes as $attribute)
@@ -123,6 +128,7 @@ abstract class dbModel extends Model
         }
 
         $statement->execute();
+
 
         return true;
     }

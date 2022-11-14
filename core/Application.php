@@ -1,5 +1,6 @@
 <?php
 namespace Core;
+use App\model\users\Campaign;
 use App\model\users\User;
 use Exception;
 
@@ -61,6 +62,7 @@ class Application
         if(isset($_SESSION['user']))
         {
             $this->user = User::findOne(['id' => $_SESSION['user']]);
+            $this->campaign = Campaign::findOne(['id'=>$_SESSION['user']]);
         }
         else
         {
@@ -74,10 +76,14 @@ class Application
         $primaryKey=$user->primaryKey();
         $primaryValue=$user->{$primaryKey};
         $this->session->set('user',$primaryValue);
+        $this->session->set('userInfo',$user->getName());
+        $this->session->set('email',$user->getEmail());
         $this->session->setFlash('success','Welcome Back '.$user->getName());
+
 
         return true;
     }
+
 
     public function run(): void
     {
@@ -93,11 +99,7 @@ class Application
         $this->session->remove('user');
     }
 
-    public function getDisplayName(): void
-    {
 
-
-    }
 
 
 }

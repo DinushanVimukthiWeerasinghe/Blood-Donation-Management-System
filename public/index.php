@@ -38,6 +38,10 @@ $app->router->get('/organisation', [organisationController::class, 'home']);
 $app->router->post('/organisation/register', [organisationController::class, 'register']);
 $app->router->get('/organisation/login', [organisationController::class, 'login']);
 $app->router->post('/organisation/login', [organisationController::class, 'login']);
+$app->router->get('/organisation/manage', [organisationController::class, 'manage']);
+$app->router->get('/organisation/create', [organisationController::class, 'create']);
+$app->router->post('/organisation/create', [organisationController::class, 'create']);
+$app->router->get('/organisation/history', [organisationController::class, 'history']);
 $app->router->post('/admin/register', [adminController::class, 'register']);
 
 //Logout
