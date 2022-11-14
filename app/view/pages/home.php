@@ -1,7 +1,7 @@
 <?php
 ?>
 <link rel="stylesheet" href="/public/styles/home.css">
-<script src="/public/scripts/home.js"></script>
+<!--<script src="/public/scripts/home.js"></script>-->
 
 <?php
 
@@ -42,6 +42,14 @@ $s4= new \App\view\components\Card\CounterCard(['primary'=>"100+",'secondary'=>"
             <?php echo $Login_Button->render();?>
             <?php echo $Register_Button->render();?>
         </div>
+        <div class="card-guide-grp">
+            <div class="card-guide">
+                <?php echo $s1->render();?>
+            </div>
+            <div class="card-guide">
+                <?php echo $s2->render();?>
+            </div>
+        </div>
     </div>
 
     </div>
@@ -62,14 +70,17 @@ $s4= new \App\view\components\Card\CounterCard(['primary'=>"100+",'secondary'=>"
 </div>
 
 <br>
-<div class="card-grp g-flex g-flex-wrap">
-    <?php
-    echo $s1->render();
-    echo $s2->render();
-    echo $s4->render();
-    //    echo $s->render();
+<div class="home-body">
+    <div class="card-grp g-flex g-flex-wrap">
+        <?php
+        echo $s1->render();
+        echo $s2->render();
+        echo $s4->render();
+        //    echo $s->render();
 
-    ?>
+        ?>
+    </div>
 </div>
-<script src="/public/scripts/index.js"></script>
+
+<script src="/public/scripts/home.js"></script>
 

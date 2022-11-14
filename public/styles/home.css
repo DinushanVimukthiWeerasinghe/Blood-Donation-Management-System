@@ -120,6 +120,7 @@ body{
     /*bottom: 20%;*/
 }
 
+
 /*Side Bar*/
 .side-bar{
     background: rgba(0, 0, 0, 0.3);
@@ -329,12 +330,9 @@ nav a {
     }
 
     .btn-panel{
-        margin-top: 50px;
+        display: none;
     }
-    .btn-panel a{
-        padding: 3.5rem 3rem;
-        font-size: medium;
-    }
+
 
     .home-bg{
         height: 100vh;

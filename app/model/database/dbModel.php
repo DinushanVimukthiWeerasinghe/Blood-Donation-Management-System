@@ -42,6 +42,14 @@ abstract class dbModel extends Model
         $this->WherePrimaryKey = $PrimaryKey;
     }
 
+    public function RetrieveAll(): bool|array
+    {
+        $tableName = static::tableName();
+        $statement = self::prepare("SELECT * FROM $tableName");
+        $statement->execute();
+        return $statement->fetchAll(\PDO::FETCH_CLASS,static::class);
+    }
+
 
 
     private function saveRealtion(string $table1,string $table2){
