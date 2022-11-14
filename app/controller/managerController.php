@@ -5,6 +5,7 @@ namespace App\controller;
 use App\middleware\userMiddleware;
 use App\model\Authentication\Login;
 use App\model\users\Manager;
+use Core\Application;
 use Core\Request;
 use Core\Response;
 
@@ -52,6 +53,14 @@ class managerController extends \Core\Controller
 
     public function dashboard(): string
     {
+        $manager=new Manager();
+        echo '<pre>';
+        print_r($manager->RetrieveAll());
+        echo '</pre>';
+        exit();
+
+
+        print_r(Application::$app->getUser());
         $this->layout='auth';
         return $this->render('Manager\managerBoard');
     }
