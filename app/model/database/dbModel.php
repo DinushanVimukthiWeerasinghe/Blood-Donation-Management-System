@@ -156,7 +156,9 @@ abstract class dbModel extends Model
     {
         $tableName=static::tableName();
         $attributes=array_keys($where);
-        $sql=implode("AND",array_map(fn($attr)=>"$attr=:$attr",$attributes));
+
+        $sql=implode(" AND ",array_map(fn($attr)=>"$attr=:$attr",$attributes));
+
         $statement=self::prepare("SELECT * FROM $tableName WHERE $sql");
         foreach ($where as $key=>$item)
         {

@@ -21,9 +21,9 @@ $s3= new \App\view\components\Card\CounterCard(['primary'=>"500+",'secondary'=>"
 $s4= new \App\view\components\Card\CounterCard(['primary'=>"100+",'secondary'=>"Campaign"], "100", $camp_Image);
 ?>
 <img class="home-bg" src="/public/images/homebg.png"  alt=""/>
-<!--<div class="side-bar">-->
-<!--    Side Bar-->
-<!--</div>-->
+<div class="side-bar">
+
+</div>
 <div class="super-header">
     <div class="nav-beg">
     <div class="nav-logo g-flex g-flex-col">
@@ -41,14 +41,6 @@ $s4= new \App\view\components\Card\CounterCard(['primary'=>"100+",'secondary'=>"
         <div class="btn-panel">
             <?php echo $Login_Button->render();?>
             <?php echo $Register_Button->render();?>
-        </div>
-        <div class="card-guide-grp">
-            <div class="card-guide">
-                <?php echo $s1->render();?>
-            </div>
-            <div class="card-guide">
-                <?php echo $s2->render();?>
-            </div>
         </div>
     </div>
 
