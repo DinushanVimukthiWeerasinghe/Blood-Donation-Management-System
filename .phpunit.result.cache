@@ -1,0 +1,1 @@
+{"version":1,"defects":{"TEST\\BaseEmailTest::testSend":4,"Warning":6},"times":{"TEST\\BaseEmailTest::testSend":3.306,"Warning":0.002,"TEST\\BaseEmailTest::testSendWithArray":3.582,"TEST\\AuthenticationEmailTest::testSend":4.45,"TEST\\AuthenticationEmailTest::testSendWithArray":4.528}}

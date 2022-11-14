@@ -19,6 +19,7 @@ class Application
     public View $view;
     public Session $session;
     public forbiddenRoute $forbiddenRoute;
+    public BaseEmail $email;
 
     public static function getRole(): string
     {
@@ -44,13 +45,14 @@ class Application
     }
 
 
-    public function __construct($path,array $config)
+    /**
+     * @throws \PHPMailer\PHPMailer\Exception
+     */
+    public function __construct($path, array $config)
     {
         self::$app=$this;
         $this->view = new View();
         $this->forbiddenRoute = new forbiddenRoute();
-
-
 
         self::$ROOT_DIR = $path;
         $this->request = new Request();
@@ -58,6 +60,7 @@ class Application
         $this->session = new Session();
         $this->router = new Router($this->request, $this->response);
         $this->db = new Database($config['db']);
+        $this->email = new BaseEmail($config['email']);
 
         if(isset($_SESSION['user']))
         {

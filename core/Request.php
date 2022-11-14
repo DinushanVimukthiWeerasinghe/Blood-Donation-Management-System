@@ -44,8 +44,17 @@ class Request
                     $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
                 }
             }
+
+            if (isset($_FILES['file'])) {
+                $body['file'] =new File($_FILES['file']);
+            }
         }
         return $body;
+    }
+
+    public function getFile(string $string): File
+    {
+        return new File($_FILES[$string]);
     }
 
 

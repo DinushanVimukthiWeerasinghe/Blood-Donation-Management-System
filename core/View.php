@@ -3,22 +3,15 @@ namespace Core;
 class View
 {
     public string $title='';
-    public function renderView($view,$css,$js,$params=[],$subf=''): string
+    public function renderView($view,$params=[],$subf=''): string
     {
-
         $viewContent=$this->renderOnlyView($view,$params,$subf);
         $layoutContent=$this->layoutContent();
-        $renderCSS='<style>'.$this->RenderCSS($css).'</style>';
-        $renderJS='<script>'.$this->RenderJS($js).'</script>';
         foreach ($params as $key=>$value)
         {
             $viewContent=str_replace('{{'.$key.'}}',$value,$viewContent);
         }
-        $str= str_replace('{{content}}',$viewContent,$layoutContent);
-        $str.=$renderCSS;
-        $str.=$renderJS;
-        return $str;
-//        return $layoutContent.$viewContent;
+        return str_replace('{{content}}',$viewContent,$layoutContent);
     }
 
 
@@ -53,18 +46,18 @@ class View
         return ob_get_clean();
     }
 
-    protected function RenderCSS($css): bool|string
-    {
-        ob_start();
-        include_once Application::$ROOT_DIR ."/public/styles/".$css.".css";
-        return ob_get_clean();
-    }
-
-    protected function RenderJS($js): bool|string
-    {
-        ob_start();
-        include_once Application::$ROOT_DIR ."/public/scripts/".$js.".js";
-        return ob_get_clean();
-    }
+//    protected function RenderCSS($css): bool|string
+//    {
+//        ob_start();
+//        include_once Application::$ROOT_DIR ."/public/styles/".$css.".css";
+//        return ob_get_clean();
+//    }
+//
+//    protected function RenderJS($js): bool|string
+//    {
+//        ob_start();
+//        include_once Application::$ROOT_DIR ."/public/scripts/".$js.".js";
+//        return ob_get_clean();
+//    }
 
 }

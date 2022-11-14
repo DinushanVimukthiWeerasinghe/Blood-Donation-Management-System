@@ -10,9 +10,9 @@ class Controller
         $this->layout = $layout;
     }
 
-    public static function render($view,$css='style',$js='index',$params = [],$subf='')
+    public static function render($view,$params = [],$subf='')
     {
-        return Application::$app->view->renderView($view,$css,$js, $params,$subf);
+        return Application::$app->view->renderView($view,$params,$subf);
     }
 
     public function registerMiddleware(Middleware $middleware): void

@@ -11,7 +11,7 @@ class adminController extends \Core\Controller
     public function login(Request $request, Response $response): string
     {
         $this->layout='auth';
-        return $this->render('Admin\login','login');
+        return $this->render('Admin\login');
     }
 
     public function register(Request $request, Response $response): string
@@ -24,6 +24,6 @@ class adminController extends \Core\Controller
         }
 
         $this->layout='auth';
-        return $this->render('Admin\register','register');
+        return $this->render('Admin\register');
     }
 }

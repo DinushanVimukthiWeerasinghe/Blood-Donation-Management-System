@@ -1,6 +1,9 @@
 <?php
+?>
+<link rel="stylesheet" href="/public/styles/home.css">
+<script src="/public/scripts/home.js"></script>
 
-use App\view\components\Navigation\HomeNavigation;
+<?php
 
 $donation_Image='/public/images/donation.png';
 $organization_Image='/public/images/organization.png';
@@ -8,7 +11,7 @@ $hospital_Image='/public/images/hospital.png';
 $camp_Image='/public/images/campaign.png';
 
 $image_card=new \App\view\components\Card\ImageCard("Image Card", "$donation_Image");
-$Image=new \App\view\components\Image\GeneralImage("/public/images/logo.png", "Home Image", "","250rem");
+$Image=new \App\view\components\Image\GeneralImage("/public/images/logo.png", "Home Image", "logo","250rem");
 $Login_Button= new App\view\components\Button\PrimaryButton("Login", "/login", "btn-primary mx-1");
 $Register_Button= new App\view\components\Button\PrimaryButton("Register", "/login", "btn-red mx-1");
 //$s= new \App\view\components\Card\CounterCard("Click Me", "100");
@@ -30,10 +33,8 @@ $s4= new \App\view\components\Card\CounterCard(['primary'=>"100+",'secondary'=>"
                 <h1 class="nav-title">Blood Donation <br> Management System</h1>
             </div>
             <div class="nav-desc">
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    At consequuntur distinctio doloremque eligendi excepturi explicabo, pariatur perferendis rerum.
-                    Alias beatae cupiditate distinctio doloribus eos, eum ex labore magni molestiae, nemo nihil nostrum quaerat quam
-                    quibusdam sequi sint soluta velit vitae.</p>
+                <p class="text text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    At consequuntur distinctio doloremque eligendi excepturi explicabo, pariatur perferendis rerum. .</p>
 
             </div>
         </div>
@@ -70,5 +71,5 @@ $s4= new \App\view\components\Card\CounterCard(['primary'=>"100+",'secondary'=>"
 
     ?>
 </div>
-
+<script src="/public/scripts/index.js"></script>
 
