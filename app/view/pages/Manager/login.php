@@ -1,8 +1,6 @@
 <?php
 ?>
-<?php
-
-?>
+<link rel="stylesheet" href="/public/styles/login.css">
 <div class="container">
     <div class="top"></div>
     <div class="bottom"></div>

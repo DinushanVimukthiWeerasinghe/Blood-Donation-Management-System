@@ -3,7 +3,7 @@
 
 <div class="g-flex">
     <div class="container">
-        <form action="/manager/register" method="post">
+        <form action="/manager/register" method="post" enctype="multipart/form-data">
             <label for="email"></label><input id="email" name="email" placeholder="email" type="email"/>
             <div class="g-flex">
                 <label for="firstname"></label><input id="firstname" name="firstname" placeholder="firstname" type="text"/>
@@ -24,6 +24,9 @@
             <div class="g-flex">
                 <label for="city"></label><input id="city" name="city" placeholder="city" type="text"/>
                 <label for="postalCode"></label><input id="postalCode" name="postalCode" placeholder="postalCode" type="text"/>
+            </div>
+            <div class="g-flex">
+                <label for="file"></label><input id="file" name="file" placeholder="city" type="file"/>
             </div>
             <div class="g-flex">
                 <input type="submit" value="Submit">

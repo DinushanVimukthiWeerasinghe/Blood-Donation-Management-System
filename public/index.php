@@ -1,8 +1,9 @@
 <?php
 
 use App\controller\adminController;
-use App\controller\authController;
+use App\controller\AuthController;
 use App\controller\donorController;
+use App\controller\fileController;
 use App\controller\managerController;
 use App\controller\siteController;
 use Core\Application;
@@ -16,6 +17,14 @@ $config=[
         'user'=>$_ENV['DB_USER'],
         'password'=>$_ENV['DB_PASSWORD']
     ],
+    'email'=>[
+        'host'=>$_ENV['EMAIL_HOST'],
+        'port'=>$_ENV['EMAIL_PORT'],
+        'username'=>$_ENV['EMAIL_USERNAME'],
+        'password'=>$_ENV['EMAIL_PASSWORD'],
+        'encryption'=>$_ENV['EMAIL_ENCRYPTION'],
+        'from'=>$_ENV['EMAIL_FROM']
+    ]
 ];
 
 
@@ -33,9 +42,10 @@ $app->router->get('/admin/login', [adminController::class, 'login']);
 $app->router->post('/admin/login', [adminController::class, 'login']);
 $app->router->get('/admin/register', [adminController::class, 'register']);
 $app->router->post('/admin/register', [adminController::class, 'register']);
+$app->router->post('/upload', [fileController::class, 'upload']);
 
 //Logout
-$app->router->get('/logout', [authController::class, 'logout']);
+$app->router->get('/logout', [AuthController::class, 'logout']);
 
 //Manager Login
 $app->router->get('/manager/login', [managerController::class, 'login']);

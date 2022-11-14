@@ -1,6 +1,6 @@
-const navList = document.querySelector('.navList')
-const navBtn = document.querySelector('.navBtn')
-const navLinks = document.querySelectorAll('.navLi')
+const navList = document.querySelector('.navList');
+const navBtn = document.querySelector('.navBtn');
+const navLinks = document.querySelectorAll('.navLi');
 window.addEventListener("scroll", preventMotion, false);
 window.addEventListener("touchmove", preventMotion, false);
 
@@ -10,7 +10,7 @@ function preventMotion(event)
     event.preventDefault();
     event.stopPropagation();
 }
-navBtn.addEventListener('click', () => {
+navBtn.addEventListener('click',()=>{
     navBtn.classList.toggle('navBtnToggle')
     navList.classList.toggle('navActive')
     navLinks.forEach((item, index) => {

@@ -3,6 +3,7 @@
 namespace App\model\users;
 
 use App\model\database\dbModel;
+use Core\File;
 
 abstract class Person extends dbModel
 {
@@ -18,9 +19,39 @@ abstract class Person extends dbModel
     protected string $userImage='';
     protected string $userType='';
     protected string $status='';
+    protected ?File $file;
+    protected string $imageURL='';
 //    Logging History Array
     protected LoggingHistory $loggingHistory;
     protected string $postalCode='';
+
+    /**
+     * @return File|null
+     */
+    public function getFile(): ?File
+    {
+        return $this->file;
+    }
+
+
+
+    /**
+     * @return string
+     */
+    public function getImageURL(): string
+    {
+        return $this->imageURL;
+    }
+
+    /**
+     * @param string $imageURL
+     */
+    public function setImageURL(string $imageURL): void
+    {
+        $this->imageURL = $imageURL;
+    }
+
+
 
     public function getUsername(): string
     {

@@ -30,7 +30,7 @@ class managerController extends \Core\Controller
             }
         }
         $this->layout='auth';
-        return $this->render('Manager\login','login');
+        return $this->render('Manager\login');
     }
 
     public function register(Request $request,Response $response ): string
@@ -39,6 +39,7 @@ class managerController extends \Core\Controller
         if ($request->isPost())
         {
             $manager->loadData($request->getBody());
+            $manager->getFile()->saveFile();
             if($manager->validate() && $manager->save())
             {
                 
@@ -46,12 +47,12 @@ class managerController extends \Core\Controller
             }
         }
         $this->layout='auth';
-        return $this->render('Manager\register','register');
+        return $this->render('Manager\register');
     }
 
     public function dashboard(): string
     {
         $this->layout='auth';
-        return $this->render('Manager\managerBoard','dashboard');
+        return $this->render('Manager\managerBoard');
     }
 }

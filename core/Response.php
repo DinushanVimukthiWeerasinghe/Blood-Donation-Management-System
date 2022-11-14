@@ -12,9 +12,18 @@ class Response
         header('Location: ' . $url);
     }
 
-    public function sendFile(string $string)
+    public function sendFile(string $string): bool|int
     {
-        header('Content-Type: image/png');
         return readfile($string);
+    }
+
+    public function setContentType(string $string): void
+    {
+        header('Content-Type: ' . $string);
+    }
+
+    public function setContentLength(bool|int $filesize): void
+    {
+        header('Content-Length: ' . $filesize);
     }
 }
