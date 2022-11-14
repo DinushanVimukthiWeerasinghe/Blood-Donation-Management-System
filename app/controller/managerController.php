@@ -55,7 +55,7 @@ class managerController extends \Core\Controller
     {
         $manager=new Manager();
         echo '<pre>';
-        print_r($manager->RetrieveAll());
+        print_r($manager::findOne(['id'=>'20','username'=>'sdfs']));
         echo '</pre>';
         exit();
 
