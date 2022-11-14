@@ -4,6 +4,7 @@ use Core\Application;
 use App\model\users\User;
 
 ?>
+
 <!--<img class="home-bg" src="/public/images/homebg.png"  alt=""/>-->
 <!--<!--<div class="side-bar">-->-->
 <!--<!--    Side Bar-->-->
@@ -23,6 +24,7 @@ use App\model\users\User;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/public/styles/Orghome.css">
 </head>
 <body>
     <!-- leftcorner -->

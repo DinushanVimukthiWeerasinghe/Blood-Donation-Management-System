@@ -1,5 +1,6 @@
 <?php
 namespace Core;
+use App\model\Email\BaseEmail;
 use App\model\users\Campaign;
 use App\model\users\User;
 use Exception;

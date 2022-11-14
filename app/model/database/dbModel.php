@@ -20,6 +20,7 @@ abstract class dbModel extends Model
     /**
      * @param string $id
      */
+    
     public function setId(string $id): void
     {
         $this->id = $id;
