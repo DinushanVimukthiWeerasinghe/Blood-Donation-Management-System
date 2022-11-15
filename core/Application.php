@@ -21,6 +21,12 @@ class Application
     public forbiddenRoute $forbiddenRoute;
     public BaseEmail $email;
 
+    public static function Redirect($path): void
+    {
+        Application::$app->response->redirect($path);
+
+    }
+
     public static function getRole(): string
     {
         return self::$app->user->getRole();
@@ -29,8 +35,9 @@ class Application
     /**
      * @return User
      */
-    public function getUser(): User
+    public function getUser(): User | null
     {
+//        print_r($this->user);
         return $this->user;
     }
 
@@ -77,7 +84,8 @@ class Application
         $this->user=$user;
         $primaryKey=$user->primaryKey();
         $primaryValue=$user->{$primaryKey};
-        $this->session->set('user',$primaryValue);
+        //TODO Update the minutes to 30
+        $this->session->set('user',$primaryValue,1);
         $this->session->setFlash('success','Welcome Back '.$user->getFirstName());
         return true;
     }
@@ -89,6 +97,12 @@ class Application
         }catch (Exception $e){
             echo $e->getMessage();
         }
+    }
+
+    public function logout(): void
+    {
+        $this->user=null;
+        $this->session->remove('user');
     }
 
 }

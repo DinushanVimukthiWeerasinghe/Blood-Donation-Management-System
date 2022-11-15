@@ -1,6 +1,6 @@
 <?php
 
-namespace App\view\components\Button;
+namespace App\view\components\WebComponent\Button;
 
 class SecondaryButton extends BaseButton
 {

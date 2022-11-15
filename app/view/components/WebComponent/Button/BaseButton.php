@@ -1,6 +1,6 @@
 <?php
 
-namespace App\view\components\Button;
+namespace App\view\components\WebComponent\Button;
 
 abstract class BaseButton
 {
@@ -19,7 +19,7 @@ abstract class BaseButton
     public function render(): string
     {
         return "
-        <a href='$this->href' class='btn $this->class'>$this->text</a>
+        <a href='$this->href' class='btn web $this->class'>$this->text</a>
         ";
     }
 

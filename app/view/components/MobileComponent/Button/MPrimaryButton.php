@@ -1,8 +1,8 @@
 <?php
 
-namespace App\view\components\Button;
+namespace App\view\components\MobileComponent\Button;
 
-class PrimaryButton extends BaseButton
+class MPrimaryButton extends MBaseButton
 {
     public function __construct($text, $href, $class)
     {

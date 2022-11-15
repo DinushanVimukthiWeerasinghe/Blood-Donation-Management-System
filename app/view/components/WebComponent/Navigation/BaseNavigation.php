@@ -1,6 +1,6 @@
 <?php
 
-namespace App\view\components\Navigation;
+namespace App\view\components\WebComponent\Navigation;
 
 abstract class BaseNavigation
 {

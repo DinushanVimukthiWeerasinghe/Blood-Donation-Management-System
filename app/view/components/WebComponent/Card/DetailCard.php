@@ -1,8 +1,8 @@
 <?php
 
-namespace App\view\components\Card;
+namespace App\view\components\WebComponent\Card;
 
-class BaseCard
+class DetailCard
 {
     private string $title;
     private string $content;
@@ -18,7 +18,6 @@ class BaseCard
 
     public function render(): string
     {
-
         if (trim($this->title)=="")
         {
             return "
@@ -33,7 +32,7 @@ class BaseCard
         ";
         }else {
             return "
-        <div class='card min-w-200 max-w-200 mx-20'>
+        <div class='d-card'>
             <div class='card-header'>
                 <h3 class='card-title'>$this->title</h3>
             </div>
@@ -47,6 +46,5 @@ class BaseCard
         ";
         }
     }
-
 
 }

@@ -1,22 +1,20 @@
 <<<<<<< Updated upstream
 <?php
 
-use App\view\components\Navigation\HomeNavigation;
-
 $donation_Image='/public/images/donation.png';
 $organization_Image='/public/images/organization.png';
 $hospital_Image='/public/images/hospital.png';
 $camp_Image='/public/images/campaign.png';
 
-$image_card=new \App\view\components\Card\ImageCard("Image Card", "$donation_Image");
-$Image=new \App\view\components\Image\GeneralImage("/public/images/logo.png", "Home Image", "","250rem");
-$Login_Button= new App\view\components\Button\PrimaryButton("Login", "/login", "btn-primary mx-1");
-$Register_Button= new App\view\components\Button\PrimaryButton("Register", "/login", "btn-red mx-1");
+$image_card=new \App\view\components\WebComponent\Card\ImageCard("Image Card", "$donation_Image");
+$Image=new \App\view\components\WebComponent\Image\GeneralImage("/public/images/logo.png", "Home Image", "","250rem");
+$Login_Button= new \App\view\components\WebComponent\Button\PrimaryButton("Login", "/login", "btn-primary mx-1");
+$Register_Button= new \App\view\components\WebComponent\Button\PrimaryButton("Register", "/login", "btn-red mx-1");
 //$s= new \App\view\components\Card\CounterCard("Click Me", "100");
-$s1= new \App\view\components\Card\CounterCard(['primary'=>"15,000+",'secondary'=>"Donors"], "100", $donation_Image);
-$s2= new \App\view\components\Card\CounterCard(['primary'=>"1,000+",'secondary'=>"Organization"], "100", $organization_Image);
-$s3= new \App\view\components\Card\CounterCard(['primary'=>"500+",'secondary'=>"Hospital"], "100", $hospital_Image);
-$s4= new \App\view\components\Card\CounterCard(['primary'=>"100+",'secondary'=>"Campaign"], "100", $camp_Image);
+$s1= new \App\view\components\WebComponent\Card\CounterCard(['primary'=>"15,000+",'secondary'=>"Donors"], "100", $donation_Image);
+$s2= new \App\view\components\WebComponent\Card\CounterCard(['primary'=>"1,000+",'secondary'=>"Organization"], "100", $organization_Image);
+$s3= new \App\view\components\WebComponent\Card\CounterCard(['primary'=>"500+",'secondary'=>"Hospital"], "100", $hospital_Image);
+$s4= new \App\view\components\WebComponent\Card\CounterCard(['primary'=>"100+",'secondary'=>"Campaign"], "100", $camp_Image);
 ?>
 <img class="home-bg" src="/public/images/homebg.png"  alt=""/>
 <!--<div class="side-bar">-->

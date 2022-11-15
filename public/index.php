@@ -1,7 +1,7 @@
 <?php
 
 use App\controller\adminController;
-use App\controller\AuthController;
+use App\controller\authController;
 use App\controller\donorController;
 use App\controller\fileController;
 use App\controller\managerController;
@@ -36,6 +36,7 @@ $app->forbiddenRoute->setForbiddenRotes([
 ]);
 //$app->db->applyMigrations();
 $app->router->get('/', [siteController::class, 'home']);
+$app->router->get('/home', [siteController::class, 'home']);
 $app->router->get('/about', [siteController::class, 'about']);
 $app->router->get('/donor', [donorController::class, 'home']);
 $app->router->get('/admin/login', [adminController::class, 'login']);
@@ -45,11 +46,11 @@ $app->router->post('/admin/register', [adminController::class, 'register']);
 $app->router->post('/upload', [fileController::class, 'upload']);
 
 //Logout
-$app->router->get('/logout', [AuthController::class, 'logout']);
+$app->router->get('/logout', [authController::class, 'logout']);
 
 //Manager Login
-$app->router->get('/manager/login', [managerController::class, 'login']);
-$app->router->post('/manager/login', [managerController::class, 'login']);
+$app->router->get('/manager/login', [authController::class, 'managerLogin']);
+$app->router->post('/manager/login', [authController::class, 'managerLogin']);
 
 // Manager Register
 $app->router->get('/manager/register', [managerController::class, 'register']);

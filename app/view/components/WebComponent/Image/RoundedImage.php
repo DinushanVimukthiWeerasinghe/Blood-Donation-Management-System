@@ -1,6 +1,6 @@
 <?php
 
-namespace App\view\components\Image;
+namespace App\view\components\WebComponent\Image;
 
 class RoundedImage extends BaseImage
 {

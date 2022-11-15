@@ -1,6 +1,6 @@
 <?php
 
-namespace App\view\components\ButtonGroup;
+namespace App\view\components\WebComponent\ButtonGroup;
 
 abstract class BaseGroup
 {

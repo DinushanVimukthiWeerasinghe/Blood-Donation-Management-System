@@ -16,6 +16,27 @@ html, body {
 body{
     position: relative;
 }
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: rgba(0,0,0,0.5);
+    border-top: 1px solid #e5e5e5;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
 
 /*body {*/
 /*    width: 100vw;*/
@@ -48,7 +69,7 @@ body{
     font-weight: 400;
     font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 1rem;
+
 }
 
 /*Cards*/
@@ -69,20 +90,20 @@ body{
     background: rgba(255, 255, 255,0.5);
 }
 
-.card-title{
+.card .card-title{
     font-size: 3.5em;
     font-weight: bolder;
     margin-left: 1rem;
     text-align: center;
 }
-.card-secondary-title{
+.card .card-secondary-title{
     font-size: 2em;
     font-weight: bold;
     margin-left: 1rem;
     text-align: center;
 }
 
-.card-header{
+.card .card-header{
     margin: 0 1rem;
     width: 10vw;
     height: 10vh;
@@ -95,7 +116,7 @@ body{
     align-items: center;
 }
 
-.card-body{
+.card .card-body{
     width: 20vw;
     height: 10vh;
     color: #ffffff;
@@ -109,7 +130,7 @@ body{
     align-items: center;
 }
 
-.img-card{
+.card .img-card{
     display: flex;
     opacity: 100%;
     width: 250px;
@@ -119,19 +140,55 @@ body{
     position: absolute;
     /*bottom: 20%;*/
 }
-
-
 /*Side Bar*/
 .side-bar{
+    border-radius: 50px;
     background: rgba(255, 255, 255, 0.2);
-    position: absolute;
+    position: fixed;
     display: flex;
+    flex-direction: column;
     top: 10%;
-    width: 25vw;
-    right: 2rem;
-    height: 80vh;
+    width: 25%;
+    right: 1rem;
     z-index: 5;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
+.d-card{
+    border-radius: 50px;
+    margin: 1rem;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.d-card .card-header{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 1rem;
+}
+
+.d-card .card-body{
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin:0 1rem;
+}
+
+.d-card .card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    text-align: center;
+}
+
+.s-card-grp{
+    display: none;
+}
+
 
 .super-header{
     display: flex;
@@ -180,6 +237,13 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+.mobile{
+    display: none;
+}
+
+.web{
+    display: flex;
+}
 
 .btn-panel{
     display: flex;
@@ -190,6 +254,13 @@ body{
 
 .mx-1{
     margin: 0 1rem;
+}
+
+.btn-panel-sm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .btn{
@@ -294,9 +365,43 @@ nav a {
     transition: all 0.5s ease-in;
 }
 
-@media screen and (min-width: 601px) {
-    .res-text{
 
+@media screen and (max-width: 1600px) {
+    .side-bar{
+        display: flex;
+    }
+    .card-grp{
+        width: 70vw;
+        justify-content: center;
+    }
+    .card{
+        width: 280px;
+        height: 180px;
+    }
+    .card .card-header{
+        height: 50%;
+        margin: 0 1rem;
+    }
+    .card .card-header img{
+        height: 80%;
+    }
+
+    .card .card-body{
+        margin-left: 2%;
+        width: 50%;
+    }
+    .card .card-body .card-title{
+        margin-left: 0;
+    }
+    .card .card-body .card-secondary-title{
+        margin-left: 1%;
+    }
+
+    .card .card-title{
+        font-size: 2.0rem;
+    }
+    .card .card-secondary-title{
+        font-size: 1.5rem;
     }
 }
 @media screen and (max-width: 1200px) {
@@ -307,12 +412,30 @@ nav a {
         width: 300px;
         height: 150px;
     }
-    .card-title{
+    .card .card-title{
         font-size: 2.5em;
     }
-    .card-secondary-title{
+    .card .card-secondary-title{
         font-size: 1.5em;
     }
+
+    .d-card{
+
+    }
+    .d-card .card-header{
+        font-size: 1.5rem;
+        margin: 0.5rem;
+    }
+
+    .d-card .card-body{
+        font-size: 1.0rem;
+        /*margin: 0.5rem;*/
+    }
+
+    .d-card .card-footer .btn{
+         padding: 0.2rem 0.6rem;
+    }
+
     .nav-title{
         font-size: 3rem;
     }
@@ -320,17 +443,34 @@ nav a {
         width: 10rem;
     }
 }
-
-
-
-/* ============ SMALL SCREEN STYLES ============= */
-
 @media only screen and (max-width: 768px) {
     body{
         max-height: 100vh;
     }
+    .web{
+        display: none;
+    }
+
+    .mobile{
+        display: flex;
+    }
+    .btn-panel-sm{
+        margin-bottom: 0.4rem;
+    }
 
     .btn-panel{
+        display: none;
+    }
+    .s-card-grp{
+        margin-top: 15vh;
+    }
+    .card-grp{
+        width: 100vw;
+    }
+    .card .card-header img{
+        height: 50px;
+    }
+    .side-bar{
         display: none;
     }
 
@@ -365,19 +505,32 @@ nav a {
         position: absolute;
         width: 100vw;
         max-height: 40vh !important;
-        min-height: 40vh !important;
+        min-height: inherit;
+
+        /*min-height: 40vh !important;*/
         border-bottom-right-radius: 0;
-        display: block;
+    }
+    .g-flex-col{
+        display: flex;
+        align-items: flex-start;
     }
     .nav-logo img{
         width:5rem;
+    }
+    .nav-desc{
+        align-items: center;
+        width: 100%;
+        padding: 0.5em;
+    }
+    .nav-desc p{
+        font-size: 1.0rem;
     }
 
 
     .navList {
         /* stick the ul (navList) to a window just below navbar  */
         position: absolute;
-        right: 0;
+        right: -0.5rem;
         height: 99.9vh;
         top: clamp(0px, 0vh, 7vh);
         /* li from row to column */
@@ -410,7 +563,7 @@ nav a {
 
     .card-grp{
         position: absolute;
-        bottom: 8vh;
+        bottom: 1vh;
     }
 
     .card{
@@ -424,40 +577,74 @@ nav a {
         transform: scale(1.5);
     }
 
-    .card-header{
+    .card .card-header{
         background: transparent;
     }
 
-    .card-title{
+    .card .card-title{
         font-size: 1.5rem;
     }
 
-    .card-secondary-title{
+    .card .card-secondary-title{
         font-size: 1rem;
     }
-    .card-body{
+    .card .card-body{
         width: 60%;
     }
 
 
 }
+@media screen and (min-width: 601px) {
+    .res-text{
 
-/* ========== NAVLIST ACTIVATION CLASS ================= */
-/* used by js */
-/* toggle navList 'visability' :) */
+    }
+}
+
+@media only screen and  (max-width: 400px){
+    .btn{
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+    .s-card-grp{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .s-card{
+        width: 45%;
+        margin: 0.5rem;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255,0.3);
+        align-items: center;
+        border-radius: 10px;
+    }
+    .s-card .s-card-title{
+        font-size: 1.1rem;
+        color: white;
+        margin: 0.5rem;
+        text-align: center;
+    }
+
+    .s-card .s-card-body{
+        margin: 0.2rem;
+    }
+
+    .s-card-body span{
+        padding: 0;
+        font-size: 0.8rem;
+        color: white;
+        text-align: center;
+    }
+
+}
+
 .navActive {
     transform: translate(0%);
 }
-
-/* ========== LI ELEMENTS JAZZED UP TRANSFORMATION ===========*/
-/* used by js */
-/* .fadeIn {
-  opacity: 1;
-  transform: translate(0, 0);
-} */
-
-/* adding keyframe */
-/* used by js */
 @keyframes SlideIn {
     from {
         opacity: 0;
@@ -470,7 +657,6 @@ nav a {
     }
 }
 
-/* used by js */
 .navBtnToggle .line1 {
     transform: rotate(-45deg) translate(-4px, 6px);
 }

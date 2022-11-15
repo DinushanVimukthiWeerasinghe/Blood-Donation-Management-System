@@ -1,6 +1,6 @@
 <?php
 
-namespace App\view\components\Card;
+namespace App\view\components\WebComponent\Card;
 
 class CounterCard
 {

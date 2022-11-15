@@ -49,5 +49,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Chart" level="application" />
     <orderEntry type="library" name="Chart.js" level="application" />
+    <orderEntry type="library" name="default-passive-events" level="application" />
   </component>
 </module>
