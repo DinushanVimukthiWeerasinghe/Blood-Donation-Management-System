@@ -2,8 +2,18 @@
 
 namespace App\model\Organization;
 
+use Core\Session;
+
 class Organization extends \App\model\database\dbModel
 {
+    protected string $campaign = '';
+    protected int $manage;
+    protected string $location = '';
+    protected string $donor = '';
+    protected string $postal = '';
+    protected string $date = '';
+    protected string $amount = '';
+    public Session $session;
 
     public function rules(): array
     {
@@ -25,8 +35,18 @@ class Organization extends \App\model\database\dbModel
         // TODO: Implement PrimaryKey() method.
     }
 
+
     public function attributes(): array
     {
-        // TODO: Implement attributes() method.
+        return [
+            'campaign',
+            'donor',
+            'location',
+            'postal',
+            'date',
+            'amount',
+            'manage'
+
+        ];
     }
 }

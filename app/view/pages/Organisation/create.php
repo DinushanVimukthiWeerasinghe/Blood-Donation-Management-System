@@ -28,7 +28,7 @@
             <label style="margin-left: 50px;font-size: 20pt;">Yes</label><input type="radio" placeholder="" name="guide" style="margin-left: 5px; height: 25px;text-align: center;border-radius: 5px; cursor: pointer;">
             <label style="margin-left: 50px;font-size: 20pt;">NO</label><input type="radio" placeholder="" name="guide" style="margin-left: 5px; height: 25px;text-align: center;border-radius: 5px;cursor: pointer;"><br><br>
         <button type="submit" style="margin-left: 800px; height: 40px;border-radius: 5px;cursor: pointer;background-color: black;color: whitesmoke;padding: 20px;font-size: 15pt;position: absolute">Create Campaign</button>
-        <button style="margin-left: 600px; height: 40px;border-radius: 5px;cursor: pointer;background-color: black;color: whitesmoke;padding: 20px;font-size: 15pt;">Back</button>
+        <a href="manage"><button style="margin-left: 600px; height: 40px;border-radius: 5px;cursor: pointer;background-color: black;color: whitesmoke;padding: 20px;font-size: 15pt;">Back</button></a>
     </form>
 
 </section>

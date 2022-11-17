@@ -176,6 +176,22 @@ abstract class dbModel extends Model
 
         return $statement->fetchObject(static::class);
     }
+    public static function findAll($where)
+    {
+        $tableName=static::tableName();
+        $attributes=array_keys($where);
+
+        $sql=implode(" AND ",array_map(fn($attr)=>"$attr=:$attr",$attributes));
+
+        $statement=self::prepare("SELECT * FROM $tableName WHERE $sql");
+        foreach ($where as $key=>$item)
+        {
+            $statement->bindValue(":$key",$item);
+        }
+        $statement->execute();
+
+        return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
     public static function DeleteOne($where): bool
     {
         $tableName=static::tableName();

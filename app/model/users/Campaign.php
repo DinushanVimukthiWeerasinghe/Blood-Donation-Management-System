@@ -66,8 +66,8 @@ class Campaign extends dbModel
     {
         return $this->save();
     }
-    public function history(): bool
-    {
-        $campaign= (new \App\model\users\Campaign)->findOne(['id' => $_SESSION['userInfo']]);
-    }
+//    public function history(): bool
+//    {
+//        $campaign= (new \App\model\users\Campaign)->findOne(['id' => $_SESSION['userInfo']]);
+//    }
 }

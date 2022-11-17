@@ -3,6 +3,7 @@
 namespace App\controller;
 
 use App\model\Authentication\Login;
+use App\model\Organization\Organization;
 use App\model\users\Campaign;
 use App\model\users\User;
 use Core\Application;
@@ -91,10 +92,17 @@ class organisationController extends \Core\Controller{
     }
     public function history(Request $request,Response $response): string
     {
+        $campaign='';
+        $donor='';
+        $history = new Organization();
+//        echo '<pre>';
+          $data=$history::findAll(['manage'=>$_SESSION['user']]);
+//        echo '</pre>';
+//        exit();
         if($request->isPost()){
             require_once Application::$ROOT_DIR.'/API/adduser.php';
         }
-        return $this->render('Organisation\history');
+        return $this->render('Organisation\history',['campaign'=>$campaign,'donor'=>$donor,'data'=>$data]);
     }
 
     public function logout(Request $request,Response $response): string
