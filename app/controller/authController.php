@@ -36,11 +36,11 @@ class authController extends \Core\Controller
     }
     public function managerLogin(Request $request, Response $response): string
     {
-
+        $login = new Login();
         if ($request->isPost())
         {
-            $login = new Login();
             $login->loadData($request->getBody());
+
             if ($login->validate() && $login->login())
             {
                 $response->redirect('/manager/dashboard');
@@ -48,7 +48,7 @@ class authController extends \Core\Controller
             }
         }
         $this->layout='auth';
-        return $this->render('Manager\login');
+        return $this->render('Manager\login',['model'=>$login]);
     }
 
 }

@@ -5,52 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c22c35a-6d79-48f0-8c26-a909a9c65859" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.envExample" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/components/MobileComponent/Button/MBaseButton.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/components/MobileComponent/Button/MPrimaryButton.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/components/MobileComponent/Button/MSecondaryButton.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/DetailCard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/SessionObject.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/middleware/ManagerMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/customAlert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/alert.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Blood-Donation-Management-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Blood-Donation-Management-System.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/Authentication/staffLogin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/users/nonStaffUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/components/ResponsiveComponent/CardGroup/CardGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/components/ResponsiveComponent/NavbarComponent/Navbar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/Card.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/NavigationCard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/pages/Manager/loginCopy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/pages/Manager/mngMedicalOfficer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/components/card/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/components/navbar/navbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bePositiveLogin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/hidePass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/MedicalOfficer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/camp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/donor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/report.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/requests.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/sponsors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/showPass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/sign-out.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logimg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/card/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/navbar/navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/manager/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/navbar/navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/manager/board.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/manager/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/AuthController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/adminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/authController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/authController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/managerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/managerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/siteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/siteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/middleware/userMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/middleware/AuthenticationMiddleware.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/Authentication/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Authentication/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Button/BaseButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Button/BaseButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Button/PrimaryButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Button/PrimaryButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Button/SecondaryButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Button/SecondaryButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/ButtonGroup/BaseGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/ButtonGroup/BaseGroup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/ButtonGroup/GeneralButtonGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/ButtonGroup/GeneralButtonGroup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Card/BaseCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/BaseCard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Card/ClickableCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/ClickableCard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Card/CounterCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/CounterCard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Card/ImageCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/ImageCard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Image/BaseImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Image/BaseImage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Image/GeneralImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Image/GeneralImage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Image/RoundedImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Image/RoundedImage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Navigation/BaseNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Navigation/BaseNavigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/components/Navigation/HomeNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Navigation/HomeNavigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/database/dbModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/database/dbModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/users/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/users/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/users/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/users/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/layout/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/layout/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/layout/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/layout/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/pages/Manager/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/pages/Manager/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/pages/Manager/managerBoard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/pages/Manager/managerBoard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/pages/Organisation/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/pages/Organisation/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/pages/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/BaseMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Session.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/View.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/loginCopy.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +70,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -130,45 +134,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary": "PHPUnit",
-    "last_opened_file_path": "C:/Users/stdin/Project/Group Project/Blood-Donation-Management-System/vendor",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "settings.editor.selected.configurable": "web-ide.project.structure",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary&quot;: &quot;PHPUnit&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/stdin/Project/Group Project/Blood-Donation-Management-System/public/images/icons&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\vendor" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\app\view\components\MobileComponent" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images\icons" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images\icons\manager\dashboard" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images\icons\manager" />
       <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\css\components" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images\icons" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\styles\manager" />
       <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System" />
       <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\styles" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\scripts" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\test" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.Run">
@@ -196,6 +200,13 @@
       </CommandLine>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="PHP Script.Run" />
+      <item itemvalue="PHPUnit.AuthenticationEmailTest" />
+      <item itemvalue="PHPUnit.BaseEmailTest" />
+      <item itemvalue="PHPUnit.BaseEmailTest.testSend" />
+      <item itemvalue="PHPUnit.BaseEmailTest.testSendWithArray" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="PHPUnit.AuthenticationEmailTest" />
@@ -256,7 +267,12 @@
       <workItem from="1668405019241" duration="6749000" />
       <workItem from="1668415352389" duration="12902000" />
       <workItem from="1668446129316" duration="1120000" />
-      <workItem from="1668497379829" duration="18527000" />
+      <workItem from="1668497379829" duration="40417000" />
+      <workItem from="1668584155133" duration="361000" />
+      <workItem from="1668584605108" duration="5908000" />
+      <workItem from="1668591382049" duration="2454000" />
+      <workItem from="1668604571001" duration="19495000" />
+      <workItem from="1668662022929" duration="10123000" />
     </task>
     <task id="LOCAL-00001" summary="Added Middlewares">
       <created>1668051492690</created>

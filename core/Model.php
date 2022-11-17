@@ -96,12 +96,12 @@ abstract class Model
         return $this->errors[$attribute][0] ?? false;
     }
 
-    public function addError(string $attribute, string $message)
+    public function addError(string $attribute, string $message): void
     {
         $this->errors[$attribute][]=$message;
     }
 
-    private function addErrorRule(string $attribute, string $rule, $params=[])
+    private function addErrorRule(string $attribute, string $rule, $params=[]): void
     {
         $message=$this->errorMessages()[$rule] ?? '';
         foreach ($params as $key=>$value)
@@ -110,7 +110,7 @@ abstract class Model
         }
         $this->errors[$attribute][]=$message;
     }
-    public function errorMessages()
+    public function errorMessages(): array
     {
         return [
             self::RULE_REQUIRED=>'This field is required',

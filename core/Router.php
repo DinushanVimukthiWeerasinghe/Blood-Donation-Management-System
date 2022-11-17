@@ -34,12 +34,12 @@ class Router
             $this->response->setStatusCode(200);
             $this->response->setContentType('image/jpeg');
             return $this->response->sendFile(Application::$ROOT_DIR.$path);
-        }else if(str_contains($path, '/public/styles/')){
+        }else if(str_contains($path, '/public/styles/') || str_contains($path, '/public/css/')){
             $this->response->setStatusCode(200);
             $this->response->setContentType('text/css');
             $this->response->setContentLength(filesize(Application::$ROOT_DIR.$path));
             return $this->response->sendFile(Application::$ROOT_DIR.$path);
-        }else if(str_contains($path, '/public/scripts/')){
+        }else if(str_contains($path, '/public/scripts/') || str_contains($path, '/public/js/')){
             $this->response->setStatusCode(200);
             $this->response->setContentType('text/javascript');
             $this->response->setContentLength(filesize(Application::$ROOT_DIR.$path));

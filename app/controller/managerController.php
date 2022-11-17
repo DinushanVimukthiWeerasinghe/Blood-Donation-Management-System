@@ -4,6 +4,7 @@ namespace App\controller;
 
 use App\model\Authentication\Login;
 use App\model\users\Manager;
+use App\model\users\User;
 use Core\Application;
 use Core\BaseMiddleware;
 use Core\middleware\AuthenticationMiddleware;
@@ -18,7 +19,6 @@ class managerController extends \Core\Controller
     {
         $this->registerMiddleware(new AuthenticationMiddleware(['login'], BaseMiddleware::ALLOWED_ROUTES));
         $this->registerMiddleware(new ManagerMiddleware());
-
     }
 
 
@@ -42,9 +42,19 @@ class managerController extends \Core\Controller
 
     public function dashboard(): string
     {
-        $manager=new Manager();
-//        print_r(Application::$app->getUser());
+        /* @var Manager $manager*/
+        $manager = Manager::findOne(['Officer_ID' => Application::$app->session->get('user')]);
+        $params=[
+            'firstName'=>$manager->getFirstName(),
+            'lastName'=>$manager->getLastName()
+        ];
         $this->layout='auth';
-        return $this->render('Manager\managerBoard');
+        return $this->render('Manager\managerBoard',$params);
     }
+
+    public function ManageMedicalOfficer(): string
+    {
+        return $this->render('Manager\mngMedicalOfficer');
+    }
+
 }

@@ -71,7 +71,7 @@ class Application
 
         if(isset($_SESSION['user']))
         {
-            $this->user = User::findOne(['id' => $_SESSION['user']]);
+            $this->user = User::findOne(['uid' => $_SESSION['user']->getSessionData()]);
         }
         else
         {
@@ -83,10 +83,11 @@ class Application
     {
         $this->user=$user;
         $primaryKey=$user->primaryKey();
-        $primaryValue=$user->{$primaryKey};
+
+        $primaryValue=$user->getUid();
         //TODO Update the minutes to 30
-        $this->session->set('user',$primaryValue,1);
-        $this->session->setFlash('success','Welcome Back '.$user->getFirstName());
+        $this->session->set('user',$primaryValue,60);
+        $this->session->setFlash('success','Welcome Back '.$user->getEmail());
         return true;
     }
 

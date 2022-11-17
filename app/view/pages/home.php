@@ -35,8 +35,8 @@ $camp_Image='/public/images/campaign.png';
 
 $image_card=new ImageCard("Image Card", "$donation_Image");
 $Image=new GeneralImage("/public/images/logo.png", "Home Image", "logo","250rem");
-$Login_Button= new PrimaryButton("Login", "/login", "btn-primary mx-1");
-$Login_Button_sm= new MPrimaryButton("Login", "/login", "btn-primary mx-1");
+$Login_Button= new PrimaryButton("Login", "/login", "btn-red mx-1");
+$Login_Button_sm= new MPrimaryButton("Login", "/login", "btn-red mx-1");
 $Register_Button= new PrimaryButton("Register", "/login", "btn-red mx-1");
 $Register_Button_sm= new MSecondaryButton("Register", "/login", "btn-red mx-1");
 //$s= new \App\view\components\Card\CounterCard("Click Me", "100");

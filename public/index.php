@@ -59,5 +59,8 @@ $app->router->post('/manager/register', [managerController::class, 'register']);
 //Manager Dashboard
 $app->router->get('/manager/dashboard', [managerController::class, 'dashboard']);
 
+
+$app->router->get('/manager/mngMedicalOfficer', [managerController::class, 'ManageMedicalOfficer']);
+
 //print_r($_SESSION);
 $app->run();
