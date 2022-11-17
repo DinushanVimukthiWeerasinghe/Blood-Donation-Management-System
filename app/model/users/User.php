@@ -3,8 +3,6 @@
 namespace App\model\users;
 
 use App\model\database\dbModel;
-use Core\UserModel;
-
 class User extends dbModel
 {
 
@@ -17,20 +15,9 @@ class User extends dbModel
     protected string $name='';
     protected string $email='';
     protected string $password='';
-    protected string $address1='';
-    protected string $address2='';
-    protected string $city='';
-    protected int $status= self::STATUS_INACTIVE;
-    protected string $postalcode='';
-    protected string $tel='';
-    protected string $role='Organisation';
-    public function rules(): array
-    {
-        return [
-            'email' => [self::RULE_REQUIRED, self::RULE_EMAIL],
-            'password' => [self::RULE_REQUIRED],
-        ];
-    }
+    protected string $type_id='';
+    protected string $uid='';
+    protected string $role='';
 
     /**
      * @return string
@@ -53,8 +40,6 @@ class User extends dbModel
         return $this->role;
     }
 
-
-
     /**
      * @return string
      */
@@ -63,19 +48,41 @@ class User extends dbModel
         return $this->password;
     }
 
+    /**
+     * @return string
+     */
+    public function getTypeId(): string
+    {
+        return $this->type_id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUid(): string
+    {
+        return $this->uid;
+    }
+
+
+    public function rules(): array
+    {
+        // TODO: Implement rules() method.
+    }
+
     public static function getTableShort(): string
     {
-        return 'users';
+        return 'sc';
     }
 
     public static function tableName(): string
     {
-        return 'users';
+        return 'staff_credential';
     }
 
     public static function PrimaryKey(): string
     {
-        return 'id';
+        return 'uid';
     }
 
     public function attributes(): array
@@ -91,6 +98,7 @@ class User extends dbModel
             'tel',
             'status',
             'role',
+            'type_id'
         ];
     }
 

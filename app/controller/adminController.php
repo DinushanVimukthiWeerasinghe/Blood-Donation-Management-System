@@ -3,11 +3,17 @@
 namespace App\controller;
 
 use App\model\users\Admin;
+use Core\BaseMiddleware;
+use Core\middleware\AuthenticationMiddleware;
 use Core\Request;
 use Core\Response;
 
 class adminController extends \Core\Controller
 {
+    public function __construct()
+    {
+        $this->registerMiddleware(new AuthenticationMiddleware(['login'],BaseMiddleware::ALLOWED_ROUTES));
+    }
     public function login(Request $request, Response $response): string
     {
         $this->layout='auth';

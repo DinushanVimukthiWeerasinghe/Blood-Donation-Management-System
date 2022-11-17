@@ -2,14 +2,53 @@
 
 namespace App\controller;
 
+use App\model\Authentication\Login;
 use Core\Application;
+use Core\BaseMiddleware;
+use Core\middleware\AuthenticationMiddleware;
+use Core\Request;
+use Core\Response;
 
-class AuthController extends \Core\Controller
+class authController extends \Core\Controller
 {
+
+    public function __construct()
+    {
+        if (Application::$app->getUser()) {
+            $role = Application::$app->getUser()->getRole();
+            Application::Redirect('/' . $role . '/dashboard');
+
+        }else{
+            $this->registerMiddleware(new AuthenticationMiddleware(['managerLogin'], BaseMiddleware::ALLOWED_ROUTES));
+        }
+
+    }
+
     public function logout()
     {
-        Application::$app->session->remove('user');
-        Application::$app->response->redirect('/');
+        if (Application::$app->isGuest())
+        {
+            Application::$app->response->redirect('/');
+        }else{
+            Application::$app->logout();
+            Application::$app->response->redirect('/');
+        }
+    }
+    public function managerLogin(Request $request, Response $response): string
+    {
+        $login = new Login();
+        if ($request->isPost())
+        {
+            $login->loadData($request->getBody());
+
+            if ($login->validate() && $login->login())
+            {
+                $response->redirect('/manager/dashboard');
+                return '';
+            }
+        }
+        $this->layout='auth';
+        return $this->render('Manager\login',['model'=>$login]);
     }
 
 }

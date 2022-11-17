@@ -2,37 +2,26 @@
 
 namespace App\controller;
 
-use App\middleware\userMiddleware;
 use App\model\Authentication\Login;
 use App\model\users\Manager;
+use App\model\users\User;
 use Core\Application;
+use Core\BaseMiddleware;
+use Core\middleware\AuthenticationMiddleware;
+use Core\middleware\ManagerMiddleware;
 use Core\Request;
 use Core\Response;
 
 class managerController extends \Core\Controller
 {
 
-
     public function __construct()
     {
-        $this->registerMiddleware(new userMiddleware());
+        $this->registerMiddleware(new AuthenticationMiddleware(['login'], BaseMiddleware::ALLOWED_ROUTES));
+        $this->registerMiddleware(new ManagerMiddleware());
     }
 
-    public function login(Request $request, Response $response): string
-    {
-        if ($request->isPost())
-        {
-            $login = new Login();
-            $login->loadData($request->getBody());
-            if ($login->validate() && $login->login())
-            {
-                $response->redirect('/manager/dashboard');
-                return '';
-            }
-        }
-        $this->layout='auth';
-        return $this->render('Manager\login');
-    }
+
 
     public function register(Request $request,Response $response ): string
     {
@@ -53,15 +42,19 @@ class managerController extends \Core\Controller
 
     public function dashboard(): string
     {
-        $manager=new Manager();
-        echo '<pre>';
-        print_r($manager::findOne(['id'=>'20','username'=>'sdfs']));
-        echo '</pre>';
-        exit();
-
-
-        print_r(Application::$app->getUser());
+        /* @var Manager $manager*/
+        $manager = Manager::findOne(['Officer_ID' => Application::$app->session->get('user')]);
+        $params=[
+            'firstName'=>$manager->getFirstName(),
+            'lastName'=>$manager->getLastName()
+        ];
         $this->layout='auth';
-        return $this->render('Manager\managerBoard');
+        return $this->render('Manager\managerBoard',$params);
     }
+
+    public function ManageMedicalOfficer(): string
+    {
+        return $this->render('Manager\mngMedicalOfficer');
+    }
+
 }

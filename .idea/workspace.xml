@@ -5,10 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c22c35a-6d79-48f0-8c26-a909a9c65859" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/model/Authentication/staffLogin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/users/nonStaffUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/components/ResponsiveComponent/CardGroup/CardGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/components/ResponsiveComponent/NavbarComponent/Navbar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/Card.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/components/WebComponent/Card/NavigationCard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/pages/Manager/loginCopy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/pages/Manager/mngMedicalOfficer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/components/card/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/components/navbar/navbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bePositiveLogin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/hidePass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/MedicalOfficer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/camp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/donor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/report.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/requests.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/manager/dashboard/sponsors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/showPass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/sign-out.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logimg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/card/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/components/navbar/navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/manager/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/navbar/navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/manager/board.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/manager/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/authController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/authController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/managerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/managerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/Authentication/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Authentication/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/database/dbModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/database/dbModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/users/Manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/users/Manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/users/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/users/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/layout/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/layout/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/layout/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/layout/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/pages/Manager/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/pages/Manager/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/pages/Manager/managerBoard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/pages/Manager/managerBoard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/pages/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/pages/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/loginCopy.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +70,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -96,7 +142,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary&quot;: &quot;PHPUnit&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/stdin/Project/Group Project/Blood-Donation-Management-System/public/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/stdin/Project/Group Project/Blood-Donation-Management-System/public/images/icons&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -115,18 +161,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images\icons" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images\icons\manager\dashboard" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images\icons\manager" />
       <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\app\view\components\Card" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\assets\images" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\styles" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\config\migrations" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\vendor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\test" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\app\view\pages\Admin" />
-      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\app\view\layout" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\css\components" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\images\icons" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\styles\manager" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System" />
+      <recent name="C:\Users\stdin\Project\Group Project\Blood-Donation-Management-System\public\styles" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.Run">
@@ -154,6 +200,13 @@
       </CommandLine>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="PHP Script.Run" />
+      <item itemvalue="PHPUnit.AuthenticationEmailTest" />
+      <item itemvalue="PHPUnit.BaseEmailTest" />
+      <item itemvalue="PHPUnit.BaseEmailTest.testSend" />
+      <item itemvalue="PHPUnit.BaseEmailTest.testSendWithArray" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="PHPUnit.AuthenticationEmailTest" />
@@ -212,7 +265,14 @@
       <workItem from="1668364899460" duration="1472000" />
       <workItem from="1668399999559" duration="3651000" />
       <workItem from="1668405019241" duration="6749000" />
-      <workItem from="1668415352389" duration="3657000" />
+      <workItem from="1668415352389" duration="12902000" />
+      <workItem from="1668446129316" duration="1120000" />
+      <workItem from="1668497379829" duration="40417000" />
+      <workItem from="1668584155133" duration="361000" />
+      <workItem from="1668584605108" duration="5908000" />
+      <workItem from="1668591382049" duration="2454000" />
+      <workItem from="1668604571001" duration="19495000" />
+      <workItem from="1668662022929" duration="10123000" />
     </task>
     <task id="LOCAL-00001" summary="Added Middlewares">
       <created>1668051492690</created>

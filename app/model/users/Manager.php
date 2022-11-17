@@ -2,50 +2,138 @@
 
 namespace App\model\users;
 
-class Manager extends Person
+use App\model\database\dbModel;
+
+class Manager extends dbModel
 {
-    protected string $branchId='';
-    protected string $position='';
+
+    private string $Officer_ID='';
+    private string $First_Name='';
+    private string $Last_Name='';
+    private string $NIC='';
+    private string $Branch_ID='';
+    private string $Address1='';
+    private string $Address2='';
+    private string $City='';
+    private string $Contact_No='';
+
+    /**
+     * @return string
+     */
+    public function getOfficerID(): string
+    {
+        return $this->Officer_ID;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstName(): string
+    {
+        return $this->First_Name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName(): string
+    {
+        return $this->Last_Name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNIC(): string
+    {
+        return $this->NIC;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBranchID(): string
+    {
+        return $this->Branch_ID;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress1(): string
+    {
+        return $this->Address1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress2(): string
+    {
+        return $this->Address2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity(): string
+    {
+        return $this->City;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContactNo(): string
+    {
+        return $this->Contact_No;
+    }
+
+
+
 
     public function rules(): array
     {
         return [
-            'username' => [self::RULE_REQUIRED],
-            'firstname' => [self::RULE_REQUIRED],
-            'lastname' => [self::RULE_REQUIRED],
-            'email' => [self::RULE_REQUIRED, self::RULE_EMAIL, [self::RULE_UNIQUE, 'class' => self::class]],
-            'NIC' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class' => self::class]],
-            'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 3], [self::RULE_MAX, 'max' => 24]],
-            'address1' => [self::RULE_REQUIRED],
-            'address2' => [self::RULE_REQUIRED],
-            'city' => [self::RULE_REQUIRED],
-            'postalCode' => [self::RULE_REQUIRED],
-//            'userImage' => [self::RULE_REQUIRED],
-//            'userType' => [self::RULE_REQUIRED],
-//            'status' => [self::RULE_REQUIRED],
-//            'branchId' => [self::RULE_REQUIRED],
-//            'position' => [self::RULE_REQUIRED],
+            'First_Name' => [self::RULE_REQUIRED],
+            'Last_Name' => [self::RULE_REQUIRED],
+            'NIC' => [self::RULE_REQUIRED],
+            'Contact_No' => [self::RULE_REQUIRED],
+            'Address1' => [self::RULE_REQUIRED],
+            'Address2' => [self::RULE_REQUIRED],
+            'City' => [self::RULE_REQUIRED],
+            'Officer_ID' => [self::RULE_REQUIRED],
+            'Branch_ID' => [self::RULE_REQUIRED]
         ];
+    }
+
+    public static function getTableShort(): string
+    {
+        return 'bbm';
+    }
+
+    public static function tableName(): string
+    {
+        return 'blood_bank_manager';
+    }
+
+    public static function PrimaryKey(): string
+    {
+        return 'Officer_ID';
     }
 
     public function attributes(): array
     {
         return [
-            'username',
-            'firstname',
-            'lastname',
-            'email',
+            'First_Name',
+            'Last_Name',
             'NIC',
-            'password',
-            'address1',
-            'address2',
-            'city',
-            'postalCode',
-            'userImage',
-            'userType',
-            'status',
-            'branchId',
-            'position',
+            'Contact_No',
+            'Address1',
+            'Address2',
+            'City',
+            'Officer_ID',
+            'Branch_ID'
         ];
     }
 }

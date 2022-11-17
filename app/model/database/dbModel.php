@@ -7,7 +7,6 @@ use Core\Model;
 
 abstract class dbModel extends Model
 {
-    private string $id='4';
 
     abstract public static function getTableShort():string;
     abstract public static function tableName(): string;
@@ -20,11 +19,6 @@ abstract class dbModel extends Model
     /**
      * @param string $id
      */
-    
-    public function setId(string $id): void
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return string
@@ -114,17 +108,14 @@ abstract class dbModel extends Model
     }
     public function save()
     {
-        $tableName = $this->tableName();
-        $attributes= $this->attributes();
-
-        $nextID = $this->id;
-
+        $tableName = static::tableName();
+        $attributes=$this->attributes();
+        $nextID='';
         if($nextID=='')
         {
             $nextID=$this->getNextID($this->getLastId($tableName));
         }
-
-        $PK=$this->getPrimaryKey($this->tableName())[0];
+        $PK=$this->getPrimaryKey(static::tableName())[0];
         $params=array_map(fn($attr)=>":$attr",$attributes);
 
         $statement=self::prepare("INSERT INTO $tableName (".implode(',',$attributes).") VALUES (".implode(',',$params).")");
@@ -145,7 +136,7 @@ abstract class dbModel extends Model
 
     public function update($id): bool
     {
-        $tableName = $this->tableName();
+        $tableName = static::tableName();
         $attributes=$this->attributes();
         $params=array_map(fn($attr)=>":$attr",$attributes);
         $demo='UPDATE '.$tableName.' SET ';
@@ -162,7 +153,7 @@ abstract class dbModel extends Model
     }
     public static function findOne($where)
     {
-        $tableName=static::tableName();
+        $tableName= static::tableName();
         $attributes=array_keys($where);
 
         $sql=implode(" AND ",array_map(fn($attr)=>"$attr=:$attr",$attributes));
@@ -194,7 +185,7 @@ abstract class dbModel extends Model
     }
     public static function DeleteOne($where): bool
     {
-        $tableName=static::tableName();
+        $tableName= static::tableName();
         $attributes=array_keys($where);
         $sql=implode("AND",array_map(fn($attr)=>"$attr=:$attr",$attributes));
         $statement=self::prepare("DELETE FROM $tableName WHERE $sql");
