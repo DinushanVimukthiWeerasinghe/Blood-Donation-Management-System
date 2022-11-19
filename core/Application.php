@@ -60,7 +60,7 @@ class Application
         $this->session = new Session();
         $this->router = new Router($this->request, $this->response);
         $this->db = new Database($config['db']);
-        $this->email = new BaseEmail($config['email']);
+        //$this->email = new BaseEmail($config['email']);
 
         if(isset($_SESSION['user']))
         {

@@ -1,0 +1,72 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    font-family: Inter, serif;
+}
+
+h2, a , p{
+    text-align: center;
+}
+nav{
+    float: right;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+nav ul > *{
+    border: 2px solid #000000;
+
+}
+
+.box{
+    content: "";
+    background-color: #E25345;
+    Width : 60%;
+    height : 10%;
+    margin-left: 20%;
+}
+
+.center{
+    width: 25%;
+    margin: auto;
+}
+.center form{
+    display: flex;
+    flex-direction: column;
+}
+.center input{
+    /* Rectangle 29 */
+
+    box-sizing: border-box;
+
+    margin-top: 2%;
+
+    height: 40px;
+    width: 100%;
+
+    /*background: rgba(255, 255, 255, 0.4);*/
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+}
+
+
+.center input.login
+{
+    background-color: #E25345;
+}
+
+.center label{
+}
+
+@media screen and (max-width:800px) {
+    .center{
+        width: 65%;
+        margin: auto;
+    }
+    .box{
+        width: 100%;
+        margin: auto;
+    }
+}

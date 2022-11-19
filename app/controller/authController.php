@@ -4,7 +4,7 @@ namespace App\controller;
 
 use Core\Application;
 
-class AuthController extends \Core\Controller
+class authController extends \Core\Controller
 {
     public function logout()
     {

@@ -22,7 +22,7 @@ class ClickableCard
             <div class="card-header">
                 <h3 class="card-title">{$this->title}</h3>
             </div>
-          
+            <img src="{$this->image}" alt="{$this->img_alt}">
         </div>
         HTML;
     }
