@@ -44,6 +44,7 @@ $app->router->post('/admin/login', [adminController::class, 'login']);
 $app->router->get('/admin/register', [adminController::class, 'register']);
 $app->router->post('/admin/register', [adminController::class, 'register']);
 $app->router->post('/upload', [fileController::class, 'upload']);
+$app->router->get('/hospital', [hospitalController::class, 'hospital']);
 
 //Logout
 $app->router->get('/logout', [authController::class, 'logout']);
