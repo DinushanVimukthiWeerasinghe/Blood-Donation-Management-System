@@ -2,12 +2,20 @@
 
 namespace App\view\components\ResponsiveComponent\NavbarComponent;
 
+use App\model\users\Manager;
+use App\model\users\User;
+use Core\Application;
+use Core\SessionObject;
+
 class Navbar
 {
+    public const Authenticated=true;
+    public const NotAuthenticated=false;
     private array $links;
     private string $profileLinks;
     private string $profileImage;
     private string $profileName;
+    private bool $AuthNavBar;
 
     /**
      * @param array $links
@@ -15,12 +23,13 @@ class Navbar
      * @param string $profileImage
      * @param string $profileName
      */
-    public function __construct(array $links, string $profileLinks, string $profileImage, string $profileName)
+    public function __construct(array $links, string $profileLinks, string $profileImage,bool $auth=false, string $profileName='')
     {
         $this->links = $links;
         $this->profileLinks = $profileLinks;
         $this->profileImage = $profileImage;
         $this->profileName = $profileName;
+        $this->AuthNavBar= $auth;
     }
 
     private function getLinks(): string
@@ -32,6 +41,30 @@ class Navbar
             HTML;
         }
         return $links;
+    }
+
+    private function getProfile()
+    {
+        if ($this->AuthNavBar)
+        {
+        $user_role=Application::$app->getUser()->getTypeId();
+        $id=Application::$app->getUser()->getUid();
+        $profileName='';
+        if ($user_role==='manager')
+        {
+            $manager= Manager::findOne(['Officer_ID'=>$id]);
+            $profileName=$manager->getFirstName().' '.$manager->getLastName();
+        }
+            return <<<HTML
+                <div class="profile">
+                        <div class="logout" onclick="Logout()"><img src="/public/images/icons/sign-out.png" alt=""> </div>
+                        <div class="navProfile"><img class="profile-icon" src="/public/images/icons/user.png" alt=""></div>
+                        <div class="navProfileName"><span>$profileName</span></div>
+                </div>
+            HTML;
+        }else{
+            return '<div></div>';
+        }
     }
 
     public static function getNavbarCSS(): string
@@ -60,16 +93,13 @@ class Navbar
                             
                             <div class="navProfile"><img class="profile-icon" src="/public/images/icons/user.png" alt=""></div>
                             <div class="navProfileName"><span>$this->profileName</span></div>
-                            <div class="logout">Sign Out</div>
+                            <div class="logout" onclick="Logout()">Sign Out</div>
                         </div>
                         {$this->getLinks()}
                     </ul>
-                    <div class="profile">
-                        <div class="logout" onclick="Logout()"><img src="/public/images/icons/sign-out.png" alt=""> </div>
-                        <div class="navProfile"><img class="profile-icon" src="/public/images/icons/user.png" alt=""></div>
-                        <div class="navProfileName"><span>$this->profileName</span></div>
-                    </div>
+                  
                     
+                    {$this->getProfile()}
                     <!-- nav Button -->
                     <div class="navBtn ">
                         <div class="line1"></div>

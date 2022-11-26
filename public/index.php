@@ -62,5 +62,12 @@ $app->router->get('/manager/dashboard', [managerController::class, 'dashboard'])
 
 $app->router->get('/manager/mngMedicalOfficer', [managerController::class, 'ManageMedicalOfficer']);
 
+$app->router->get('/manager/mngMedicalOfficer/add', [managerController::class, 'AddMedicalOfficer']);
+$app->router->post('/manager/mngMedicalOfficer/add', [managerController::class, 'AddMedicalOfficer']);
+
+//View Medical Officer
+$app->router->get('/manager/mngMedicalOfficer/view', [managerController::class, 'ViewMedicalOfficer']);
+$app->router->post('/manager/mngMedicalOfficer/view', [managerController::class, 'ViewMedicalOfficer']);
+
 //print_r($_SESSION);
 $app->run();

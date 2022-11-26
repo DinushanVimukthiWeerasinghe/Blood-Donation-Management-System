@@ -82,4 +82,9 @@ class User extends dbModel
             'type_id'
         ];
     }
+
+    public function labels(): array
+    {
+        return [];
+    }
 }

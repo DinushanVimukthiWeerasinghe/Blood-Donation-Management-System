@@ -136,4 +136,19 @@ class Manager extends dbModel
             'Branch_ID'
         ];
     }
+
+    public function labels(): array
+    {
+        return [
+            'First_Name' => 'First Name',
+            'Last_Name' => 'Last Name',
+            'NIC' => 'NIC',
+            'Contact_No' => 'Contact No',
+            'Address1' => 'Address1',
+            'Address2' => 'Address2',
+            'City' => 'City',
+            'Officer_ID' => 'Officer ID',
+            'Branch_ID' => 'Branch ID'
+        ];
+    }
 }

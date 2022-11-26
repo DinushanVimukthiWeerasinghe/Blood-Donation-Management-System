@@ -12,6 +12,35 @@ class Response
         header('Location: ' . $url);
     }
 
+    public function getContentType(string $path): string
+    {
+        $ext = pathinfo($path, PATHINFO_EXTENSION);
+        switch ($ext) {
+            case 'jpg':
+            case 'jpeg':
+                return 'image/jpeg';
+            case 'png':
+                return 'image/png';
+            case 'gif':
+                return 'image/gif';
+            case 'css':
+                return 'text/css';
+            case 'js':
+                return 'text/javascript';
+            case 'json':
+                return 'application/json';
+            case 'xml':
+                return 'application/xml';
+            case 'html':
+                return 'text/html';
+            case 'txt':
+                return 'text/plain';
+            default:
+                return 'application/octet-stream';
+        }
+
+    }
+
     public function sendFile(string $string): bool|int
     {
         return readfile($string);

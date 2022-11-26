@@ -10,9 +10,6 @@ class Request
             return $path = substr($path, 0, $position);
         }
         return $path;
-
-
-
     }
 
     public function method()

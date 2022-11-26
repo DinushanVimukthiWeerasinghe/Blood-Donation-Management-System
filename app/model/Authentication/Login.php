@@ -31,7 +31,7 @@ class Login extends Model
     public function labels():array
     {
         return[
-            'email' => 'Your Email',
+            'email' => 'Email',
             'password' => 'Password'
         ];
     }

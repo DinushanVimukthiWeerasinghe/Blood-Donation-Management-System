@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="/public/styles/manager/login.css" xmlns="http://www.w3.org/1999/html">
 <?php
+
 /**
  * @var Login $model
  */
 
 use App\model\Authentication\Login;
-?>
 ?>
 <div class="login-form">
     <div class="outer-form">

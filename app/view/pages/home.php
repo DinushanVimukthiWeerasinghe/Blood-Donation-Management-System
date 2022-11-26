@@ -68,10 +68,10 @@ $e=new DetailCard("Card", "Lorem ipsum dolor sit amet, consectetur adipisicing e
             </div>
         </div>
 
-        <div class="btn-panel">
-            <?php echo $Login_Button->render();?>
-            <?php echo $Register_Button->render();?>
-        </div>
+<!--        <div class="btn-panel">-->
+<!--            --><?php //echo $Login_Button->render();?>
+<!--            --><?php //echo $Register_Button->render();?>
+<!--        </div>-->
         <div class="btn-panel-sm">
             <?php echo $Login_Button_sm->render();?>
             <?php echo $Register_Button_sm->render();?>
@@ -126,7 +126,6 @@ $e=new DetailCard("Card", "Lorem ipsum dolor sit amet, consectetur adipisicing e
         echo $s1->render();
         echo $s2->render();
         echo $s4->render();
-        //    echo $s->render();
 
         ?>
     </div>

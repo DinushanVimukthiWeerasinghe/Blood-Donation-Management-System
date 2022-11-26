@@ -47,7 +47,7 @@ class authController extends \Core\Controller
                 return '';
             }
         }
-        $this->layout='auth';
+        $this->layout='NonAuth';
         return $this->render('Manager\login',['model'=>$login]);
     }
 

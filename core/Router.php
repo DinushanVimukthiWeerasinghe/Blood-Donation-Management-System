@@ -44,6 +44,11 @@ class Router
             $this->response->setContentType('text/javascript');
             $this->response->setContentLength(filesize(Application::$ROOT_DIR.$path));
             return $this->response->sendFile(Application::$ROOT_DIR.$path);
+        }else if(str_contains($path, '/public/upload/')){
+            $this->response->setStatusCode(200);
+            $this->response->setContentType($this->response->getContentType(Application::$ROOT_DIR.$path));
+            $this->response->setContentLength(filesize(Application::$ROOT_DIR.$path));
+            return $this->response->sendFile(Application::$ROOT_DIR.$path);
         }
 
 

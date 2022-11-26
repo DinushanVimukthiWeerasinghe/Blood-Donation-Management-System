@@ -27,12 +27,12 @@ class File
         $this->file=$string;
     }
 
-    public function saveFile(): void
+    public function saveFile(): string
     {
         if($this->error===0){
             move_uploaded_file($this->tmp_name,$this->path);
+            return $this->path;
         }
-
     }
 
     public function deleteFile(): void
@@ -42,9 +42,9 @@ class File
         }
     }
 
-    public function getFileName()
+    public function getFileName(): string
     {
-        return $this->name;
+        return '/public/upload/'.$this->name;
     }
 
     public function getFileType()
@@ -65,5 +65,14 @@ class File
     public function getFileSize()
     {
         return $this->size;
+    }
+
+    public function cropFile(int $int, int $int1): void
+    {
+        $im=move_uploaded_file($this->tmp_name,$this->path);
+        $image = imagecreatefromjpeg($this->path);
+        $size = min(imagesx($image), imagesy($image));
+        $im2 = imagecrop($image, ['x' => 0, 'y' => 0, 'width' => 250, 'height' => 150]);
+
     }
 }

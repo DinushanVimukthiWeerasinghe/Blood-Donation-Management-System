@@ -9,6 +9,8 @@ abstract class Model
     public const RULE_MAX = 'max';
     public const RULE_UNIQUE = 'uniq';
     public const RULE_MATCH = 'match';
+    abstract public function labels():array;
+
     public function loadData($data)
     {
         foreach ($data as $key => $value) {
@@ -19,32 +21,37 @@ abstract class Model
 
     }
 
+    public function getFile($file='file'): File
+    {
+        return new File($_FILES[$file]);
+    }
+
     abstract public function rules():array;
     public array $errors = [];
 
-    public function labels():array
-    {
-        return [];
-    }
+
 
     public function getLabel($attribute)
     {
         return $this->labels()[$attribute] ?? $attribute;
     }
-    public function validate(): bool
+    public function validate($update=false): bool
     {
         foreach ($this->rules() as $attribute=>$rules)
         {
+
             $value=$this->{$attribute};
             foreach ($rules as $rule)
             {
+
                 $rulename=$rule;
                 if(!is_string($rulename)){
                     $rulename=$rule[0];
                 }
                 if($rulename===self::RULE_REQUIRED && empty($value))
                 {
-                    $this->addErrorRule($attribute, self::RULE_REQUIRED);
+
+                    $this->addErrorRule($attribute, self::RULE_REQUIRED,['field'=>$this->getLabel($attribute)]);
                 }
                 if($rulename===self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL))
                 {
@@ -62,12 +69,12 @@ abstract class Model
                 {
                     $this->addErrorRule($attribute, self::RULE_NUMERIC);
                 }
-                if($rulename===self::RULE_UNIQUE)
+                if(!$update && $rulename===self::RULE_UNIQUE)
                 {
-                    $className=$rule['class'];
+                    //Get Class Name
+                    $className=get_class($this);
                     $uniqueAttr=$rule['attribute'] ?? $attribute;
                     $tableName=$className::tableName();
-                    //TODO We have to BIND the value to the query
                     $sql="SELECT * FROM $tableName WHERE $uniqueAttr=:attr";
                     $statement=Application::$app->db->prepare($sql);
                     $statement->bindValue(':attr',$value);
@@ -113,14 +120,15 @@ abstract class Model
     public function errorMessages(): array
     {
         return [
-            self::RULE_REQUIRED=>'This field is required',
-            self::RULE_EMAIL=>'This field must be a valid email',
-            self::RULE_MIN=>'This field must be at least {min} characters long',
-            self::RULE_MAX=>'This field must be at most {max} characters long',
-            self::RULE_MATCH=>'This field must same as {match}',
-            self::RULE_UNIQUE=>'Record with this {field} already exist',
-            self::RULE_NUMERIC=>'This field must be numeric',
+            self::RULE_REQUIRED=>'{field} is required',
+            self::RULE_EMAIL=>'Enter a valid email',
+            self::RULE_MIN=>'This {field} must be at least {min} characters long',
+            self::RULE_MAX=>'This {field} must be at most {max} characters long',
+            self::RULE_MATCH=>'This {field} must same as {match}',
+            self::RULE_UNIQUE=>'This {field} already exist',
+            self::RULE_NUMERIC=>'This {field} must be numeric',
         ];
 
     }
+
 }
