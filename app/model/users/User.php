@@ -8,7 +8,7 @@ class User extends \App\model\database\dbModel
     protected string $password='';
     protected string $firstname='';
     protected string $lastname='';
-    protected string $role='';
+    protected string $role='0';
     public function rules(): array
     {
         return [
@@ -61,9 +61,11 @@ class User extends \App\model\database\dbModel
     public function attributes(): array
     {
         return [
+            'id',
             'email',
             'password',
             'firstname',
+            'lastname',
             'role',
         ];
     }
@@ -71,5 +73,8 @@ class User extends \App\model\database\dbModel
     public function getFirstName(): string
     {
         return $this->firstname;
+    }
+    public function setPassword(string $rawPassword): void{
+        $this->password = password_hash($rawPassword, PASSWORD_DEFAULT);
     }
 }

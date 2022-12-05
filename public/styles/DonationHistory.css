@@ -1,0 +1,54 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.home{
+    float: right;
+}
+
+.title-container{
+    width: max-content;
+    margin: auto;
+    background-color: #E25345;
+}
+
+.top-row{
+    font-size: 20px;
+    width: 80%;
+    margin: auto;
+    background-color: #FAE3E3;
+}
+
+.top-row .card-view{
+    float: right;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 10px auto 5rem auto;
+    background-color: #FAE3E3;
+    padding: 1% 5% 1% 5%;
+}
+
+.card-container .card{
+    padding: 10px;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    margin: 10px auto 10px auto;
+    background-color: white;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+.footerBar{
+    background-color: #A4152D;
+    height: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}

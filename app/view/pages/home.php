@@ -13,7 +13,7 @@ $camp_Image='/public/images/campaign.png';
 $image_card=new \App\view\components\Card\ImageCard("Image Card", "$donation_Image");
 $Image=new \App\view\components\Image\GeneralImage("/public/images/logo.png", "Home Image", "logo","250rem");
 $Login_Button= new App\view\components\Button\PrimaryButton("Login", "/donor/login", "btn-primary mx-1");
-$Register_Button= new App\view\components\Button\PrimaryButton("Register", "/login", "btn-red mx-1");
+$Register_Button= new App\view\components\Button\PrimaryButton("Register", "/donor/signup", "btn-red mx-1");
 //$s= new \App\view\components\Card\CounterCard("Click Me", "100");
 $s1= new \App\view\components\Card\CounterCard(['primary'=>"15,000+",'secondary'=>"Donors"], "100", $donation_Image);
 $s2= new \App\view\components\Card\CounterCard(['primary'=>"1,000+",'secondary'=>"Organization"], "100", $organization_Image);

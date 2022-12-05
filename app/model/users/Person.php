@@ -17,8 +17,8 @@ abstract class Person extends dbModel
     protected string $address2='';
     protected string $city='';
     protected string $userImage='';
-    protected string $userType='';
-    protected string $status='';
+    protected string $userType='Donor';
+    protected string $status='1';
     protected ?File $file;
     protected string $imageURL='';
 //    Logging History Array

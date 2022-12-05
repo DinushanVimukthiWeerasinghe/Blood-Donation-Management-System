@@ -12,18 +12,18 @@ class Donor extends Person
     {
         return [
             'Donor_ID' =>[self::RULE_REQUIRED],
-            'username' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class' => self::class]],
+            //'username' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class' => self::class]],
             'firstname' => [self::RULE_REQUIRED],
             'lastname' => [self::RULE_REQUIRED],
             'email' => [self::RULE_REQUIRED, self::RULE_EMAIL, [self::RULE_UNIQUE, 'class' => self::class]],
             'NIC' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class' => self::class]],
-            'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 8], [self::RULE_MAX, 'max' => 24]],
+            //'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 8], [self::RULE_MAX, 'max' => 24]],
             'address1' => [self::RULE_REQUIRED],
             'address2' => [self::RULE_REQUIRED],
             'city' => [self::RULE_REQUIRED],
             'postalCode' => [self::RULE_REQUIRED],
-            'userImage' => [self::RULE_REQUIRED],
-            'userType' => [self::RULE_REQUIRED],
+            //'userImage' => [self::RULE_REQUIRED],
+            //'userType' => [self::RULE_REQUIRED],
             'status' => [self::RULE_REQUIRED],
         ];
     }
@@ -31,18 +31,19 @@ class Donor extends Person
     public function attributes(): array
     {
         return [
-            'username',
+//            'username',
+            'Donor_ID',
             'firstname',
             'lastname',
             'email',
             'NIC',
-            'password',
+//            'password',
             'address1',
             'address2',
             'city',
             'postalCode',
             'userImage',
-            'userType',
+//            'userType',
             'status',
             'contactNumber',
         ];
@@ -62,12 +63,22 @@ class Donor extends Person
             'contactNumber' => $this->contactNumber,
             ];
     }
-
+    public function isNotRegistered():bool {
+        return $this->Donor_ID === null;
+    }
     public static function tableName(): string{
         return 'Donor';
     }
     public static function PrimaryKey(): string{
         return 'Donor_ID';
+    }
+    public function setDonorId(string $primary){
+        $this->Donor_ID = $primary;
+    }
+
+    public function getId()
+    {
+        return $this->Donor_ID;
     }
 
 }

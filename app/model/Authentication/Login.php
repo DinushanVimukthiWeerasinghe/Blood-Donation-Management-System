@@ -46,8 +46,9 @@ class Login extends Model
 //            $this->addError('password','Incorrect Password!');
 //            return false;
 //        }
-        if ($this->password != $user->getPassword())
+        if (!password_verify($this->password,$user->getPassword()))
         {
+            //$this->password != $user->getPassword())
             $this->addError('password','Incorrect Password!');
             return false;
         }

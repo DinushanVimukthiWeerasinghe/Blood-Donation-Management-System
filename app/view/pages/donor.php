@@ -63,9 +63,16 @@ $c3 = new App\view\components\Card\ClickableCard("Nearby Donations", $nearby_Don
 <br>
 <div class="home-body">
     <div class="card-grp g-flex g-flex-wrap">
+        <a href="/donor/guideline"> <?php
+            echo $c1->render();
+            ?>
+        </a>
+        <a href="/donor/history"> <?php
+            echo $c2->render();
+            ?>
+        </a>
+
         <?php
-        echo $c1->render();
-        echo $c2->render();
         echo $c3->render();
 //        echo $s2->render();
 //        echo $s4->render();

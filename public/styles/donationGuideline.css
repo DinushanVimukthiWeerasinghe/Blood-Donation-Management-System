@@ -1,0 +1,31 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body{
+    font-size: large;
+    font-family: Ubuntu Thin, serif;
+}
+
+h1{
+    color: white;
+    width: max-content;
+    margin: auto;
+    text-align: center;
+    background-color: #A4152D;
+}
+
+.container{
+    margin: auto;
+    width: 80%;
+    padding-bottom: 5rem;
+}
+
+.footerBar{
+    background-color: #A4152D;
+    height: 5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
