@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Dec 15, 2022 at 01:38 PM
+-- Generation Time: Dec 15, 2022 at 06:23 PM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -209,15 +209,10 @@ CREATE TABLE `Emergency_Request` (
 --
 
 INSERT INTO `Emergency_Request` (`Request_Id`, `Officer_ID`, `bloodType`, `Remark`) VALUES
-('11', 'HP001', 'B+', 'Urgent'),
-('136', 'HP001', 'A-', 'hgdj'),
-('193', 'HP001', 'A+', 'hb'),
-('242', 'HP001', 'A+', 'saD'),
-('383', 'HP001', 'B-', 'Urgent'),
-('4', 'HP001', 'A+', 'ngv'),
-('468', 'HP001', 'A+', 'af'),
-('526', 'HP001', 'B-', 'tyfsgxzv'),
-('599', 'HP001', 'AB-', 'HIV');
+('4', 'HP001', 'O+', 'Urgent'),
+('600', 'HP001', 'AB+', 'Very Urgent'),
+('765', 'HP001', 'B-', 'Not that urgent. HIV patient'),
+('891', 'HP001', 'B+', 'Need With in a week');
 
 -- --------------------------------------------------------
 
