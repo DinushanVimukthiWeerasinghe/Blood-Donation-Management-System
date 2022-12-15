@@ -37,19 +37,14 @@ class Login extends dbModel
         $user= User::findOne(['email' => $this->email]);
         if(!$user)
         {
-            $this->addError('email','Invalid Account EMAIL!');
+            $this->addError('email','User does not exist with this email');
             return false;
         }
         if(!password_verify($this->password,$user->getPassword()))
         {
-            $this->addError('password','Incorrect Password!');
+            $this->addError('password','Password is incorrect');
             return false;
         }
-//        if ($this->password != $user->getPassword())
-//        {
-//            $this->addError('password','Incorrect Password!');
-//            return false;
-//        }
         Application::$app->login($user);
         return true;
     }

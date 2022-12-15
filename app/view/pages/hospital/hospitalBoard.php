@@ -9,7 +9,7 @@
         <h1>Hospital Dashboard</h1>
     </div>
     <div class="logout">
-        <a class="Button" href="/logout">Logout</a>
+        <a class="Button" id="logout" onclick="logout()" href="/logout">Logout</a>
     </div>
     <div class="container" id="Add" onclick="Redirect('/hospital/createEmergency')">
         <div class="image-container">

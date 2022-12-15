@@ -20,6 +20,7 @@ body {
     font-family: Poppins, serif;
 }
 .card-header{
+    margin-top: 5%;
     position: absolute;
     top: 0;
     z-index: 1;
@@ -57,7 +58,7 @@ body {
     align-items: center;
     flex-direction: column;
     width: 14vw;
-    height: 33vh;
+    height: auto;
     overflow: hidden;
     /*background: #fff;*/
     border-radius: 5px;
@@ -94,7 +95,7 @@ body {
 .meta-container .title {
     padding: 0;
     margin: 10px 0;
-    font-size: 22px;
+    font-size: 15px;
     color: #0076b6;
     /*color: #fff;*/
 }

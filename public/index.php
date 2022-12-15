@@ -63,7 +63,11 @@ $app->router->get('/manager/dashboard', [managerController::class, 'dashboard'])
 
 //Hospital Login
 $app->router->get('/hospital/login', [hospitalController::class, 'login']);
+$app->router->get('/hospital/', [hospitalController::class, 'login']);
+$app->router->get('/hospital', [hospitalController::class, 'login']);
 $app->router->post('/hospital/login', [hospitalController::class, 'login']);
+$app->router->post('/hospital/', [hospitalController::class, 'login']);
+$app->router->post('/hospital', [hospitalController::class, 'login']);
 
 //Hospital Dashboard
 $app->router->get('/hospital/hospitalBoard', [hospitalController::class, 'dashboard']);

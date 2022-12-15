@@ -32,7 +32,8 @@ body {
 
 .logout:hover {
     background: linear-gradient(-125deg, #f27474 0%, #e52d27 60%);
-    padding-left: 15px;
+    transform: translateY(-6px);
+    box-shadow: 0 11px 14px rgb(0 0 0 / 25%), 0 8px 20px rgb(0 0 0 / 10%);
 }
 
 .logout{

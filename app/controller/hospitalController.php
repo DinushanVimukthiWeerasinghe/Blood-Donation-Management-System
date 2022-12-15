@@ -15,6 +15,7 @@ class hospitalController extends \Core\Controller
     public function __construct()
     {
         $this->layout='auth';
+        $this->registerMiddleware(new \Core\middleware\AuthenticationMiddleware(['register','login'],1));
     }
 
     public function register()
@@ -36,15 +37,10 @@ class hospitalController extends \Core\Controller
             if($login->validate() && $login->login())
             {
                 $response->redirect('/hospital/hospitalBoard');
-                return '';
             }
-            else
-            {
-                print_r($login);
-                exit();
-            }
+
         }
-        return $this->render('hospital/login');
+        return $this->render('hospital/login',['model' => $login]);
     }
 
     public function dashboard()
