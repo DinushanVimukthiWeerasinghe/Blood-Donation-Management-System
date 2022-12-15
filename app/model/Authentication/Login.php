@@ -52,11 +52,6 @@ class Login extends Model
             $this->addError('password','Incorrect Password!');
             return false;
         }
-//        if ($this->password != $user->getPassword())
-//        {
-//            $this->addError('password','Incorrect Password!');
-//            return false;
-//        }
         Application::$app->login($user);
         Application::$app->session->setFlash('success','Login Successful!');
         return true;
