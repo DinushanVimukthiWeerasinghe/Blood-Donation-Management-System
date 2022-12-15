@@ -1,9 +1,10 @@
 <?php
 
+use App\view\components\WebComponent\Image\GeneralImage;
 use Core\Application;
 
 $lorem="<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium et ex, impedit iure laudantium nulla quia quisquam quo tempora velit.</div>";
-$image=new \App\view\components\WebComponent\Image\GeneralImage("https://source.unsplash.com/user/c_v_r/200x200","alt","circle","100px");
+$image=new GeneralImage("https://source.unsplash.com/user/c_v_r/200x200","alt","circle","100px");
 $button=new \App\view\components\WebComponent\Button\PrimaryButton("Button","/manager","btn-primary");
 $button2=new \App\view\components\WebComponent\Button\SecondaryButton("Button2","/manager");
 $BtnGrp=new \App\view\components\WebComponent\ButtonGroup\GeneralButtonGroup([$button,$button2]);

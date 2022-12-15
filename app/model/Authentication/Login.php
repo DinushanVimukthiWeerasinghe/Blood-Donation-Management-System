@@ -2,12 +2,13 @@
 
 namespace App\model\Authentication;
 
+use App\model\database\dbModel;
 use App\model\users\Person;
 use App\model\users\User;
 use Core\Application;
 use Core\Model;
 
-class Login extends Model
+class Login extends dbModel
 {
     public string $email='';
     public string $password='';
@@ -33,24 +34,53 @@ class Login extends Model
 
     public function login(): bool
     {
-
         $user= User::findOne(['email' => $this->email]);
         if(!$user)
         {
             $this->addError('email','Invalid Account EMAIL!');
             return false;
         }
-//        if(!password_verify($this->password,$user->getPassword()))
-//        {
-//            $this->addError('password','Incorrect Password!');
-//            return false;
-//        }
-        if ($this->password != $user->getPassword())
+        if(!password_verify($this->password,$user->getPassword()))
         {
             $this->addError('password','Incorrect Password!');
             return false;
         }
+//        if ($this->password != $user->getPassword())
+//        {
+//            $this->addError('password','Incorrect Password!');
+//            return false;
+//        }
         Application::$app->login($user);
         return true;
+    }
+
+    public static function getTableShort(): string
+    {
+        // TODO: Implement getTableShort() method.
+        return 'login';
+    }
+
+    public static function tableName(): string
+    {
+        // TODO: Implement tableName() method.
+        return 'login';
+    }
+
+    public static function PrimaryKey(): string
+    {
+        // TODO: Implement PrimaryKey() method.
+        return 'uid';
+    }
+
+    public function attributes(): array
+    {
+        // TODO: Implement attributes() method.
+        return [
+            'uid',
+            'email',
+            'password',
+            'role',
+            'type_id'
+        ];
     }
 }

@@ -41,6 +41,7 @@ form * {
     border: none;
 }
 form h3 {
+    color: #FFFFFF;
     font-size: 40px;
     font-weight: 700;
     line-height: 42px;
@@ -69,9 +70,11 @@ input {
 }
 
 input:hover{
-    outline: 2px solid #0001;
+    outline: 2px solid #E25345;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
 }
-button {
+.button{
     position: absolute;
     margin-top: 50px;
     left: 50%;
@@ -86,7 +89,7 @@ button {
     font-weight: 600;
     cursor: pointer;
 }
-button:hover {
+.button:hover {
     background-color: #A4152D;
     color: #FFFFFF;
     transition: 0.5s;

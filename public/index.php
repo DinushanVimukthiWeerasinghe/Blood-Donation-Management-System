@@ -4,6 +4,7 @@ use App\controller\adminController;
 use App\controller\authController;
 use App\controller\donorController;
 use App\controller\fileController;
+use App\controller\hospitalController;
 use App\controller\managerController;
 use App\controller\siteController;
 use Core\Application;
@@ -59,6 +60,20 @@ $app->router->post('/manager/register', [managerController::class, 'register']);
 
 //Manager Dashboard
 $app->router->get('/manager/dashboard', [managerController::class, 'dashboard']);
+
+//Hospital Login
+$app->router->get('/hospital/login', [hospitalController::class, 'login']);
+$app->router->post('/hospital/login', [hospitalController::class, 'login']);
+
+//Hospital Dashboard
+$app->router->get('/hospital/hospitalBoard', [hospitalController::class, 'dashboard']);
+
+//Add Emergency Request
+$app->router->get('/hospital/createEmergency', [hospitalController::class, 'createEmergency']);
+$app->router->post('/hospital/createEmergency', [hospitalController::class, 'createEmergency']);
+
+//View Emergency Request
+$app->router->get('/hospital/viewEmergency', [hospitalController::class, 'viewEmergency']);
 
 //print_r($_SESSION);
 $app->run();

@@ -14,7 +14,7 @@ class SessionObject
     private $sessionStatus;
     private $sessionTimeOut;
 
-    public function __construct($sessionName,$data,$sessionTimeOut=60)
+    public function __construct($sessionName,$data,$sessionTimeOut=3600)
     {
         self::$sessionObject = $this;
         $this->sessionName = $sessionName;

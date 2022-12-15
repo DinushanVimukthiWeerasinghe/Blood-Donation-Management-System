@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');*/
 *{
     margin: 0;
     padding: 0;
@@ -116,12 +116,17 @@ form .button input{
     font-weight: 500;
     letter-spacing: 2px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+    display: block;
 }
+
 form .button input:hover{
-    /* transform: scale(0.99); */
-    background: linear-gradient(-90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
 }
 @media(max-width: 584px){
     .container{

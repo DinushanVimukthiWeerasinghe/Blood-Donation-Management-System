@@ -28,10 +28,10 @@ class authController extends \Core\Controller
     {
         if (Application::$app->isGuest())
         {
-            Application::$app->response->redirect('/');
+            Application::$app->response->redirect('/hospital/login');
         }else{
             Application::$app->logout();
-            Application::$app->response->redirect('/');
+            Application::$app->response->redirect('/hospital/login');
         }
     }
     public function managerLogin(Request $request, Response $response): string
@@ -48,7 +48,7 @@ class authController extends \Core\Controller
             }
         }
         $this->layout='auth';
-        return $this->render('Manager\login');
+        return $this->render('Manager/login');
     }
 
 }

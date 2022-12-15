@@ -43,8 +43,8 @@ class managerController extends \Core\Controller
     public function dashboard(): string
     {
         $manager=new Manager();
-//        print_r(Application::$app->getUser());
+//        print_r(Application::$app->getUser()m;
         $this->layout='auth';
-        return $this->render('Manager\managerBoard');
+        return $this->render('Manager/managerBoard');
     }
 }

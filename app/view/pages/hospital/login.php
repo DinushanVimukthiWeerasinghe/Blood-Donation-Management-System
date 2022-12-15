@@ -1,16 +1,13 @@
-<?php
-?>
-
 <link rel="stylesheet" href="/public/styles/hospital/login.css">
 <img src="/public/images/hospital/Cover-RGB-01.png" alt="Logo" class="logo">
-<form>
+<form action="/hospital/login" method="post">
     <h3>Login</h3>
 
     <label for="username">Username</label>
-    <input type="text" placeholder="User Name" id="username">
+    <input type="email" placeholder="Email" id="email" name="email" required>
 
     <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="password">
+    <input type="password" placeholder="Password" id="password" name="password" required>
 
-    <button>Log In</button>
+    <input type="submit" value="Log In" class="button">
 </form>

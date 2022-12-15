@@ -4,11 +4,19 @@ namespace App\model\users;
 
 class User extends \App\model\database\dbModel
 {
-    protected string $email='';
-    protected string $password='';
-    protected string $firstname='';
-    protected string $lastname='';
-    protected string $role='';
+    public string $email='';
+    public string $password='';
+    public string $type_id='';
+    public string $uid='';
+
+    /**
+     * @return string
+     */
+    public function getUid(): string
+    {
+        return $this->uid;
+    }
+    public string $role='';
     public function rules(): array
     {
         return [
@@ -50,20 +58,21 @@ class User extends \App\model\database\dbModel
 
     public static function tableName(): string
     {
-        return 'users';
+        return 'staff_credential';
     }
 
     public static function PrimaryKey(): string
     {
-        return 'id';
+        return 'uid';
     }
 
     public function attributes(): array
     {
         return [
+            'uid',
             'email',
             'password',
-            'firstname',
+            'type_id',
             'role',
         ];
     }
