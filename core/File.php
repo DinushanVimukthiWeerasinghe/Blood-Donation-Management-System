@@ -4,14 +4,14 @@ namespace Core;
 
 class File
 {
-    public $name;
-    public $type;
-    public $tmp_name;
-    public $error;
-    public $size;
-    public $extension;
-    public $path;
-    public $file;
+    public $name='';
+    public $type='';
+    private $tmp_name='';
+    public $error=[];
+    public $size=0;
+    public $extension='';
+    public $path='';
+    public $file='';
 
     /**
      * @param mixed $string
@@ -22,17 +22,25 @@ class File
         $this->tmp_name=$string['tmp_name'];
         $this->error=$string['error'];
         $this->size=$string['size'];
+        $this->path=Application::$ROOT_DIR.'/public/upload/';
         $this->extension=pathinfo($this->name,PATHINFO_EXTENSION);
-        $this->path=Application::$ROOT_DIR.'/public/upload/'.$this->name;
         $this->file=$string;
     }
 
-    public function saveFile(): void
+    public function GenerateFileName(string $prefix=''): string
     {
-        if($this->error===0){
-            move_uploaded_file($this->tmp_name,$this->path);
-        }
+        $this->name= $prefix.uniqid().'.'.$this->extension;
+        return '/public/upload/'.$this->name;
+    }
 
+    public function saveFile(): bool
+    {
+            $filePath=$this->path.$this->name;
+            if(move_uploaded_file($this->tmp_name,$filePath)){
+
+                return true;
+            }
+            return false;
     }
 
     public function deleteFile(): void
@@ -42,9 +50,9 @@ class File
         }
     }
 
-    public function getFileName()
+    public function getFileName(): string
     {
-        return $this->name;
+        return '/public/upload/'.$this->name;
     }
 
     public function getFileType()
@@ -65,5 +73,24 @@ class File
     public function getFileSize()
     {
         return $this->size;
+    }
+
+    public function cropFile(int $int, int $int1): void
+    {
+        $im=move_uploaded_file($this->tmp_name,$this->path);
+        $image = imagecreatefromjpeg($this->path);
+        $size = min(imagesx($image), imagesy($image));
+        $im2 = imagecrop($image, ['x' => 0, 'y' => 0, 'width' => 250, 'height' => 150]);
+
+    }
+
+    public function setFileName(string $fileName)
+    {
+        $this->name=$fileName;
+    }
+
+    public function getExtension()
+    {
+        return $this->extension;
     }
 }

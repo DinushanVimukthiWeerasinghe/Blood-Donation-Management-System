@@ -4,18 +4,19 @@ class Controller
 {
     public string $action='';
     public string $layout = 'main';
-    protected array $middlewares = [];
+    private array $middlewares = [];
     public function setLayout($layout)
     {
         $this->layout = $layout;
     }
 
-    public static function render($view,$params = [],$subf='')
+    public static function render($view,$params = []): string
     {
-        return Application::$app->view->renderView($view,$params,$subf);
+        return Application::$app->view->renderView($view,$params);
     }
 
-    public function registerMiddleware(Middleware $middleware): void
+
+    public function registerMiddleware(BaseMiddleware $middleware): void
     {
         $this->middlewares[]=$middleware;
 

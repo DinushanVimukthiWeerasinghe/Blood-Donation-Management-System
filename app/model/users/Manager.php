@@ -2,50 +2,69 @@
 
 namespace App\model\users;
 
+use App\model\database\dbModel;
+
 class Manager extends Person
 {
-    protected string $branchId='';
-    protected string $position='';
+
 
     public function rules(): array
     {
         return [
-            'username' => [self::RULE_REQUIRED],
-            'firstname' => [self::RULE_REQUIRED],
-            'lastname' => [self::RULE_REQUIRED],
-            'email' => [self::RULE_REQUIRED, self::RULE_EMAIL, [self::RULE_UNIQUE, 'class' => self::class]],
-            'NIC' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class' => self::class]],
-            'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 3], [self::RULE_MAX, 'max' => 24]],
-            'address1' => [self::RULE_REQUIRED],
-            'address2' => [self::RULE_REQUIRED],
-            'city' => [self::RULE_REQUIRED],
-            'postalCode' => [self::RULE_REQUIRED],
-//            'userImage' => [self::RULE_REQUIRED],
-//            'userType' => [self::RULE_REQUIRED],
-//            'status' => [self::RULE_REQUIRED],
-//            'branchId' => [self::RULE_REQUIRED],
-//            'position' => [self::RULE_REQUIRED],
+            'First_Name' => [self::RULE_REQUIRED],
+            'Last_Name' => [self::RULE_REQUIRED],
+            'NIC' => [self::RULE_REQUIRED],
+            'Contact_No' => [self::RULE_REQUIRED],
+            'Address1' => [self::RULE_REQUIRED],
+            'Address2' => [self::RULE_REQUIRED],
+            'City' => [self::RULE_REQUIRED],
+            'Officer_ID' => [self::RULE_REQUIRED],
+            'Branch_ID' => [self::RULE_REQUIRED]
         ];
+    }
+
+    public static function getTableShort(): string
+    {
+        return 'bbm';
+    }
+
+    public static function tableName(): string
+    {
+        return 'blood_bank_manager';
+    }
+
+    public static function PrimaryKey(): string
+    {
+        return 'Officer_ID';
     }
 
     public function attributes(): array
     {
         return [
-            'username',
-            'firstname',
-            'lastname',
-            'email',
+            'First_Name',
+            'Last_Name',
             'NIC',
-            'password',
-            'address1',
-            'address2',
-            'city',
-            'postalCode',
-            'userImage',
-            'userType',
-            'status',
-            'branchId',
-            'position',
+            'Contact_No',
+            'Address1',
+            'Address2',
+            'City',
+            'Officer_ID',
+            'Branch_ID'
+        ];
+    }
+
+    public function labels(): array
+    {
+        return [
+            'First_Name' => 'First Name',
+            'Last_Name' => 'Last Name',
+            'NIC' => 'NIC',
+            'Contact_No' => 'Contact No',
+            'Address1' => 'Address1',
+            'Address2' => 'Address2',
+            'City' => 'City',
+            'Officer_ID' => 'Officer ID',
+            'Branch_ID' => 'Branch ID'
         ];
     }
 }

@@ -4,19 +4,37 @@ namespace App\controller;
 
 
 use Core\Application;
+use Core\middleware\AuthenticationMiddleware;
 use Core\Request;
 use Core\Response;
 
 class siteController extends \Core\Controller
 {
-    public function home()
-    {
-        $params=[
-            'name'=>'PHP CODES',
-            'Author'=>'Dinushan Vimukthi',
 
+
+    public function __construct()
+    {
+        $this->registerMiddleware( new AuthenticationMiddleware(['homes']));
+    }
+
+    public function home(): string
+    {
+
+        $params=[
+            'name'=>['first'=>'Mohamed','last'=>'Ali'],
+            'Author'=>'Dinushan Vimukthi',
         ];
-        return $this->render('home',$params);
+        return $this->render('home',['params'=>$params]);
+    }
+
+    public function userRegister(Request $request, Response $response)
+    {
+        return $this->render('Authentication/UserRegister');
+    }
+
+    public function userLogin(Request $request, Response $response)
+    {
+        return $this->render('Authentication/UserLogin');
     }
 
     public function about(Request $request,Response $response)
@@ -32,6 +50,11 @@ class siteController extends \Core\Controller
             require_once Application::$ROOT_DIR.'/API/adduser.php';
         }
         return $this->render('contact');
+    }
+
+    public function ManagerLogin()
+    {
+        
     }
 
 }

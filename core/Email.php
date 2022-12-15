@@ -18,16 +18,20 @@ abstract class Email
      */
     protected function __construct(array $config)
     {
-        $this->mailer = new PHPMailer(true);
-        $this->mailer->isSMTP();
-        $this->mailer->SMTPDebug = 0;
-        $this->mailer->Host = $config['host'];
-        $this->mailer->Port = $config['port'];
-        $this->mailer->SMTPSecure = $config['encryption'];
-        $this->mailer->SMTPAuth = true;
-        $this->mailer->Username = $config['username'];
-        $this->mailer->Password = $config['password'];
-        $this->mailer->setFrom($config['from']);
+        try {
+            $this->mailer = new PHPMailer(true);
+            $this->mailer->isSMTP();
+            $this->mailer->SMTPDebug = 0;
+            $this->mailer->Host = $config['host'];
+            $this->mailer->Port = $config['port'];
+            $this->mailer->SMTPSecure = $config['encryption'];
+            $this->mailer->SMTPAuth = true;
+            $this->mailer->Username = $config['username'];
+            $this->mailer->Password = $config['password'];
+            $this->mailer->setFrom($config['from']);
+        }catch (Exception $e){
+            throw new Exception('PHPMailer not found');
+        }
     }
 
     /**

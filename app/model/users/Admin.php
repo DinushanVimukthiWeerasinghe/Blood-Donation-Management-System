@@ -45,4 +45,8 @@ class Admin extends Person
         ];
     }
 
+    public function labels(): array
+    {
+        // TODO: Implement labels() method.
+    }
 }

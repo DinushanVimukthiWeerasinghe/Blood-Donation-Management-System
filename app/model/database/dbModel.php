@@ -7,7 +7,6 @@ use Core\Model;
 
 abstract class dbModel extends Model
 {
-    private string $id='4';
 
     abstract public static function getTableShort():string;
     abstract public static function tableName(): string;
@@ -20,10 +19,6 @@ abstract class dbModel extends Model
     /**
      * @param string $id
      */
-    public function setId(string $id): void
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return string
@@ -41,7 +36,7 @@ abstract class dbModel extends Model
         $this->WherePrimaryKey = $PrimaryKey;
     }
 
-    public function RetrieveAll(): bool|array
+    public static function RetrieveAll(): bool|array
     {
         $tableName = static::tableName();
         $statement = self::prepare("SELECT * FROM $tableName");
@@ -65,16 +60,6 @@ abstract class dbModel extends Model
         return $count;
     }
 
-    private function getLastId($table)
-    {
-        $PK= self::PrimaryKey();
-        $sql = "SELECT MAX($PK) as ID FROM $table";
-        $stmt = self::prepare($sql);
-        $stmt->execute();
-        $row = $stmt->fetchAll();
-        return $row[0]['ID'] ?? $this->getTableShort()."_000";
-
-    }
 
     private function getPrimaryKey($table){
         $sql = "SHOW INDEX FROM $table WHERE Key_name = 'PRIMARY'";
@@ -106,30 +91,23 @@ abstract class dbModel extends Model
             return $number;
         }
     }
-    public function getNextID(string $ID)
-    {
-        return explode('_',$ID)[0].'_'.  $this->getIndex(intval(explode('_',$ID)[1])+1);
-    }
+
     public function save()
     {
-        $tableName = $this->tableName();
+        $tableName = static::tableName();
         $attributes=$this->attributes();
-        $nextID=$this->id;
-        if($nextID=='')
-        {
-            $nextID=$this->getNextID($this->getLastId($tableName));
-        }
-        $PK=$this->getPrimaryKey($this->tableName())[0];
+        $PK=$this->getPrimaryKey(static::tableName())[0];
         $params=array_map(fn($attr)=>":$attr",$attributes);
         $statement=self::prepare("INSERT INTO $tableName (".implode(',',$attributes).") VALUES (".implode(',',$params).")");
-        $this->{$PK}=$nextID;
 //        $attributes['username']="username";
         foreach ($attributes as $attribute)
         {
             $statement->bindValue(":$attribute",$this->{$attribute});
         }
 
+
         $statement->execute();
+
 
         return true;
     }
@@ -137,24 +115,27 @@ abstract class dbModel extends Model
 
     public function update($id): bool
     {
-        $tableName = $this->tableName();
+        $tableName = static::tableName();
         $attributes=$this->attributes();
         $params=array_map(fn($attr)=>":$attr",$attributes);
+
         $demo='UPDATE '.$tableName.' SET ';
         foreach ($attributes as $attribute)
         {
+            if ($attribute==static::PrimaryKey()){
+                continue;
+            }
             $demo.=$attribute.'="'.$this->{$attribute}.'", ';
         }
-        $demo= substr($demo,0,-2);
-        date_default_timezone_set('Asia/Colombo');
-        $demo.=' ,updatedAt="'.date("y-m-d H:i:s").'" WHERE '.$this->getWherePrimaryKey().'="'.$id.'"';
+        $demo=substr($demo,0,-2);
+        $demo.=' WHERE '.static::PrimaryKey().'="'.$id.'"';
         $statement=self::prepare($demo);
         $statement->execute();
         return true;
     }
     public static function findOne($where)
     {
-        $tableName=static::tableName();
+        $tableName= static::tableName();
         $attributes=array_keys($where);
 
         $sql=implode(" AND ",array_map(fn($attr)=>"$attr=:$attr",$attributes));
@@ -170,7 +151,7 @@ abstract class dbModel extends Model
     }
     public static function DeleteOne($where)
     {
-        $tableName=static::tableName();
+        $tableName= static::tableName();
         $attributes=array_keys($where);
         $sql=implode("AND",array_map(fn($attr)=>"$attr=:$attr",$attributes));
         $statement=self::prepare("DELETE FROM $tableName WHERE $sql");
