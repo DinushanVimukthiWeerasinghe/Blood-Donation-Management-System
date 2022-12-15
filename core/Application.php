@@ -85,7 +85,7 @@ class Application
         $primaryKey=$user->primaryKey();
         $primaryValue=$user->{$primaryKey};
         //TODO Update the minutes to 30
-        $this->session->set('user',$primaryValue,1);
+        $this->session->set('user',$primaryValue,30);
 //        $this->session->setFlash('success','Welcome Back '.$user->getFirstName());
         return true;
     }

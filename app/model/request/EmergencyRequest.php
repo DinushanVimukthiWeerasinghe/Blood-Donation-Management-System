@@ -2,10 +2,11 @@
 
 namespace App\model\request;
 
+use App\model\database\dbModel;
 use Core\Response;
 use Core\Request;
 
-class EmergencyRequest extends \App\model\database\dbModel
+class EmergencyRequest extends dbModel
 {
     protected $Request_Id;
     protected $Officer_ID;

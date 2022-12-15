@@ -19,10 +19,27 @@ body {
     margin: 0;
     font-family: Poppins, serif;
 }
+.card-header{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(8, 7, 16, 0.6);
+}
 
 .container-box{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 90vh;
     height: auto;
-    width: auto;
+    width:90vw;
+    margin-bottom: 5%;
+    justify-content: center;
+    align-content: center;
     background-color: rgba(0, 0, 0, 0.09);
     position: absolute;
     transform: translate(-50%, -50%);
@@ -35,29 +52,19 @@ body {
     padding: 50px 35px;
 }
 
-.card-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: white;
-    border-bottom: 1px solid #ccc;
-}
-
 .container {
-    float: left;
     margin: 20px;
-    display: flex;
     align-items: center;
     flex-direction: column;
-    width: 240px;
-    height: 400px;
+    width: 14vw;
+    height: 33vh;
     overflow: hidden;
-    background: #fff;
+    /*background: #fff;*/
     border-radius: 5px;
     box-shadow: 0 0 10px 0 #000000;
     transition: all 0.3s;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .container:hover {
@@ -89,27 +96,11 @@ body {
     margin: 10px 0;
     font-size: 22px;
     color: #0076b6;
+    /*color: #fff;*/
 }
 
 .meta-container .description {
     font-size: 13px;
     text-align: center;
     color: #373737;
-}
-
-@media screen and (max-width:1267px){
-    .container{
-        width: 200px;
-        height: 280px;
-        margin-block: fill;
-        position: relative;
-    }
-}
-@media screen and (max-width:1107px) {
-    .container {
-        /*width: 160px;*/
-        /*height: 240px;*/
-        margin-left: 100px;
-        position: relative;
-    }
 }

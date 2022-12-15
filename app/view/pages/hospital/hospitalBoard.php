@@ -13,7 +13,7 @@
     </div>
     <div class="container" id="Add" onclick="Redirect('/hospital/createEmergency')">
         <div class="image-container">
-        <img src="/public/images/hospital.png" alt="Add">
+        <img src="/public/images/Hospital/add.png" alt="Add">
         </div>
         <div class="meta-container">
         <h2 class="title">Add Emergency Blood donation request</h2>
@@ -22,7 +22,7 @@
     </div>
     <div class="container" id="Show" onclick="Redirect('/hospital/viewEmergency')">
         <div class="image-container">
-            <img src="/public/images/hospital.png" alt="Show">
+            <img src="/public/images/Hospital/history.png" alt="Show">
         </div>
         <div class="meta-container">
             <h2 class="title">View Emergency Blood donation requests </h2>

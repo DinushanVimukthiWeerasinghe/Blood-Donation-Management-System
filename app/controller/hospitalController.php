@@ -8,6 +8,7 @@ use Core\Request;
 use Core\Response;
 use App\view\components\card\requestDetailsCard;
 use App\model\request\EmergencyRequest;
+use App\view\components\card\successCard;
 
 class hospitalController extends \Core\Controller
 {
@@ -61,14 +62,15 @@ class hospitalController extends \Core\Controller
             $currentUsr = Application::$app->getUser();
             //exit();
             $EmergencyRequest->setOfficerId($currentUsr->getUid());
-            print_r($EmergencyRequest);
+            //print_r($EmergencyRequest);
             if ($EmergencyRequest->validate())
             {
-                echo 'hi';
+                //echo 'hi';
                 if ($EmergencyRequest->save())
                 {
-                    $response->redirect('/hospital/hospitalBoard');
-                    return '';
+                    $card = new successCard();
+                    echo $card->render();
+                    return $this->render('hospital/hospitalBoard');
                 }
             }
         }
@@ -82,14 +84,7 @@ class hospitalController extends \Core\Controller
         $UID = $currentUsr->getUid();
         //$body = $EmergencyRequest->RetrieveAll('HI');
         $body = $EmergencyRequest->RetrieveAll(['Officer_ID' => $UID]);
-        foreach($body as $value)
-        {
-            //print_r($value);
-//            $value->getAttributeVal();
-            //print_r($value->getAttributeVal());
-            $requestDetailsCard = new requestDetailsCard($value->getAttributeVal());
-            echo $requestDetailsCard->render();
-        }
-        return $this->render('hospital/viewEmergency');
+
+        return $this->render('hospital/viewEmergency',['body' => $body]);
     }
 }

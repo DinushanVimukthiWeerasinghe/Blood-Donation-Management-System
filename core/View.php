@@ -9,23 +9,7 @@ class View
         $layoutContent=$this->layoutContent();
         foreach ($params as $key=>$value)
         {
-            if(is_array($value))
-            {
-                $d='';
-                foreach ($value as $k=>$v)
-                {
-                    if(is_array($v))
-                    {
-                        $d.=implode(' ',$v);
-                    }else{
-                        $d.=$v;
-                    }
-                }
-                $viewContent=str_replace('{{'.$key.'}}',$d,$viewContent);
-
-            }else{
-                $viewContent=str_replace('{{'.$key.'}}',$value,$viewContent);
-            }
+            $$key=$value;
         }
         return str_replace('{{content}}',$viewContent,$layoutContent);
     }
