@@ -4,15 +4,6 @@ $logo = new \App\view\components\Image\GeneralImage("/public/images/logo.png", "
 <head>
     <link rel="stylesheet" href='/public/styles/DonorLogin.css'>
 </head>
-<header>
-    <nav>
-        <ul class="navList">
-            <li class="navLi"><a href="">Home</a></li>
-            <li class="navLi"><a href="">About</a></li>
-            <li class="navLi"><a href="">Contact us</a> </li>
-        </ul>
-    </nav>
-</header>
 
 <?php echo $logo->render();?>
 <div class="container">
@@ -24,17 +15,21 @@ $logo = new \App\view\components\Image\GeneralImage("/public/images/logo.png", "
         <div class="mid">
             <h2>Please Sign In</h2>
             <form action="/donor/login" method="post">
-                <label for="email"></label><input id="email" name="email" placeholder="email" type="email"/>
+                <label for="email"></label><input id="email" name="email" placeholder="Email" type="email"/>
                 <label>
-                    <input id="password" name="password" placeholder="password" type="password"/>
+                    <input id="password" name="password" placeholder="Password" type="password"/>
                 </label>
                 <div class="buttons">
                     <input class="login" type="submit" value="LogIn"/>
-                    <a href="">Forgot your Password?</a>
+                    <div style="text-align: center;">
+                        <a href="">Forgot your Password?</a>
+                    </div>
                 </div>
                 <div class="buttons">
                     <p>Don’t have an account yet?</p>
-                    <input class="btn-hover color-9" type="button" value="Register"/>
+                    <a href="/donor/signup">
+                        <input class="signup-btn" type="button" value="Register"/>
+                    </a>
                 </div>
             </form>
         </div>

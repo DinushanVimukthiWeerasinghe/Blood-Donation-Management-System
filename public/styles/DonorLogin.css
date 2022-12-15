@@ -3,6 +3,22 @@
     font-family: Inter, serif;
 }
 
+body{
+    background-image: url("/public/images/homebg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color : white;
+}
+
+.container{
+    width:60%;
+    background-color: rgba(0,0,0,0.61);
+}
+a{
+    color: #6B8DD6;
+}
+
 h2, a , p{
     text-align: center;
 }
@@ -14,10 +30,12 @@ nav ul{
     display: flex;
 }
 nav ul > *{
-    border: 2px solid #000000;
-
+    margin: 5px;
 }
 
+input[type=button]:hover,input[type = submit]:hover{
+    transform: scale(0.9);
+}
 .box{
     content: "";
     background-color: #E25345;
@@ -54,6 +72,7 @@ nav ul > *{
 
 .center input.login
 {
+    color: white;
     background-color: #E25345;
 }
 

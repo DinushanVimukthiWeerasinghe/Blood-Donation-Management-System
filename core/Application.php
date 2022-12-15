@@ -87,6 +87,7 @@ class Application
         try {
             echo self::$app->router->resolve();
         }catch (Exception $e){
+            $this->response->redirect('/');
             echo $e->getMessage();
         }
     }

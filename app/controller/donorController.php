@@ -2,6 +2,7 @@
 
 namespace App\controller;
 
+use App\model\Report\Report;
 use App\model\users\Donor;
 use App\model\users\User;
 use App\model\donation\donation;
@@ -53,14 +54,22 @@ class donorController extends \Core\Controller
     {
         $this->usrCheck($response);
         $donor = new Donor();
+        $report = new Report();
         $user = Application::$app->getUser();
         $primaryKey = $user->primaryKey();
         $primaryValue = $user->{$primaryKey};
         $donor->loadData(Donor::findOne(['Donor_ID'=>$primaryValue]));
+        if(Report::findOne(['Donor_ID'=>$primaryValue])) {
+            $report->loadData(Report::findOne(['Donor_ID' => $primaryValue]));
+        }
         if ($donor->isNotRegistered()){
             return $this->render('Donor/register');
         }
-        return $this->render('Donor/profile', $donor->getAttributes());
+//        if ($report->isNotAvailable()){
+//            //echo '<script>getEleme</script>'
+//            return $this->render('Donor/profile', $donor->getAttributes());
+//        }
+        return $this->render('Donor/profile', $donor->getAttributes() + $report->getBriefReport());
     }
     public function signup(Request $request, Response $response)
     {
@@ -71,8 +80,8 @@ class donorController extends \Core\Controller
             $user->setPassword($user->getPassword());
             if(User::findOne(['email' => $user->getEmail()]))
             {
-                echo "you have already been signed";
-                return $this->render('Donor/login');
+                echo "This Email is already registered <a href='/donor/login'>Try Login</a>";
+                return $this->render('Donor/signup');
             }
 
             if($user->validate() && $user->save())

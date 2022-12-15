@@ -30,14 +30,32 @@ class donationDetailsCard
                 Packet ID :<h1 class="card-title">$this->Packet_ID</h1>
             </div>
             <div class="card-body">
-                <ul>
-                    <li>Amount : $this->Blood_Volume</li>
-                    <li>In time : $this->In_Time</li>
-                    <li>Out Time :$this->Out_Time</li>
-                    <li>Date : $this->Date</li>
-                    <li>Campaign Code: $this->Venue</li>
-                    <li>Effects : $this->Effects</li>
-                </ul>
+                <table>
+                    <tr>
+                        <td>Amount</td>
+                        <td>: $this->Blood_Volume</td>
+                    </tr>
+                    <tr>
+                        <td>In time</td>
+                        <td>: $this->In_Time</td>
+                    </tr>
+                    <tr>
+                        <td>Out Time</td>
+                        <td>: $this->Out_Time</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>: $this->Date</td>
+                    </tr>
+                    <tr>
+                        <td>Campaign Code</td>
+                        <td>: $this->Venue</td>
+                    </tr>
+                    <tr>
+                        <td>Effects</td>
+                        <td>: $this->Effects</td>
+                    </tr>
+                </table>
             </div>
         </div>
         HTML;

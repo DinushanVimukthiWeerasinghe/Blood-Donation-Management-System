@@ -39,10 +39,9 @@ $home = new \App\view\components\Image\GeneralImage("/public/images/home.png", "
         <button type="button">Change Password</button>
     </div>
     <div class=medicalDetails>
-        <p> Blood Type: O+</p>
-        <p>Height: 174 cm</p>
-        <p>Weight: 50 Kg</p>
-        <p>Chronic Diseases: NONE</p>
+        <p> Blood Type: {{Blood_Group}}</p>
+        <p>Weight: {{Weight}} Kg</p>
+        <p>Chronic Diseases: {{Remark}}</p>
     </div>
 </div>
 <div class="footerBar"></div>

@@ -19,10 +19,10 @@ class ClickableCard
     {
         return <<<HTML
         <div class="card">
+            <h1 class="card-title">{$this->title}</h1>
             <div class="card-header">
-                <h1 class="card-title">{$this->title}</h1>
+                <img src="{$this->image}" alt="{$this->img_alt}">
             </div>
-            <img src="{$this->image}" alt="{$this->img_alt}">
         </div>
         HTML;
     }
