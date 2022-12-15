@@ -9,6 +9,7 @@ abstract class Model
     public const RULE_MAX = 'max';
     public const RULE_UNIQUE = 'uniq';
     public const RULE_MATCH = 'match';
+
     public function loadData($data)
     {
         foreach ($data as $key => $value) {
@@ -64,7 +65,8 @@ abstract class Model
                 }
                 if($rulename===self::RULE_UNIQUE)
                 {
-                    $className=$rule['class'];
+
+                    $className=get_class($this);
                     $uniqueAttr=$rule['attribute'] ?? $attribute;
                     $tableName=$className::tableName();
                     //TODO We have to BIND the value to the query
@@ -75,6 +77,7 @@ abstract class Model
                     $record=$statement->fetchObject();
                     if($record){
                         $this->addErrorRule($attribute,self::RULE_UNIQUE,['field'=>$this->getLabel($attribute)]);
+
                     }
                 }
                 if($rulename===self::RULE_MATCH && $value!=$this->{$rule['match']})

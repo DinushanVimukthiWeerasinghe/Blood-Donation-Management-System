@@ -25,7 +25,7 @@ class Campaign extends dbModel
     public function save()
     {
         //mnbhbjhjhchjhs
-        $this->manage = ($_SESSION['user']);
+        $this->manage = Application::$app->session->get('user')->getSessionData();
         return parent::save();
     }
 

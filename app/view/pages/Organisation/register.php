@@ -1,5 +1,4 @@
 <?php
-
 ?>
 <html lang="en">
 <head>
@@ -10,44 +9,93 @@
     <link rel="stylesheet" href="/public/styles/Orgregister.css">
 </head>
 <body>
-<!--form -->
-<section class="container forms">
-    <div class="form login">
-        <div class="form-content">
-            <header>Register</header>
-            <form action="/organisation/register" method="post">
-                <div class="field input-field">
-                    <input type="text" placeholder="Organisation Name" name="name" required >
-                </div>
-                <div class="field input-field">
-                   <input type="text" placeholder="Address line1" name="address1" required>
-                </div>
-                <div class="field input-field">
-                    <input type="text" placeholder="Address line2" name="address2" required>
-                </div>
-                <div class="field input-field">
-                    <input type="text" placeholder="City" name="city" required>
-                </div>
-                <div class="field input-field">
-                    <input type="text" placeholder="Postal Code" name="postalcode" required>
-                </div>
-                <div class="field input-field">
-                    <input type="text" placeholder="Telephone Number" name="tel" required>
-                </div>
-                <div class="field input-field">
-                    <input type="email" placeholder="Email" name="email" required>
-                </div>
-                <div class="field input-field">
-                    <input type="password" placeholder="Password" name="password" id="password" required>
-                    <i class="uil uil-eye-slash toggle"></i>
-                </div>
-                <div class="field button-field">
-                    <button type="submit">Register</button>
-                </div>
-            </form>
+<div class="container">
+    <h1 class="form-title">Organization Registration</h1>
+    <form action="/organisation/register" method="post">
+        <div class="main-user-info">
+            <div class="user-input-box">
+                <label for="organizationName">Organization Name</label>
+                <input type="text"
+                       id="organizationName"
+                       name="name"
+                       placeholder="Organization Name" required/>
+            </div>
+            <div class="user-input-box">
+                <label for="address1">Address Line 1</label>
+                <input type="text"
+                       id="address1"
+                       name="address1"
+                       placeholder="Address Line 1" required/>
+            </div>
+            <div class="user-input-box">
+                <label for="address2">Address Line 2</label>
+                <input type="text"
+                       id="address2"
+                       name="address2"
+                       placeholder="Address Line 2" required/>
+            </div>
+            <div class="user-input-box">
+                <label for="city">City</label>
+                <input type="text"
+                       id="city"
+                       name="city"
+                       placeholder="City" required/>
+            </div>
+            <div class="user-input-box">
+                <label for="postal">Postal Code</label>
+                <input type="text"
+                       id="postal"
+                       name="postalcode"
+                       placeholder="Postal Code" required/>
+            </div>
+            <div class="user-input-box">
+                <label for="tel">Telephone Number</label>
+                <input type="text"
+                       id="tel"
+                       name="tel"
+                       placeholder="Telephone Number" required/>
+            </div>
+            <div class="user-input-box">
+                <label for="email">E-mail</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="E-mail" required/>
+            </div>
+            <div class="user-input-box">
+                <label for="password">Password</label>
+                <input type="password"
+                       id="password"
+                       name="password"
+                       placeholder="Password"  required/>
+            </div>
         </div>
+        <span style="color: red;font-size: 15pt;margin-left: 120px;"><?php echo $model->getFirstError('email') ?></span>
+        <span style="color: red;font-size: 15pt;margin-left: 120px;"><?php echo $model->getFirstError('password') ?></span>
+        <span style="color: red;font-size: 15pt;margin-left: 10px;" id="error"></span>
+        <div class="form-submit-btn" id="but">
+            <input type="submit" value="Register">
+        </div>
+    </form><br>
+    <div class="back" style="border-radius: 5px;">
+    <a href="/organisation/login"><button style="width: 100%;height: 50px;cursor: pointer;background-color:  rgb(0,0,255,0.5);border: none;font-size: 20px;color: white; cursor: pointer;" class="back">Back To Login</button></a>
     </div>
-</section>
-</body>
+</div>
+<script>
+    function character(){
+        let text = document.getElementById('password').value;
+        let length = text.length;
+        if(0<length<6){
+            document.getElementById('but').style.visibility = 'hidden';
+            document.getElementById('but').style.disabled ='Password Must contain at least 6 characters'
+            document.getElementById('error').innerHTML ='Password Must contain at least 6 characters';
 
-</html>
+        }if(length===0){
+            document.getElementById('error').innerHTML ='';
+        }
+        if(length>6){
+            document.getElementById('error').innerHTML ='';
+        }
+    }
+</script>
+</body>

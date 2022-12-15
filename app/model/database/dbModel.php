@@ -12,6 +12,7 @@ abstract class dbModel extends Model
     abstract public static function tableName(): string;
     abstract public static function PrimaryKey(): string;
     abstract public function attributes(): array;
+    private string $id='';
 //    abstract public function relations(): array;
     private string $WherePrimaryKey='';
 
@@ -62,7 +63,7 @@ abstract class dbModel extends Model
 
     private function getLastId($table)
     {
-        $PK= self::PrimaryKey();
+        $PK= static::PrimaryKey();
         $sql = "SELECT MAX($PK) as ID FROM $table";
         $stmt = self::prepare($sql);
         $stmt->execute();
@@ -102,25 +103,19 @@ abstract class dbModel extends Model
             return $number;
         }
     }
-    public function getNextID(string $ID): string
-    {
-        return explode('_',$ID)[0].'_'.  $this->getIndex(intval(explode('_',$ID)[1])+1);
-    }
+
     public function save()
     {
         $tableName = static::tableName();
         $attributes=$this->attributes();
         $nextID='';
-        if($nextID=='')
-        {
-            $nextID=$this->getNextID($this->getLastId($tableName));
-        }
+
         $PK=$this->getPrimaryKey(static::tableName())[0];
         $params=array_map(fn($attr)=>":$attr",$attributes);
 
         $statement=self::prepare("INSERT INTO $tableName (".implode(',',$attributes).") VALUES (".implode(',',$params).")");
 
-        $this->{$PK}=$nextID;
+        $this->{$PK}=$this->id;
 //        $attributes['username']="username";
         foreach ($attributes as $attribute)
         {

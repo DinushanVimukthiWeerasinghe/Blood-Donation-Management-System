@@ -1,0 +1,58 @@
+body{
+    background-image: url("../../public/images/orgacreate.jpg");
+    z-index: -1;
+    position: relative;
+    width: 90%;
+    height: 80vh;
+    filter: brightness(0.8);
+    object-fit: contain;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profileBanner{
+    position: absolute;
+    width: 738px;
+    height: 80px;
+    left: 400px;
+    top: 24px;
+    border-radius: 5px;
+
+}
+.profileBanner h1{
+    position: absolute;
+    left: 30%;
+
+    font-family:"Bell MT";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 30px;
+
+    color: #000000;
+}
+.contentArea{
+    position: absolute;
+    width: 80%;
+    height: 85%;
+    top: 15%;
+    left: 10%;
+
+    border-radius: 51px;
+}
+
+/*.contentArea{*/
+/*    position: absolute;*/
+/*    width: 1300px;*/
+/*    height: 580px;*/
+/*    left: 160px;*/
+/*    top: 120px;*/
+
+/*    background: #D9D9D9;*/
+/*    border-radius: 51px;*/
+/*}
+

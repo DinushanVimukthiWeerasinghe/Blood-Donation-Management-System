@@ -7,12 +7,53 @@ use App\model\Organization\Organization;
 use App\model\users\Campaign;
 use App\model\users\User;
 use Core\Application;
+use Core\BaseMiddleware;
+use Core\middleware\AuthenticationMiddleware;
+use Core\middleware\ManagerMiddleware;
+use Core\middleware\OrganisationMiddleware;
 use Core\Request;
 use Core\Response;
 
 class organisationController extends \Core\Controller{
 
-    public function login(Request $request,Response $response): string
+    public function __construct()
+    {
+        if (Application::$app->getUser()) {
+            $role = Application::$app->getUser()->getRole();
+//            Application::Redirect('/' . $role);
+
+        }else{
+            $this->registerMiddleware(new AuthenticationMiddleware(['orglogin','register'], BaseMiddleware::ALLOWED_ROUTES));
+        }
+    }
+
+    public function register(Request $request,Response $response): string
+    {
+        $user = new User();
+        if($request->isPost()){
+//            require_once Application::$ROOT_DIR.'/API/adduser.php';
+//            $this->render('register','register');
+            $user -> loadData($request->getBody());
+            $user->setPassword(password_hash($request->getBody()['password'],PASSWORD_BCRYPT));
+//            echo '<pre>';
+//            print_r($request->getBody());
+//            echo '</pre>';
+
+
+            if($user->validate() && $user->register()){
+
+                Application::$app->session->setFlash('success','Thanks for Registering.');
+                Application::$app->response->redirect('/organisation/login');
+            }
+
+            return $this->render('Organisation\register',[
+                'model' => $user
+            ]);
+        }
+//        $this->setLayout('auth');
+        return $this->render('Organisation\register',['model'=>$user]);
+    }
+    public function orglogin(Request $request,Response $response): string
     {
         $loginForm = new Login();
         if($request->isPost()){
@@ -24,40 +65,24 @@ class organisationController extends \Core\Controller{
 //        return $this->render('Organisation/login',[
 //            'model' => $loginForm
 //        ]);
-        return $this->render('organisation/login');
-    }
-    public function register(Request $request,Response $response): string
-    {
-        $user = new User();
-        if($request->isPost()){
-//            require_once Application::$ROOT_DIR.'/API/adduser.php';
-//            $this->render('register','register');
-            $user -> loadData($request->getBody());
-//            echo '<pre>';
-//            print_r($request->getBody());
-//            echo '</pre>';
-            if($user->validate() && $user->register()){
-                Application::$app->session->setFlash('success','Thanks for Registering.');
-                Application::$app->response->redirect('/organisation/login');
-            }
-            return $this->render('Organisation\register',[
-                'model' => $user
-            ]);
-        }
-//        $this->setLayout('auth');
-        return $this->render('Organisation\register','Orgregister');
+        return $this->render('organisation/login',['model'=>$loginForm]);
     }
     public function home(Request $request,Response $response): string
     {
-        $userName='';
-        if (isset($_SESSION['userInfo'])){
-            $userName=$_SESSION['userInfo'];
-        }
-        if($request->isPost()){
-            require_once Application::$ROOT_DIR.'/API/adduser.php';
-        }
+//        $userName='';
+        /* @var User $organisation*/
+        $organisation = User::findOne(['id' => Application::$app->session->get('user')]);
+        $params=[
+            'name'=>$organisation->getName(),
+        ];
+//        if (isset($_SESSION['userInfo'])){
+//            $userName=$_SESSION['userInfo'];
+//        }
+//        if($request->isPost()){
+//            require_once Application::$ROOT_DIR.'/API/adduser.php';
+//        }
 
-        return $this->render('Organisation\home',['userName'=>$userName]);
+        return $this->render('Organisation\home',$params);
     }
 
     public function profile(Request $request,Response $response): string
@@ -70,15 +95,15 @@ class organisationController extends \Core\Controller{
 
     public function manage(Request $request,Response $response): string
     {
-        $userPassword = '';
-        $userEmail = '';
-        $userEmail = $_SESSION['email'];
-        $userName = $_SESSION['userInfo'];
+//        $userPassword = '';
+//        $userEmail = '';
+//        $userEmail = $_SESSION['email'];
+//        $userName = $_SESSION['userInfo'];
 
-        if($request->isPost()){
-            require_once Application::$ROOT_DIR.'/API/adduser.php';
-        }
-        return $this->render('Organisation\manage',['userName'=>$userName,'userEmail'=>$userEmail]);
+//        if($request->isPost()){
+//            require_once Application::$ROOT_DIR.'/API/adduser.php';
+//        }
+        return $this->render('Organisation\manage');
     }
     public function create(Request $request,Response $response): string
     {
@@ -95,10 +120,8 @@ class organisationController extends \Core\Controller{
         $campaign='';
         $donor='';
         $history = new Organization();
-//        echo '<pre>';
+
           $data=$history::findAll(['manage'=>$_SESSION['user']]);
-//        echo '</pre>';
-//        exit();
         if($request->isPost()){
             require_once Application::$ROOT_DIR.'/API/adduser.php';
         }

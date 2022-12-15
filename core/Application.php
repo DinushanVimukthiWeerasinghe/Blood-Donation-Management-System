@@ -21,6 +21,9 @@ class Application
     public Session $session;
     public forbiddenRoute $forbiddenRoute;
     public BaseEmail $email;
+    /**
+     * @var \App\model\database\dbModel|false|mixed|object|\stdClass|null
+     */
 
     public static function Redirect($path): void
     {

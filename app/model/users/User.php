@@ -16,12 +16,23 @@ class User extends dbModel
     protected string $email='';
     protected string $password='';
     protected string $type_id='';
-    protected string $uid='';
-    protected string $role='';
+    protected string $id='';
+    protected string $role='organisation';
+    protected string $address1='';
+    protected string $address2='';
+    protected string $city='';
+    protected string $postalcode='';
+    protected string $tel='';
+    protected string $status='';
+
 
     /**
      * @return string
      */
+
+    public function getName():string{
+        return $this->name;
+    }
     public function getEmail(): string
     {
         return $this->email;
@@ -61,13 +72,21 @@ class User extends dbModel
      */
     public function getUid(): string
     {
-        return $this->uid;
+        return $this->id;
     }
 
 
     public function rules(): array
     {
-        // TODO: Implement rules() method.
+
+        return ['name'=> [self::RULE_REQUIRED],
+            'email'=> [self::RULE_REQUIRED,self::RULE_UNIQUE],
+            'password'=> [self::RULE_REQUIRED,[self::RULE_MIN,'min'=>6]],
+            'address1'=> [self::RULE_REQUIRED],
+            'address2'=> [self::RULE_REQUIRED],
+            'city'=> [self::RULE_REQUIRED],
+            'postalcode'=> [self::RULE_REQUIRED],
+            'tel'=> [self::RULE_REQUIRED]];
     }
 
     public static function getTableShort(): string
@@ -77,12 +96,12 @@ class User extends dbModel
 
     public static function tableName(): string
     {
-        return 'staff_credential';
+        return 'users';
     }
 
     public static function PrimaryKey(): string
     {
-        return 'uid';
+        return 'id';
     }
 
     public function attributes(): array
@@ -98,13 +117,7 @@ class User extends dbModel
             'tel',
             'status',
             'role',
-            'type_id'
         ];
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
     }
 
     public function register(): bool
@@ -114,5 +127,10 @@ class User extends dbModel
     public function getDisplayName(): string
     {
         return $this->name;
+    }
+
+    public function setPassword(string $password_hash)
+    {
+        return $this->password= $password_hash;
     }
 }

@@ -6,7 +6,7 @@
 }
 html{
     font-size: 95%;
-    background-color: #8E37D7;
+    background-color: #880808;
 
 }
 
@@ -21,29 +21,32 @@ main{
 }
 main .card{
     border-radius: 20px;
-    max-width: 500px;
+    max-width: 350px;
     flex: 1 1 210px;
     text-align: center;
-    height: 600px;
+    height: 500px;
     border: 1px solid lightgray;
     margin-top: 100px;
     margin-left: 10px;
+    background-color: #3fc3ee;
+    box-shadow: 5px 10px;
 }
 main .card .image{
-    height: 50%;
+    height: 40%;
     margin-bottom: 20px;
 }
 
 main .card .image img{
     width: 80%;
     height:80%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 main .card .caption{
     font-family:'Roboto Mono', monospace;
     padding-left: 1em;
-    text-align: center;
+    text-align: justify;
+    margin-left: 10%;
     line-height: 3em;
     height: 25%;
 }

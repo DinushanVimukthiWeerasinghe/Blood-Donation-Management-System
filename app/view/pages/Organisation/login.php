@@ -1,4 +1,9 @@
 <?php
+/**
+ * @var Login $model
+ */
+
+use App\model\Authentication\Login;
 
 ?>
 <html lang="en">
@@ -7,53 +12,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BDMS</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<!--    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>-->
+<!--    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">-->
     <link rel="stylesheet" href="/public/styles/Orglogin.css">
 </head>
 <body>
-    <!--form -->
-    <section class="container forms">
-        <div class="form login">
-            <div class="form-content">
-                <header>Login</header>
-                <form action="/organisation/login" method="post">
-                    <div class="field input-field">
-                        <input type="email" placeholder="Email" name="email" required>
-                    </div>
-                    <div class="field input-field">
-                        <input type="password" placeholder="Password" name="password" id="password" required>
-                        <i class="uil uil-eye-slash toggle"></i>
-                    </div>  
-                    <div class="form-link">
-                        <a href="#" class="forgot">Forgot Password?</a>
-                    </div>
-                    <div class="field button-field">
-                        <button>Login</button>
-                    </div>
-                </form>
-                <div class="btn">
-                    <br>
-                    <a href="/organisation/register" style="background-color: #337ab7; margin-left: 20%;border-radius: 8px;color: azure;text-decoration: none;padding: 10px 80px 10px 80px;">Register</a>
-                </div>
-            </div>
-        </div>
+<div class="login-container">
+    <div class="login-info-container">
+        <h1 class="title">Organization Login</h1>
+        <form action="/organisation/login" method="post" class="inputs-container">
+            <input class="input" type="text" placeholder="email" name="email">
+            <input class="input" type="password" placeholder="Password" name="password">
+            <label style="color: red;font-family: 'Arial Black';margin-left: 5%;"><b><?php echo $model->getFirstError('email')?></b></label>
+            <label style="color: red;font-family: 'Arial Black';margin-left: 5%;"><b><?php echo $model->getFirstError('password')?></b></label>
+            <p>Forgot password? <span class="span">Click here</span></p>
+            <button class="btn" type="submit">login</button>
+            <p>Don't have an account? <a href="/organisation/register" style="text-decoration: none;"><span class="span">Sign Up</span></a></p>
+        </form>
+    </div>
+    <img class="image-container" src="../../../../public/images/orgsave.png" alt="">
+</div>
 
-    </section>
-    <script>
-        const toggle = document.body.querySelector(".toggle"),
-            input = document.body.querySelector(".password");
 
-        toggle.addEventListener("click", () => {
-            if(input.type === "password"){
-                input.type = "text";
-                toggle.classList.replace("uil-eye-slash", "uil-eye");
-            }else{
-                input.type= "password";
-                toggle.classList.replace("uil-eye", "uil-eye-slash");
-            }
-        })
-    </script>
+</body>
+</html>
+
 </body>
 
 </html>

@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="/public/styles/orgmanage.css">
 </head>
 <body>
+<a href="/organisation"><button type="button">Home</button></a>
 <!-- profile banner-->
 <section class="profileBanner">
-    <h1>Manage Campaigns</h1>
+    <h1 style="font-size: 35pt;font-weight: 800;">Manage Campaigns</h1>
 </section>
 <!--profile banner end-->
 <!--content area-->

@@ -17,30 +17,27 @@
 </head>
 <body>
 <div>
-    <a href="/organisation"><button type="button">Home</button></a>
-    <main>
-<!--       --><?php
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-        exit();
-        foreach ($data as $key=>$row){
-        ?>
-            <div class="card">
-                <div class="image">
-                    <img src="../../../../public/images/history.png">
+    <a href="/organisation"><button type="button" style="height: 60px;font-size: 20px;margin-top: 2px;">Home</button></a>
+    <div style="background-color: rgb(0,0,0,0.3);margin-top: 20px;margin-left: 20px;margin-right: 20px;border-radius: 20px;box-shadow: 10px 10px">
+        <main>
+            <?php
+            foreach ($data as $key=>$row){
+            ?>
+                <div class="card" style="margin-top: 30px;margin-bottom: 30px;">
+                    <div class="image">
+                        <img src="../../../../public/images/history.png">
+                    </div>
+                    <div class="caption">
+                        <p class="campaign_name" style="font-size: 20pt;color: red"><b><?php echo $row['campaign'] ?></b></p>
+                        <p class="date" style="font-size: 15pt;color: red;margin-left: 50px;"><b><?php echo $row['date']?></b></p>
+                        <p class="postal_code"><b>Postal Code:-&nbsp</b><?php echo $row['postal']?></p>
+                        <p class="location"><b>Expected Donors:-&nbsp</b><?php echo $row['donor']?></p>
+                        <p class="amount"><b>Expected Amount:-&nbsp</b><?php echo $row['amount']?></p>
+                    </div>
                 </div>
-                <div class="caption">
-                    <p class="campaign_name"><b>Campaign Name :-</b><?php echo $row['campaign'] ?></p>
-                    <p class="postal_code"><b>Postal Code:- </b><?php echo $row['postal']?></p>
-                    <p class="location"><b>Expected Donors:- </b><?php echo $row['donor']?></p>
-                    <p class="date"><b>Campaign Date:- </b><?php echo $row['date']?></p>
-                    <p class="amount"><b>Expected Amount:- </b><?php echo $row['amount']?></p>
-                </div>
-            </div>
-        <?php } ?>
-    </main>
-
+            <?php } ?>
+        </main>
+    </div>
 </body>
 </html>
 
