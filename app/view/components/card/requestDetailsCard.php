@@ -18,7 +18,7 @@ class requestDetailsCard
     public function render(): string
     {
         return <<<HTML
-        <div class="container" id="Add" onclick="Redirect('/hospital/createEmergency')">
+        <div class="container" id="Add" onclick="Redirect('/hospital/viewEmergency')">
                <div class="image-container">
                     <img src="/public/images/hospital.png" alt="Add">
                </div>
@@ -32,6 +32,7 @@ class requestDetailsCard
                     <h3>$this->requestId</h3>
                </div>
         </div>
+
     HTML;
     }
 }
