@@ -7,7 +7,7 @@
 
 $donation_Image='/public/images/donation.png';
 $donation_History='/public/images/Icons/icons8-order-history-80.png';
-$donation_Guidline = '/public/images/Icons/icons8-more-details-50.png';
+$donation_Guideline = '/public/images/Icons/icons8-more-details-50.png';
 $nearby_Donations = '/public/images/Icons/icons8-nearby-32.png';
 
 
@@ -16,7 +16,7 @@ $Image=new \App\view\components\Image\GeneralImage("/public/images/logo.png", "H
 //$Login_Button= new App\view\components\Button\PrimaryButton("Login", "/login", "btn-primary mx-1");
 //$Register_Button= new App\view\components\Button\PrimaryButton("Register", "/login", "btn-red mx-1");
 //$s= new \App\view\components\Card\CounterCard("Click Me", "100");
-$c1 = new \App\view\components\Card\ClickableCard("Donation Guidline", $donation_Guidline,"Donation Guidline");
+$c1 = new \App\view\components\Card\ClickableCard("Donation Guidline", $donation_Guideline,"Donation Guidline");
 $c2 = new \App\view\components\Card\ClickableCard("Donation History", $donation_History,"Donation History");
 $c3 = new App\view\components\Card\ClickableCard("Nearby Donations", $nearby_Donations,"Nearby Donations");
 ?>
@@ -30,8 +30,7 @@ $c3 = new App\view\components\Card\ClickableCard("Nearby Donations", $nearby_Don
                     <h1 class="nav-title">Welcome <br> {{name}}</h1>
                 </div>
                 <div class="nav-desc">
-                    <p class="text text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        At consequuntur distinctio doloremque eligendi excepturi explicabo, pariatur perferendis rerum. .</p>
+                    <p class="text text-white">Thank you for visiting the Be Positive blood donation campaign management system. As a registered user, you have the opportunity to make a positive impact on the lives of others by donating blood. Your generosity and commitment to helping those in need is greatly appreciated. Thank you for being a part of the Be Positive community and for doing your part to save lives.</p>
 
                 </div>
             </div>
@@ -72,13 +71,14 @@ $c3 = new App\view\components\Card\ClickableCard("Nearby Donations", $nearby_Don
             ?>
         </a>
 
+        <a href="#">
         <?php
         echo $c3->render();
 //        echo $s2->render();
 //        echo $s4->render();
 //        echo $s3->render();
 
-        ?>
+        ?></a>
     </div>
 </div>
 

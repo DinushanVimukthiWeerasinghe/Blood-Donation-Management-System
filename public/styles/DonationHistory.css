@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+body{
+    background-image: url("/public/images/homebg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .home{
     float: right;
 }
@@ -9,14 +16,18 @@
 .title-container{
     width: max-content;
     margin: auto;
-    background-color: #E25345;
+    background-color: rgba(226,83,69,0.8);
+    border-radius: 10px;
 }
 
 .top-row{
     font-size: 20px;
     width: 80%;
     margin: auto;
-    background-color: #FAE3E3;
+    padding: 10px;
+    color : white;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.6);
 }
 
 .top-row .card-view{
@@ -28,11 +39,14 @@
     flex-wrap: wrap;
     width: 80%;
     margin: 10px auto 5rem auto;
-    background-color: #FAE3E3;
-    padding: 1% 5% 1% 5%;
+    background-color: rgba(0,0,0,0.6);
+    padding: 5%;
+    border-radius: 60px;
+
 }
 
 .card-container .card{
+    box-shadow: 10px 10px 5px lightblue;
     padding: 10px;
     border-radius: 15px;
     flex-wrap: wrap;
@@ -51,4 +65,7 @@ ul{
     right: 0;
     bottom: 0;
     position: fixed;
+}
+h1{
+    padding:20px;
 }

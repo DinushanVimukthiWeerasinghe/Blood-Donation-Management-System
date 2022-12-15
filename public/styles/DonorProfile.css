@@ -2,13 +2,27 @@
     box-sizing: border-box;
 }
 .profileBanner{
-    margin: auto;
-    width: max-content;
-    background-color: #E25345;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    border-radius: 15px;
+    padding: 5px 20px;
+    background-color: rgba(226,83,69,0.6)
 }
+
+body{
+    font-size:x-large;
+    background-image: url("/public/images/homebg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color : white;
+}
+
 .superContainer{
-    background: rgba(0,0,0,0.2);
-    padding-bottom: 5px;
+    margin-bottom: 10rem;
+    background: rgba(0,0,0,0.6);
+    padding: 5%;
     border-radius: 66px;
     margin-left: 5%;
     margin-right: 5%;
@@ -50,16 +64,25 @@
     width: max-content;
 }
 .changePassword button{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background-color: #E25345;
     padding: 5px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 20px;
+    width : 200px;
+    height : 50px;
+
 }
 
 .homeIcon{
+    flex-grow: 1;
     margin: auto;
+}
+
+.homeIcon a{
     float: right;
 }
+
 tr{
     height: 3rem;
 }
@@ -68,9 +91,8 @@ td:nth-child(3){
     padding-left: 2rem;
 }
 .medicalDetails{
-    border-radius: 66px;
-    margin: 0 5% 5% 5%;
-    background-color: rgba(0,0,0,0.21);
+    border-radius: 30px;
+    background-color: rgba(255,255,255,0.2);
     padding:2rem;
 }
 
@@ -84,12 +106,16 @@ td:nth-child(3){
     background: #A4152D;
 }
 
+table{
+    font-size:large;
+}
 
 
 @media screen and (max-width: 768px){
 
-    .medicalDetails{
-        margin-bottom: 5rem;
+    .superContainer{
+        margin-left:0;
+        width: 100%;
     }
     .profilePicture {
     }

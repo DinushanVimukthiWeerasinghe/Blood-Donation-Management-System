@@ -8,14 +8,12 @@ $home = new \App\view\components\Image\GeneralImage("/public/images/home.png", "
 </head>
 
 
-<?php echo $logo->render();?>
-
-<div class="homeIcon">
-    <a href="/donor"><?php echo $home->render();?></a>
-</div>
-
-    <section class="profileBanner">
-        <h1>My Profile</h1>
+<section class="profileBanner">
+    <?php echo $logo->render();?>
+    <h1>My Profile</h1>
+        <div class="homeIcon">
+            <a href="/donor"><?php echo $home->render();?></a>
+        </div>
     </section>
 
 <div class="superContainer">
@@ -40,7 +38,7 @@ $home = new \App\view\components\Image\GeneralImage("/public/images/home.png", "
     </div>
     <div class=medicalDetails>
         <p> Blood Type: {{Blood_Group}}</p>
-        <p>Weight: {{Weight}} Kg</p>
+        <p>Weight(Kg): {{Weight}} </p>
         <p>Chronic Diseases: {{Remark}}</p>
     </div>
 </div>

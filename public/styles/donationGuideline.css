@@ -5,20 +5,28 @@
 body{
     font-size: large;
     font-family: Ubuntu Thin, serif;
+    background-image: url("/public/images/homebg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color : white;
 }
 
 h1{
     color: white;
-    width: max-content;
     margin: auto;
     text-align: center;
-    background-color: #A4152D;
+    background-color: rgba(164,21,45,0.6);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .container{
     margin: auto;
     width: 80%;
-    padding-bottom: 5rem;
+    padding: 5rem;
+    background-color: rgba(0,0,0,0.7);
+    border-radius:60px;
 }
 
 .footerBar{
@@ -28,4 +36,11 @@ h1{
     right: 0;
     bottom: 0;
     position: fixed;
+}
+
+@media screen and (max-width:768px)
+{
+    .container{
+        width: 100%;
+    }
 }

@@ -9,18 +9,18 @@ $logo = new \App\view\components\Image\GeneralImage("/public/images/logo.png", "
 <div class="container">
     <div class="top">
         <div class="box">
+            <h1>Sign In</h1>
         </div>
     </div>
     <div class="center">
         <div class="mid">
-            <h2>Please Sign In</h2>
             <form action="/donor/login" method="post">
                 <label for="email"></label><input id="email" name="email" placeholder="Email" type="email"/>
                 <label>
                     <input id="password" name="password" placeholder="Password" type="password"/>
                 </label>
                 <div class="buttons">
-                    <input class="login" type="submit" value="LogIn"/>
+                    <input class="login" type="submit" value="Log In"/>
                     <div style="text-align: center;">
                         <a href="">Forgot your Password?</a>
                     </div>

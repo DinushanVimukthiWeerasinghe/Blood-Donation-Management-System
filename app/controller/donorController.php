@@ -45,6 +45,9 @@ class donorController extends \Core\Controller
                 $response->redirect('/donor');
                 return '';
             }
+            else{
+                echo "<center style='color: red; font-size: x-large;'>Wrong Credentials Try Again!!!</center>";
+            }
         }
         $this->layout = 'auth';
         return $this->render('Donor/login');
@@ -80,7 +83,7 @@ class donorController extends \Core\Controller
             $user->setPassword($user->getPassword());
             if(User::findOne(['email' => $user->getEmail()]))
             {
-                echo "This Email is already registered <a href='/donor/login'>Try Login</a>";
+                echo "<center style='color: red;font-size: x-large'>This Email is already registered <a href='/donor/login'>Try Login</a></center>";
                 return $this->render('Donor/signup');
             }
 
