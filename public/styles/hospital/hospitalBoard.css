@@ -31,22 +31,38 @@ body {
 }
 
 .logout:hover {
-    background: linear-gradient(-125deg, #f27474 0%, #e52d27 60%);
-    transform: translateY(-6px);
-    box-shadow: 0 11px 14px rgb(0 0 0 / 25%), 0 8px 20px rgb(0 0 0 / 10%);
+    /*background: linear-gradient(-125deg, #f27474 0%, #e52d27 60%);*/
+    /*transform: translateY(-6px);*/
+    /*box-shadow: 0 11px 14px rgb(0 0 0 / 25%), 0 8px 20px rgb(0 0 0 / 10%);*/
+    background-color: #A4152D;
+    color: #FFFFFF;
+    transition: 0.5s;
 }
 
 .logout{
     height: auto;
     position: absolute;
-    top: 10px;
-    right: 0;
+    top: 5px;
+    right: 5px;
     padding: 1vh;
     border-radius: 5px;
     text-decoration: none;
-    background: linear-gradient(125deg, #f27474 0%, #e52d27 60%);
-    font-size: 30px;
-    box-shadow: #000000 0 0 10px;
+    /*background: linear-gradient(125deg, #f27474 0%, #e52d27 60%);*/
+    /*font-size: 30px;*/
+    /*box-shadow: #000000 0 0 10px;*/
+    /*position: absolute;*/
+    /*margin-top: 50px;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -50%);*/
+    /*display: block;*/
+    /*border-radius: 33px;*/
+    /*width: 35%;*/
+    background-color: #E25345;
+    color: #FFFFFF;
+    /*padding: 15px 0;*/
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .container-box{
