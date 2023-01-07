@@ -21,42 +21,42 @@
                 <input type="text"
                        id="campaignName"
                        name="campaign"
-                       placeholder="Campaign Name"/>
+                       placeholder="Campaign Name"/ required>
             </div>
             <div class="user-input-box">
                 <label for="ExpectedDonors">Expected Donors</label>
                 <input type="text"
                        id="ExpectedDonors"
                        name="donor"
-                       placeholder="Expected Number of Donors"/>
+                       placeholder="Expected Number of Donors" required/>
             </div>
             <div class="user-input-box">
                 <label for="Location">Location</label>
                 <input type="text"
                        id="Location"
                        name="location"
-                       placeholder="Campaign Location"/>
+                       placeholder="Campaign Location" required/>
             </div>
             <div class="user-input-box">
                 <label for="PostalCode">Postal Code</label>
                 <input type="text"
                        id="PostalCod"
                        name="postal"
-                       placeholder="Postal Code"/>
+                       placeholder="Postal Code" required/>
             </div>
             <div class="user-input-box">
                 <label for="Date">Campaign Date</label>
                 <input type="date"
                        id="Date"
                        name="date"
-                       placeholder="Campaign Date"/>
+                       placeholder="Campaign Date"required/>
             </div>
             <div class="user-input-box">
                 <label for="ExpectedAmount">Expected Amount</label>
                 <input type="text"
                        id="ExpectedAmount"
                        name="amount"
-                       placeholder="Expected Amount"/>
+                       placeholder="Expected Amount" required/>
             </div>
         </div>
         <div class="gender-details-box">

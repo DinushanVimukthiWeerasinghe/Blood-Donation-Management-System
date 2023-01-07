@@ -32,7 +32,7 @@
                         <p class="date" style="font-size: 15pt;color: red;margin-left: 50px;"><b><?php echo $row['date']?></b></p>
                         <p class="postal_code"><b>Postal Code:-&nbsp</b><?php echo $row['postal']?></p>
                         <p class="location"><b>Expected Donors:-&nbsp</b><?php echo $row['donor']?></p>
-                        <p class="amount"><b>Expected Amount:-&nbsp</b><?php echo $row['amount']?></p>
+                        <p class="amount"><b>Expected Sponsorship:-</b><?php echo $row['amount']?></p>
                     </div>
                 </div>
             <?php } ?>

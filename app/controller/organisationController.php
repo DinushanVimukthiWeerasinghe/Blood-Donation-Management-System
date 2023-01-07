@@ -112,6 +112,7 @@ class organisationController extends \Core\Controller{
             $campaign -> loadData($request->getBody());
 //            require_once Application::$ROOT_DIR.'/API/adduser.php';
             $campaign->create();
+            Application::$app->response->redirect('/organisation/history');
         }
         return $this->render('Organisation\create');
     }
