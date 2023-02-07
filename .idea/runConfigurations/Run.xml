@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/public/index.php">
-    <CommandLine parameters="-S localhost:5000" />
+    <CommandLine parameters="-S localhost:8000" />
     <method v="2" />
   </configuration>
 </component>
